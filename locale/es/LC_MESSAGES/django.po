@@ -1,0 +1,618 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: portfolio 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# ── Languages
+msgid "Spanish"
+msgstr "Español"
+
+msgid "English"
+msgstr "Inglés"
+
+# ── Layout
+msgid "Strategic Consulting, Web Development and Digital Marketing."
+msgstr "Consultoría Estratégica, Desarrollo Web y Marketing Digital."
+
+msgid "Strategic Consulting, Web Development and Digital Marketing. Supporting entrepreneurs and SMEs since 2022."
+msgstr "Consultoría Estratégica, Desarrollo Web y Marketing Digital. Apoyando a Emprendedores y Pymes desde 2022."
+
+msgid "About"
+msgstr "Sobre mí"
+
+msgid "Experience"
+msgstr "Experiencia"
+
+msgid "Skills"
+msgstr "Habilidades"
+
+msgid "Projects"
+msgstr "Proyectos"
+
+msgid "Education"
+msgstr "Educación"
+
+msgid "Contact"
+msgstr "Contacto"
+
+msgid "All rights reserved."
+msgstr "Todos los derechos reservados."
+
+msgid "Built with"
+msgstr "Hecho con"
+
+msgid "and"
+msgstr "y"
+
+msgid "Quick links"
+msgstr "Enlaces rápidos"
+
+msgid "Connect"
+msgstr "Contacta"
+
+# ── Hero
+msgid "MarTech Developer"
+msgstr "MarTech Developer"
+
+msgid "Hi, my name is"
+msgstr "Hola, mi nombre es"
+
+msgid "Front-End & Digital Strategy"
+msgstr "Front-End y Estrategia Digital"
+
+msgid "Strategic Consulting, Web Development and Digital Marketing. Supporting entrepreneurs and SMEs with their digital projects since 2022."
+msgstr "Consultoría Estratégica, Desarrollo Web y Marketing Digital. Apoyando a Emprendedores y Pymes con sus proyectos digitales desde 2022."
+
+msgid "View projects"
+msgstr "Ver proyectos"
+
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+# ── Terminal
+msgid "Hi, I am"
+msgstr "Hola, soy"
+
+msgid "MarTech Developer with a hybrid profile in development & digital marketing."
+msgstr "MarTech Developer con un perfil híbrido entre desarrollo y marketing digital."
+
+msgid "Specialty: creative projects with disruptive change and tech with purpose."
+msgstr "Especialidad: proyectos creativos con cambios disruptivos y tecnología con propósito."
+
+msgid "Open to new opportunities and collaborations."
+msgstr "Abierta a nuevas oportunidades y colaboraciones."
+
+msgid "Available commands:"
+msgstr "Comandos disponibles:"
+
+msgid "Scrolling to skills..."
+msgstr "Yendo a habilidades..."
+
+msgid "Scrolling to projects..."
+msgstr "Yendo a proyectos..."
+
+msgid "Scrolling to contact..."
+msgstr "Yendo a contacto..."
+
+msgid "command not found. Try 'help'."
+msgstr "comando no encontrado. Prueba 'help'."
+
+msgid "type a command..."
+msgstr "escribe un comando..."
+
+# ── About
+msgid "About me"
+msgstr "Sobre mí"
+
+msgid "I have a hybrid profile between development and digital marketing, with a versatile approach that goes beyond my technical area. Throughout my career I have led projects across multiple sectors, taking on cross-functional roles that gave me an integral view of business."
+msgstr "Tengo un perfil híbrido entre desarrollo y marketing digital, con un enfoque versátil que va más allá de mi área técnica. A lo largo de mi trayectoria, he liderado proyectos en diversos sectores, asumiendo funciones transversales que me han permitido desarrollar una visión integral del negocio."
+
+msgid "This experience gives me a +PLUS: deeply understanding the needs of each project, adapting to changing environments and contributing more technical, strategic and complete solutions."
+msgstr "Esta experiencia me da un +PLUS: entender profundamente las necesidades de cada proyecto, adaptarme a entornos cambiantes y aportar soluciones más técnicas, estratégicas y completas."
+
+msgid "Creative projects involving disruptive change and tech with purpose."
+msgstr "Proyectos creativos que impliquen cambios disruptivos y tecnología con propósito."
+
+msgid "Years experience"
+msgstr "Años de experiencia"
+
+msgid "Technologies"
+msgstr "Tecnologías"
+
+# ── Skills categories
+msgid "Frontend & Data"
+msgstr "Frontend y Data"
+
+msgid "Marketing & Growth"
+msgstr "Marketing y Growth"
+
+msgid "Tools & Methods"
+msgstr "Herramientas y Métodos"
+
+# ── Experience: positions / locations / periods
+msgid "Project Technician"
+msgstr "Técnico de Proyectos"
+
+msgid "Administrative Technician"
+msgstr "Técnico Administrativo"
+
+msgid "Project Manager"
+msgstr "Project Manager"
+
+msgid "Communications Manager"
+msgstr "Gestión de Comunicación"
+
+msgid "Marketing Intern"
+msgstr "Becaria de Marketing"
+
+msgid "Spain"
+msgstr "España"
+
+msgid "Madrid, Spain"
+msgstr "Madrid, España"
+
+msgid "Venezuela"
+msgstr "Venezuela"
+
+msgid "Oct 2025 — Present"
+msgstr "Oct 2025 — Actualidad"
+
+msgid "Jun 2024 — Oct 2025"
+msgstr "Jun 2024 — Oct 2025"
+
+msgid "Oct 2022 — May 2024"
+msgstr "Oct 2022 — May 2024"
+
+msgid "May 2018 — Sep 2022"
+msgstr "May 2018 — Sep 2022"
+
+msgid "Feb 2017 — Sep 2022"
+msgstr "Feb 2017 — Sep 2022"
+
+msgid "Oct 2014 — Apr 2016"
+msgstr "Oct 2014 — Abr 2016"
+
+msgid "Sep 2013 — May 2014"
+msgstr "Sep 2013 — May 2014"
+
+# ── Experience: descriptions / achievements
+msgid "Supporting entrepreneurs and SMEs with their digital marketing projects since 2022."
+msgstr "Apoyando a Emprendedores y Pymes con sus proyectos de Marketing Digital desde 2022."
+
+msgid "UX/UI & Web Optimization: design and improvement of user-centered interfaces, accessibility and conversion."
+msgstr "UX/UI y Optimización Web: diseño y mejora de interfaces centradas en la experiencia del usuario, accesibilidad y conversión."
+
+msgid "SEO & Digital Marketing: organic positioning strategies and content optimization in WordPress."
+msgstr "SEO y Marketing Digital: implementación de estrategias de posicionamiento orgánico y optimización de contenido en WordPress."
+
+msgid "Web Project Management: design and development coordination for SMEs, integrating analytics and A/B testing."
+msgstr "Gestión de Proyectos Web: coordinación de diseño y desarrollo para PYMEs, integrando analítica y pruebas A/B para mejora continua."
+
+msgid "Strategy, analysis and optimization of social media and Web for retail clients."
+msgstr "Estrategia, análisis y optimización de RRSS y Web para clientes de retail."
+
+msgid "Digital marketing project management and customer experience improvement in retail stores."
+msgstr "Gestión de proyectos de marketing digital y mejora de la experiencia cliente en tiendas del sector retail."
+
+msgid "Cross-departmental project follow-up and execution."
+msgstr "Seguimiento y ejecución de proyectos en coordinación con el resto de los departamentos."
+
+msgid "Content, design and signage proposals aligned with client and franchise branding to boost in-store sales."
+msgstr "Propuesta de mejora en contenidos, diseño y cartelería según branding de clientes y franquicias, con el objetivo de aumentar ventas en tiendas."
+
+msgid "Results analysis, reporting and process/cost optimization proposals."
+msgstr "Análisis de resultados, informes y propuestas de optimización de procesos y costes."
+
+msgid "Spreading valuable content for the leading Entrepreneurship radio show on Radio Intereconomía 95.1FM."
+msgstr "Difundiendo contenido de valor para el programa de Radio líder en Emprendimiento, Cultura Emprende de Radio Intereconomía 95.1FM."
+
+msgid "Show content editing."
+msgstr "Edición de contenidos del programa."
+
+msgid "Web design and social media management."
+msgstr "Diseño Web y gestión de redes sociales."
+
+msgid "Guest agenda management."
+msgstr "Gestión de agenda de invitados."
+
+msgid "Marketing and Communication project management for clients."
+msgstr "Gestión de proyectos de Marketing y Comunicación para clientes."
+
+msgid "Social media strategy and email marketing campaigns in Mailchimp and HubSpot."
+msgstr "Planificación de estrategia de RRSS y campañas de email marketing en Mailchimp y HubSpot."
+
+msgid "Advertising campaigns on Instagram and Facebook ads."
+msgstr "Creación y desarrollo de campañas publicitarias en Instagram y Facebook ads."
+
+msgid "Content management for Cultura Emprende Radio Intereconomía."
+msgstr "Gestión de contenidos, patrocinios y canales de difusión del programa Cultura Emprende de Radio Intereconomía."
+
+msgid "Signage layout and digital content proposals for clients."
+msgstr "Maquetación de cartelería y creación de propuestas de contenidos digitales para clientes."
+
+msgid "Project follow-up with agencies, suppliers and collaborators."
+msgstr "Seguimiento de proyectos en comunicación con agencias, proveedores y colaboradores."
+
+msgid "Analysis and reporting for management presentations."
+msgstr "Análisis y creación de informes para la presentación de resultados con dirección."
+
+msgid "Analysis and optimization of digital campaigns: social media, email marketing and basic SEO."
+msgstr "Análisis y optimización de campañas digitales: redes sociales, email marketing y SEO básico."
+
+msgid "Monitoring metrics in Google Analytics, WordPress administration."
+msgstr "Monitoreo de métricas en Google Analytics y administración de WordPress."
+
+msgid "Configuring ads in Google Ads and Meta Ads."
+msgstr "Configuración de anuncios en Google Ads y Meta Ads."
+
+msgid "Internal communications, merchandising inventory control, digital marketing campaign assistance and CRM database updates."
+msgstr "Apoyo en gestión de comunicación interna, control de inventarios de merchandising, asistencia en campañas de marketing digital y actualización de bases de datos en CRM."
+
+# ── Projects
+msgid "Mental health support platform where users can book sessions or therapies with professionals at any time of the day."
+msgstr "Plataforma de apoyo a personas con problemas de salud mental, donde pueden tener sesiones o terapias con profesionales en cualquier momento del día."
+
+msgid "Content development modules support."
+msgstr "Apoyo en módulos de desarrollo de contenidos."
+
+msgid "Web layout & user panel modules."
+msgstr "Maquetación web y módulos de panel de usuario."
+
+msgid "Blog implementation."
+msgstr "Implementación de blog."
+
+msgid "E-commerce of gourmet products (jamones, embutidos, quesos). Web layout, content editing and price re-tagging for physical stores."
+msgstr "E-commerce de productos gourmet (jamones, embutidos, quesos). Maquetación web, edición de contenidos y reetiquetado de precios para tiendas físicas."
+
+msgid "Web layout and content editing support."
+msgstr "Apoyo en la maquetación web y edición de contenidos."
+
+msgid "Brand uniform proposal design with the team."
+msgstr "Diseño de propuesta junto al equipo sobre el nuevo uniforme de marca."
+
+msgid "Future Retail team member for sales-boosting UX proposals."
+msgstr "Parte del equipo de Future Retail para propuestas que aumenten ventas según la experiencia de usuario en tienda."
+
+msgid "Landing page for followers of the entrepreneurship radio show on Radio Intereconomía 95.1FM. Built end-to-end from client requirements."
+msgstr "Página de aterrizaje para seguidores del programa Cultura Emprende de Radio Intereconomía 95.1FM. Construida de extremo a extremo según requerimientos del cliente."
+
+msgid "Full website creation per client needs."
+msgstr "Creación completa de la página web según necesidades y requerimientos del cliente."
+
+msgid "Betting platform partner portal where users can track their earnings and referred users."
+msgstr "Portal de socios de plataforma de apuestas donde los usuarios pueden ver sus ganancias y usuarios referidos."
+
+msgid "Layout support."
+msgstr "Apoyo en la maquetación."
+
+msgid "Click strategy and featured panel design."
+msgstr "Apoyo en estrategia de clicado y paneles destacados."
+
+msgid "Website for the Urban Lab Madrid coworking and business center."
+msgstr "Página web del centro de negocios y coworking Urban Lab Madrid."
+
+msgid "Web layout support."
+msgstr "Apoyo en la maquetación web."
+
+msgid "Initial copywriting."
+msgstr "Redacción inicial de contenidos."
+
+msgid "Blog content writing."
+msgstr "Redacción de contenidos para el blog."
+
+# ── Education
+msgid "Education & Certifications"
+msgstr "Educación y Certificaciones"
+
+msgid "Certifications"
+msgstr "Certificaciones"
+
+msgid "Languages"
+msgstr "Idiomas"
+
+msgid "Native or Bilingual"
+msgstr "Nativo o Bilingüe"
+
+msgid "Professional Working"
+msgstr "Profesional"
+
+msgid "AI Bootcamp — Python, Game Dev & Programming"
+msgstr "Bootcamp IA — Python, Videojuegos y Programación"
+
+msgid "Professional Certificate in Project Management"
+msgstr "Certificado Profesional en Gestión de Proyectos"
+
+msgid "Rock{TheCode} — Full Stack Development"
+msgstr "Rock{TheCode} — Desarrollo Full Stack"
+
+msgid "Master in Commercial Direction & Advertising"
+msgstr "Máster en Dirección Comercial y Publicidad"
+
+msgid "International University of La Rioja"
+msgstr "Universidad Internacional de La Rioja"
+
+msgid "Bachelor in Business Administration"
+msgstr "Grado en Administración y Dirección de Empresas"
+
+msgid "Digital Content Design"
+msgstr "Diseño de Contenidos Digitales"
+
+msgid "Content Marketing Strategies"
+msgstr "Estrategias de Marketing de Contenidos"
+
+msgid "English B1 Intermediate"
+msgstr "Inglés B1 Intermedio"
+
+msgid "Digital Marketing Fundamentals"
+msgstr "Fundamentos de Marketing Digital"
+
+# ── Contact
+msgid "What's next?"
+msgstr "¿Qué sigue?"
+
+msgid "Get in touch"
+msgstr "Hablemos"
+
+msgid "I'm currently open to new opportunities and interesting projects. Whether you have a question or just want to say hi, my inbox is always open — I'll do my best to get back to you."
+msgstr "Estoy abierta a nuevas oportunidades y proyectos interesantes. Si tienes una pregunta o solo quieres saludar, mi bandeja de entrada siempre está abierta — haré lo posible por responderte."
+
+msgid "Say hello"
+msgstr "Saluda"
+
+# ── Editorial redesign — new strings
+msgid "Work"
+msgstr "Trabajo"
+
+msgid "Process"
+msgstr "Proceso"
+
+msgid "Strategic Consulting, Web Development and Digital Marketing. Madrid, Spain."
+msgstr "Consultoría Estratégica, Desarrollo Web y Marketing Digital. Madrid, España."
+
+msgid "Available for new work"
+msgstr "Disponible para nuevos proyectos"
+
+msgid "I build digital"
+msgstr "Construyo"
+
+msgid "products"
+msgstr "productos"
+
+msgid "brands"
+msgstr "marcas"
+
+msgid "strategies"
+msgstr "estrategias"
+
+msgid "experiences"
+msgstr "experiencias"
+
+msgid "that move SMEs forward."
+msgstr "digitales que hacen crecer a las pymes."
+
+msgid "See selected work"
+msgstr "Ver trabajos"
+
+msgid "I have a hybrid profile between development and digital marketing."
+msgstr "Tengo un perfil híbrido entre desarrollo y marketing digital."
+
+msgid "A versatile approach that goes beyond the technical: I lead projects across sectors, taking cross-functional roles that gave me an integral view of business."
+msgstr "Un enfoque versátil que va más allá de lo técnico: lidero proyectos en distintos sectores, asumiendo funciones transversales que me dieron una visión integral del negocio."
+
+msgid "Projects shipped"
+msgstr "Proyectos entregados"
+
+msgid "Industries"
+msgstr "Sectores"
+
+msgid "Selected work"
+msgstr "Trabajo seleccionado"
+
+msgid "Projects."
+msgstr "Proyectos."
+
+msgid "A selection of recent work — web, e-commerce and digital strategy for SMEs."
+msgstr "Una selección de trabajos recientes — web, e-commerce y estrategia digital para pymes."
+
+msgid "How I work."
+msgstr "Cómo trabajo."
+
+msgid "A repeatable workflow refined over a decade of cross-functional projects."
+msgstr "Un flujo repetible refinado a lo largo de una década de proyectos transversales."
+
+msgid "Career log."
+msgstr "Trayectoria."
+
+msgid "Stack."
+msgstr "Stack."
+
+msgid "My core"
+msgstr "Mi core"
+
+msgid "Marketing & Growth."
+msgstr "Marketing y Growth."
+
+msgid "Native"
+msgstr "Nativo"
+
+msgid "Professional"
+msgstr "Profesional"
+
+msgid "Let's"
+msgstr "Trabajemos"
+
+msgid "work."
+msgstr "juntos."
+
+msgid "Open to new opportunities and interesting projects. Drop me a line — I read everything."
+msgstr "Abierta a nuevas oportunidades y proyectos interesantes. Escríbeme — leo todo."
+
+# ── Process steps
+msgid "Goals"
+msgstr "Objetivos"
+
+msgid "Define what success looks like before touching the keyboard. KPIs, scope and constraints."
+msgstr "Definir cómo se ve el éxito antes de tocar el teclado. KPIs, alcance y restricciones."
+
+msgid "Research"
+msgstr "Investigación"
+
+msgid "Audit the market, the competition and the audience. Data over opinion."
+msgstr "Auditar el mercado, la competencia y la audiencia. Datos antes que opiniones."
+
+msgid "Strategy"
+msgstr "Estrategia"
+
+msgid "Translate research into a clear positioning and channel mix."
+msgstr "Traducir la investigación en un posicionamiento claro y un mix de canales."
+
+msgid "Ideas"
+msgstr "Ideas"
+
+msgid "Generate creative concepts that fit the strategy and stretch the brand."
+msgstr "Generar conceptos creativos que encajen con la estrategia y expandan la marca."
+
+msgid "Planning"
+msgstr "Planificación"
+
+msgid "Roadmap, ownership and timelines so nothing falls through the cracks."
+msgstr "Roadmap, responsables y plazos para que no se cuele nada."
+
+msgid "Media plan"
+msgstr "Plan de medios"
+
+msgid "Choose paid, owned and earned channels with a realistic budget."
+msgstr "Escoger canales pagados, propios y ganados con un presupuesto realista."
+
+msgid "Promotion"
+msgstr "Promoción"
+
+msgid "Launch, iterate and optimize creatives, audiences and bidding."
+msgstr "Lanzar, iterar y optimizar creatividades, audiencias y pujas."
+
+msgid "Results analysis"
+msgstr "Análisis de resultados"
+
+msgid "Read the numbers, separate signal from noise, share insights."
+msgstr "Leer los números, separar señal de ruido y compartir insights."
+
+msgid "Measurement"
+msgstr "Medición"
+
+msgid "Close the loop: report against KPIs and feed learnings into the next cycle."
+msgstr "Cerrar el círculo: reportar contra los KPIs y alimentar el siguiente ciclo con aprendizajes."
+
+# ── SyntaxCV-style hero
+msgid "Available for work"
+msgstr "Disponible para trabajar"
+
+msgid ", based in Madrid."
+msgstr ", desde Madrid."
+
+msgid "I have a hybrid profile between development and digital marketing — leading creative, strategic projects for SMEs and startups since 2013. I aim for clarity, useful tech and long-term impact."
+msgstr "Tengo un perfil híbrido entre desarrollo y marketing digital — liderando proyectos creativos y estratégicos para pymes y startups desde 2013. Busco claridad, tecnología útil e impacto a largo plazo."
+
+msgid "Download CV"
+msgstr "Descargar CV"
+
+msgid "Contact me"
+msgstr "Contáctame"
+
+msgid "Yrs experience"
+msgstr "Años de experiencia"
+
+# ── About v2
+msgid "I started in 2013 in marketing and project management, and step by step grew into the technical side — front-end, analytics, MarTech automation. That hybrid path is exactly the value I bring: I read business needs and translate them into ship-able digital products."
+msgstr "Empecé en 2013 en marketing y gestión de proyectos, y poco a poco crecí hacia el lado técnico — front-end, analítica, automatización MarTech. Ese camino híbrido es exactamente el valor que aporto: leo las necesidades del negocio y las traduzco en productos digitales que se pueden enviar."
+
+msgid "Today I focus on creative projects involving disruptive change and tech with purpose. I care about clarity over noise, useful systems over hype, and shipping work that actually moves a metric."
+msgstr "Hoy me enfoco en proyectos creativos que impliquen cambios disruptivos y tecnología con propósito. Me importa la claridad antes que el ruido, los sistemas útiles antes que el hype, y enviar trabajo que mueva una métrica."
+
+msgid "Creative projects with disruptive change and tech with purpose."
+msgstr "Proyectos creativos con cambios disruptivos y tecnología con propósito."
+
+# ── References
+msgid "References"
+msgstr "Referencias"
+
+msgid "What people say."
+msgstr "Qué dicen de mí."
+
+# ── Jolle hero
+msgid "Resume"
+msgstr "CV"
+
+msgid "I'm"
+msgstr "Soy"
+
+msgid "with over"
+msgstr "con más de"
+
+msgid "years"
+msgstr "años"
+
+msgid "of experience."
+msgstr "de experiencia."
+
+msgid "Hybrid profile between development and digital marketing — leading creative, strategic projects for SMEs and startups since 2013. I aim for clarity, useful tech and long-term impact."
+msgstr "Perfil híbrido entre desarrollo y marketing digital — liderando proyectos creativos y estratégicos para pymes y startups desde 2013. Busco claridad, tecnología útil e impacto a largo plazo."
+
+msgid "Client satisfaction"
+msgstr "Satisfacción cliente"
+
+# ── Jolle services
+msgid "Code"
+msgstr "Código"
+
+msgid "Growth"
+msgstr "Growth"
+
+msgid "SEO audits, organic positioning, content strategy and brand positioning that move metrics — not vanity."
+msgstr "Auditorías SEO, posicionamiento orgánico, estrategia de contenidos y posicionamiento de marca que mueven métricas — no vanidad."
+
+msgid "Front-end (Angular, JS, HTML/CSS), MarTech automation (Make, Zapier) and analytics (GA4, GTM, Looker)."
+msgstr "Front-end (Angular, JS, HTML/CSS), automatización MarTech (Make, Zapier) y analítica (GA4, GTM, Looker)."
+
+msgid "Paid media (Meta Ads), email automation (Klaviyo, Mailchimp) and CRM ops (HubSpot, Salesforce)."
+msgstr "Paid media (Meta Ads), automatización de email (Klaviyo, Mailchimp) y operativa CRM (HubSpot, Salesforce)."
+
+msgid "How I work"
+msgstr "Cómo trabajo"
+
+msgid "Career log"
+msgstr "Trayectoria"
+
+msgid "Stack & tools"
+msgstr "Stack y herramientas"
+
+msgid "What people say"
+msgstr "Qué dicen de mí"
+
+msgid "Have an idea?"
+msgstr "¿Tienes una idea?"
+
+msgid "Let's work together."
+msgstr "Trabajemos juntos."
+
+msgid "Hybrid profile, leading creative & strategic projects for SMEs and startups since 2013."
+msgstr "Perfil híbrido, liderando proyectos creativos y estratégicos para pymes y startups desde 2013."
+
+msgid "I'm a"
+msgstr "Soy"
+
+# ── Avexa hero
+msgid "Hybrid"
+msgstr "Híbrido"
+
+msgid "MarTech &"
+msgstr "MarTech y"
+
+msgid "Strategy"
+msgstr "Estrategia"
+
+msgid "Creative strategy that drives results."
+msgstr "Estrategia creativa que da resultados."

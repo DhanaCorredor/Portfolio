@@ -1,0 +1,134 @@
+{% load static tailwind_tags i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block meta_description %}{% translate 'Strategic Consulting, Web Development and Digital Marketing.' %}{% endblock %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700;1,9..144,800&family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <title>{% block title %}Dhana Corredor — MarTech Developer{% endblock %}</title>
+    <script>
+      // Dark only — Jolle aesthetic.
+    </script>
+    {% tailwind_css %}
+</head>
+<body class="grain min-h-screen flex flex-col">
+
+<div class="cursor-ring hidden md:block" id="cursor-ring"></div>
+<div class="cursor-dot hidden md:block" id="cursor-dot"></div>
+
+<header id="site-header" class="fixed top-0 inset-x-0 z-40 transition-all duration-500">
+    <nav class="max-w-[1600px] mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center justify-between gap-4">
+        <a href="{% url 'core:index' %}" class="flex items-center gap-3 group shrink-0" aria-label="Home" data-magnetic>
+            <span class="font-display text-2xl font-extrabold tracking-tight">DC<span class="text-[var(--fg-subtle)]">.</span></span>
+        </a>
+
+        <ul class="hidden md:flex items-center gap-6 lg:gap-8 text-sm">
+            <li><a href="#work" class="link-underline">{% translate 'Work' %}</a></li>
+            <li><a href="#about" class="link-underline">{% translate 'About' %}</a></li>
+            <li><a href="#process" class="link-underline">{% translate 'Process' %}</a></li>
+            <li><a href="#experience" class="link-underline">{% translate 'Experience' %}</a></li>
+            <li><a href="#contact" class="link-underline">{% translate 'Contact' %}</a></li>
+        </ul>
+
+        <div class="flex items-center gap-2 md:gap-4">
+            <form action="{% url 'set_language' %}" method="post" class="flex items-center gap-1 font-mono text-xs">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
+                {% get_current_language as CURRENT_LANG %}
+                {% get_available_languages as LANGS %}
+                {% for lang_code, lang_name in LANGS %}
+                    <button type="submit" name="language" value="{{ lang_code }}" class="px-1.5 py-1 uppercase font-bold transition {% if lang_code == CURRENT_LANG %}text-[var(--fg)]{% else %}text-[var(--fg-subtle)] hover:text-[var(--fg)]{% endif %}">{{ lang_code }}</button>
+                    {% if not forloop.last %}<span class="text-[var(--fg-subtle)]">/</span>{% endif %}
+                {% endfor %}
+            </form>
+
+            <a href="{% static 'cv/dhana-corredor-cv.pdf' %}" download class="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-[var(--bg)] text-xs font-mono uppercase tracking-widest font-semibold hover:opacity-90 transition" data-magnetic>
+                CV ↓
+            </a>
+
+            {# Mobile hamburger #}
+            <button id="mobile-menu-btn" type="button" class="md:hidden w-10 h-10 grid place-items-center rounded-full border border-[var(--line-strong)] hover:border-accent transition" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16"/></svg>
+            </button>
+        </div>
+    </nav>
+</header>
+
+{# Mobile menu overlay #}
+<div id="mobile-menu" class="md:hidden fixed inset-0 z-50 bg-[var(--bg)] flex flex-col opacity-0 pointer-events-none transition-opacity duration-300" aria-hidden="true">
+    <div class="flex items-center justify-between px-5 h-16 border-b border-[var(--line)]">
+        <span class="font-display text-2xl font-extrabold tracking-tight">DC<span class="text-[var(--fg-subtle)]">.</span></span>
+        <button id="mobile-menu-close" type="button" class="w-10 h-10 grid place-items-center rounded-full border border-[var(--line-strong)] hover:border-accent transition" aria-label="Close menu">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6"/></svg>
+        </button>
+    </div>
+
+    <nav class="flex-1 flex flex-col justify-center px-6 gap-2">
+        <a href="#work"       class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">01</span>{% translate 'Work' %}</a>
+        <a href="#about"      class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">02</span>{% translate 'About' %}</a>
+        <a href="#process"    class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">03</span>{% translate 'Process' %}</a>
+        <a href="#experience" class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">04</span>{% translate 'Experience' %}</a>
+        <a href="#skills"     class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">05</span>{% translate 'Skills' %}</a>
+        <a href="#contact"    class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">06</span>{% translate 'Contact' %}</a>
+    </nav>
+
+    <div class="px-6 pb-8 space-y-3">
+        <a href="{% static 'cv/dhana-corredor-cv.pdf' %}" download class="flex items-center justify-between gap-2 w-full px-5 py-4 rounded-full bg-accent text-[var(--bg)] text-sm font-semibold">
+            <span>{% translate 'Download CV' %}</span>
+            <span>↓</span>
+        </a>
+        <a href="mailto:corredorsadhana@gmail.com" class="flex items-center justify-between gap-2 w-full px-5 py-4 rounded-full border border-[var(--line-strong)] text-sm font-semibold">
+            <span>{% translate 'Contact me' %}</span>
+            <span>↗</span>
+        </a>
+        <div class="flex items-center justify-between pt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--fg-muted)]">
+            <span class="flex items-center gap-2"><span class="status-dot"></span>Madrid · UTC+1</span>
+            <a href="https://www.linkedin.com/in/dhanacorredor/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+    </div>
+</div>
+
+<main class="flex-1 pt-16 md:pt-20 relative z-10">
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="border-t border-[var(--line)] mt-16 relative z-10">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-10 py-12">
+        <div class="flex flex-col md:flex-row justify-between gap-8 mb-12">
+            <div class="space-y-2">
+                <p class="font-display text-3xl md:text-4xl font-bold tracking-tight">Dhana Corredor.</p>
+                <p class="text-[var(--fg-muted)] text-sm max-w-md">{% translate 'Strategic Consulting, Web Development and Digital Marketing. Madrid, Spain.' %}</p>
+            </div>
+            <div class="flex flex-col gap-2 text-sm font-mono uppercase tracking-wider">
+                <a href="https://www.linkedin.com/in/dhanacorredor/" target="_blank" rel="noopener" class="link-underline" data-magnetic>LinkedIn ↗</a>
+                <a href="https://github.com/DhanaCorredor" target="_blank" rel="noopener" class="link-underline" data-magnetic>GitHub ↗</a>
+                <a href="mailto:corredorsadhana@gmail.com" class="link-underline" data-magnetic>Email ↗</a>
+            </div>
+        </div>
+
+        <div class="border-t border-[var(--line)] pt-6 flex flex-col md:flex-row justify-between gap-2 text-xs font-mono text-[var(--fg-subtle)] uppercase tracking-widest">
+            <p>&copy; {% now 'Y' %} — {% translate 'All rights reserved.' %}</p>
+            <p>Madrid · ES</p>
+            <p>Django · Tailwind</p>
+        </div>
+    </div>
+</footer>
+
+<div id="hud-widget" class="hidden md:flex fixed bottom-6 right-6 z-40 items-center gap-3 px-3.5 py-2 rounded-full border border-[var(--line-strong)] bg-[var(--bg-alt)]/90 backdrop-blur-md font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--fg-muted)] pointer-events-none select-none">
+    <span class="status-dot shrink-0"></span>
+    <span class="text-[var(--fg)]">Madrid</span>
+    <span class="text-[var(--fg-subtle)]">·</span>
+    <span id="hud-clock" class="text-[var(--fg)] tabular-nums">--:--:--</span>
+    <span class="text-[var(--fg-subtle)]">·</span>
+    <span class="text-accent">READING</span>
+    <span id="hud-section" class="text-[var(--fg)]">00 / HERO</span>
+</div>
+
+<script src="{% static 'js/interactions.js' %}" defer></script>
+{% block scripts %}{% endblock %}
+
+</body>
+</html>
