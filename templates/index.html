@@ -22,8 +22,11 @@
     </p>
 
     <div class="flex flex-wrap items-center gap-2.5">
-        <a href="{% static 'cv/dhana-corredor-cv.pdf' %}" download class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-[var(--bg)] text-xs font-semibold hover:opacity-90 transition">
-            {% translate 'Download CV' %} ↓
+        <a href="{% url 'core:cv' %}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-[var(--bg)] text-xs font-semibold hover:opacity-90 transition">
+            {% translate 'View CV' %} ↗
+        </a>
+        <a href="{% static 'cv/dhana-corredor-cv.pdf' %}" download class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--line-strong)] text-xs font-semibold hover:border-accent hover:text-accent transition">
+            {% translate 'Download PDF' %} ↓
         </a>
         <a href="mailto:corredorsadhana@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--line-strong)] text-xs font-semibold hover:border-accent hover:text-accent transition">
             {% translate 'Contact me' %} ↗
