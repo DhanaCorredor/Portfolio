@@ -16,6 +16,7 @@
 }
 
 :root {
+  /* Dark theme (default) */
   --bg: #0a0a0a;
   --bg-alt: #131313;
   --bg-elevated: #1a1a1a;
@@ -25,10 +26,33 @@
   --line: rgba(255, 255, 255, 0.10);
   --line-strong: rgba(255, 255, 255, 0.28);
   --accent: #c3a7e8;
+  --accent-strong: #c3a7e8;
   --accent-soft: rgba(195, 167, 232, 0.15);
   --invert-bg: #fafafa;
   --invert-fg: #0a0a0a;
+  --contact-bg: #c3a7e8;
+  --contact-fg: #0a0a0a;
   color-scheme: dark;
+}
+
+:root.light {
+  /* Light theme */
+  --bg: #fafaf7;
+  --bg-alt: #f0eee8;
+  --bg-elevated: #e8e5dd;
+  --fg: #171415;
+  --fg-muted: #5a5550;
+  --fg-subtle: #98938b;
+  --line: rgba(23, 20, 21, 0.12);
+  --line-strong: rgba(23, 20, 21, 0.30);
+  --accent: #7b5fbf;
+  --accent-strong: #6644a8;
+  --accent-soft: rgba(123, 95, 191, 0.12);
+  --invert-bg: #171415;
+  --invert-fg: #fafaf7;
+  --contact-bg: #171415;
+  --contact-fg: #fafaf7;
+  color-scheme: light;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -44,7 +68,6 @@ html, body {
 }
 
 body {
-  transition: background 0.4s ease, color 0.4s ease;
   overflow-x: hidden;
 }
 
@@ -62,135 +85,17 @@ h3.font-display {
   text-transform: uppercase;
   letter-spacing: 0.005em;
   line-height: 0.85;
-  font-weight: 400; /* Bebas only ships in 400 */
+  font-weight: 400;
 }
 
 .text-accent { color: var(--accent); }
 .bg-accent   { background-color: var(--accent); color: var(--invert-fg); }
 .border-accent { border-color: var(--accent); }
 
-/* ==== Custom cursor ==== */
-@media (hover: hover) and (pointer: fine) {
-  html { cursor: none; }
-  a, button, input, [data-magnetic] { cursor: none; }
-  .cursor-dot,
-  .cursor-ring {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9999;
-    border-radius: 9999px;
-    transform: translate3d(-50%, -50%, 0);
-    will-change: transform, width, height;
-  }
-  .cursor-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
-    transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
-  }
-  .cursor-ring {
-    width: 36px;
-    height: 36px;
-    border: 1.5px solid var(--accent);
-    transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease,
-                background 0.25s ease, transform 0.05s linear;
-  }
-  .cursor-ring.is-hover {
-    width: 72px;
-    height: 72px;
-    background: var(--accent-soft);
-  }
-  .cursor-dot.is-hover { opacity: 0; }
-}
-
-/* ==== Reveal on scroll ==== */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-stagger > * {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal-stagger.is-visible > * {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
-.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.12s; }
-.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.19s; }
-.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.26s; }
-.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.33s; }
-.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.40s; }
-.reveal-stagger.is-visible > *:nth-child(7) { transition-delay: 0.47s; }
-
-/* ==== Char reveal (hero) ==== */
-.char-reveal .char {
-  display: inline-block;
-  transform: translateY(110%);
-  opacity: 0;
-  transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s ease;
-  will-change: transform;
-}
-.char-reveal.is-visible .char {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* Kinetic — letters parallax follow cursor */
-.kinetic-name .char {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* ==== Marquee ==== */
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-.marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 40s linear infinite;
-}
-.marquee-slow { animation-duration: 60s; }
-.marquee:hover { animation-play-state: paused; }
-
-/* ==== Rotating words ==== */
-.rotating-words {
-  display: inline-flex;
-  flex-direction: column;
-  vertical-align: bottom;
-  height: 1em;
-  overflow: hidden;
-}
-.rotating-words ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  animation: rotate 8s steps(4) infinite;
-}
-.rotating-words ul li {
-  height: 1em;
-  line-height: 1;
-  white-space: nowrap;
-}
-@keyframes rotate {
-  0%   { transform: translateY(0); }
-  25%  { transform: translateY(-1em); }
-  50%  { transform: translateY(-2em); }
-  75%  { transform: translateY(-3em); }
-  100% { transform: translateY(-4em); }
-}
+/* ==== Fluid typography ==== */
+.fluid-hero { font-size: clamp(2.5rem, 9vw, 7rem); line-height: 0.9; }
+.fluid-h1   { font-size: clamp(1.875rem, 5.5vw, 3.5rem); line-height: 1; }
+.fluid-h2   { font-size: clamp(1.5rem, 4vw, 2.75rem); line-height: 1.05; }
 
 /* ==== Status dot pulse ==== */
 @keyframes pulse-dot {
@@ -215,10 +120,10 @@ h3.font-display {
 }
 @keyframes pulse-ring {
   0%   { transform: scale(0.6); opacity: 0.7; }
-  100% { transform: scale(2); opacity: 0; }
+  100% { transform: scale(2);   opacity: 0;   }
 }
 
-/* ==== Underline grow ==== */
+/* ==== Underline grow link ==== */
 .link-underline {
   position: relative;
   display: inline-block;
@@ -230,50 +135,34 @@ h3.font-display {
   bottom: -2px;
   height: 1px;
   width: 100%;
-  background: var(--accent);
+  background: currentColor;
   transform-origin: right;
   transform: scaleX(0);
-  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
 }
 .link-underline:hover::after {
   transform-origin: left;
   transform: scaleX(1);
 }
-.link-underline:hover { color: var(--accent); }
-
-/* ==== Hide scrollbar utility ==== */
-.no-scrollbar {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
 
 /* ==== Project card hover ==== */
 .project-card .project-arrow {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               background-color 0.3s ease,
               color 0.3s ease;
 }
 .project-card:hover .project-arrow {
-  transform: translate(0.5rem, -0.5rem);
+  transform: translate(0.3rem, -0.3rem);
   background-color: var(--accent);
+  border-color: var(--accent);
   color: var(--bg);
 }
-.project-card:hover {
-  background: linear-gradient(90deg, transparent 0%, var(--accent-soft) 50%, transparent 100%);
-}
 
-/* ==== Big CTA hover ==== */
-.big-cta {
-  transition: color 0.4s ease;
-}
-.big-cta:hover {
-  color: var(--accent);
-}
+/* ==== Big CTA hover (contact) ==== */
+.big-cta { transition: opacity 0.3s ease; }
+.big-cta:hover { opacity: 0.75; }
 
-/* ==== Lavender glow on focus ==== */
+/* ==== Focus ring ==== */
 button:focus-visible,
 a:focus-visible {
   outline: 2px solid var(--accent);
@@ -281,7 +170,19 @@ a:focus-visible {
   border-radius: 4px;
 }
 
-/* ==== Mobile menu links ==== */
+/* ==== Reveal on scroll (subtle) ==== */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==== Mobile menu ==== */
 .mobile-link {
   display: flex;
   align-items: baseline;
@@ -308,164 +209,4 @@ a:focus-visible {
   pointer-events: auto;
 }
 
-/* Disable body scroll when menu open */
 body.menu-open { overflow: hidden; }
-
-/* ==== Service card tilt ==== */
-.tilt-card {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.3s ease,
-              background-color 0.3s ease;
-}
-.tilt-card:hover {
-  transform: translateY(-6px) rotate(-0.5deg);
-  border-color: var(--accent);
-  background-color: var(--bg-alt);
-}
-
-/* ==== Cursor trail particles ==== */
-.cursor-trail {
-  position: fixed;
-  width: 4px;
-  height: 4px;
-  border-radius: 9999px;
-  background: var(--accent);
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 9998;
-  animation: trail-fade 0.7s ease-out forwards;
-  mix-blend-mode: screen;
-}
-@keyframes trail-fade {
-  0%   { opacity: 0.8; transform: translate(-50%, -50%) scale(1); }
-  100% { opacity: 0;   transform: translate(-50%, -50%) scale(0.2); }
-}
-
-/* ==== Confetti burst (easter egg) ==== */
-.confetti-particle {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
-  background: var(--accent);
-  z-index: 9999;
-  pointer-events: none;
-  animation: confetti-fly 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.confetti-particle:nth-child(odd)  { background: #fafaf7; }
-.confetti-particle:nth-child(3n)   { background: var(--accent); width: 6px; height: 14px; border-radius: 9999px; }
-@keyframes confetti-fly {
-  0%   { transform: translate(0, 0) rotate(0deg); opacity: 1; }
-  100% { transform: translate(var(--dx), var(--dy)) rotate(var(--rot)); opacity: 0; }
-}
-
-/* ==== Manifesto hero ==== */
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
-  display: inline-block;
-}
-.hero-monogram {
-  font-weight: 400;
-  letter-spacing: -0.05em;
-  font-size: clamp(12rem, 30vw, 32rem);
-}
-.hero-orb {
-  animation: pulse-glow 8s ease-in-out infinite;
-}
-
-/* ==== Avexa-style hero ==== */
-.hero-avexa {
-  background: #a3b89e;
-  color: #1a1a14;
-  position: relative;
-  overflow: hidden;
-}
-.hero-avexa-orange { color: #ff5523; }
-.hero-avexa-portrait {
-  filter: contrast(1.05) saturate(0.95);
-}
-.hero-avexa-stripe {
-  position: absolute;
-  left: -8%;
-  right: -8%;
-  top: 28%;
-  height: 18%;
-  background:
-    radial-gradient(ellipse at 30% 50%, rgba(255, 100, 40, 0.95) 0%, rgba(255, 100, 40, 0) 60%),
-    radial-gradient(ellipse at 65% 40%, rgba(255, 80, 30, 0.85) 0%, rgba(255, 80, 30, 0) 55%),
-    linear-gradient(90deg, rgba(255, 100, 40, 0) 0%, rgba(255, 100, 40, 0.65) 35%, rgba(255, 80, 30, 0.85) 55%, rgba(255, 100, 40, 0.55) 75%, rgba(255, 100, 40, 0) 100%);
-  filter: blur(28px);
-  mix-blend-mode: screen;
-  pointer-events: none;
-  z-index: 5;
-}
-.hero-avexa-stripe::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 220, 200, 0.3) 50%, transparent 100%);
-  filter: blur(10px);
-}
-.hero-avexa-title {
-  font-family: var(--font-serif);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 0.9;
-}
-.hero-avexa-title .italic-tail {
-  font-style: italic;
-  font-weight: 500;
-  color: #fafaf7;
-}
-
-/* ==== Hero photo float ==== */
-@keyframes hero-float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-12px); }
-}
-.hero-photo img {
-  animation: hero-float 7s ease-in-out infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-photo img { animation: none; }
-}
-.hero-photo-glow {
-  animation: pulse-glow 5s ease-in-out infinite;
-}
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.25; transform: scale(1); }
-  50%      { opacity: 0.4;  transform: scale(1.05); }
-}
-
-/* ==== Section watermark (Jolle signature element) ==== */
-.section-watermark {
-  font-family: var(--font-display);
-  font-size: clamp(5rem, 18vw, 22rem);
-  line-height: 0.8;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.06);
-  pointer-events: none;
-  user-select: none;
-  white-space: nowrap;
-  display: block;
-}
-
-/* ==== Services card colors (Jolle alternating) ==== */
-.service-card-light {
-  background: var(--accent);
-  color: var(--invert-fg);
-}
-.service-card-dark {
-  background: var(--bg-alt);
-  color: var(--fg);
-  border: 1px solid var(--line);
-}
-.service-card-dark:hover {
-  background: var(--bg-elevated);
-  border-color: var(--accent);
-}

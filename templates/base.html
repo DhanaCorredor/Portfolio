@@ -4,32 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{% block meta_description %}{% translate 'Strategic Consulting, Web Development and Digital Marketing.' %}{% endblock %}">
+    <title>{% block title %}Dhana Corredor — MarTech Developer & Frontend Engineer in Madrid{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{% translate 'Dhana Corredor — MarTech Developer and Frontend Engineer in Madrid. 10+ years bridging marketing strategy and front-end code. Specializing in healthcare, retail and B2B projects.' %}{% endblock %}">
+    <meta name="author" content="Dhana Corredor">
+    <meta name="keywords" content="MarTech Developer, Frontend Engineer, Marketing Digital, SEO, Madrid, Project Manager, Next.js, Angular, GA4, Klaviyo, HubSpot">
+    <meta name="theme-color" content="#0a0a0a">
+
+    {# Favicon #}
+    <link rel="icon" type="image/svg+xml" href="{% static 'favicon.svg' %}">
+    <link rel="alternate icon" href="{% static 'favicon.svg' %}">
+
+    {# Open Graph / LinkedIn / WhatsApp #}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dhana Corredor — MarTech Developer & Frontend Engineer">
+    <meta property="og:description" content="10+ years bridging marketing strategy and front-end code. Madrid, Spain.">
+    <meta property="og:image" content="{% static 'og/og-card.png' %}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="{{ LANGUAGE_CODE }}">
+    <meta property="og:site_name" content="Dhana Corredor">
+
+    {# Twitter / X #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dhana Corredor — MarTech Developer & Frontend Engineer">
+    <meta name="twitter:description" content="10+ years bridging marketing strategy and front-end code. Madrid, Spain.">
+    <meta name="twitter:image" content="{% static 'og/og-card.png' %}">
+
+    {# Structured data — Person schema for Google rich results #}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dhana Corredor",
+      "alternateName": "Dhana Corredor Muñoz",
+      "jobTitle": "MarTech Developer & Frontend Engineer",
+      "email": "corredorsadhana@gmail.com",
+      "telephone": "+34722381698",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Madrid",
+        "addressCountry": "ES"
+      },
+      "knowsAbout": [
+        "MarTech",
+        "Marketing Digital",
+        "SEO",
+        "Frontend Development",
+        "Project Management",
+        "Next.js",
+        "Angular",
+        "Google Analytics",
+        "Email Marketing"
+      ],
+      "knowsLanguage": ["Spanish", "English"],
+      "sameAs": [
+        "https://www.linkedin.com/in/dhanacorredor/",
+        "https://github.com/DhanaCorredor"
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700;1,9..144,800&family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <title>{% block title %}Dhana Corredor — MarTech Developer{% endblock %}</title>
     <script>
-      // Dark only — Jolle aesthetic.
+      (function(){
+        try {
+          var stored = localStorage.getItem('theme');
+          var sysLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+          if (stored === 'light' || (!stored && sysLight)) {
+            document.documentElement.classList.add('light');
+          }
+        } catch(e){}
+      })();
     </script>
     {% tailwind_css %}
 </head>
-<body class="grain min-h-screen flex flex-col">
-
-<div class="cursor-ring hidden md:block" id="cursor-ring"></div>
-<div class="cursor-dot hidden md:block" id="cursor-dot"></div>
+<body class="min-h-screen flex flex-col">
 
 <header id="site-header" class="fixed top-0 inset-x-0 z-40 transition-all duration-500">
     <nav class="max-w-[1600px] mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center justify-between gap-4">
-        <a href="{% url 'core:index' %}" class="flex items-center gap-3 group shrink-0" aria-label="Home" data-magnetic>
+        <a href="{% url 'core:index' %}" class="flex items-center gap-3 group shrink-0" aria-label="Home">
             <span class="font-display text-2xl font-extrabold tracking-tight">DC<span class="text-[var(--fg-subtle)]">.</span></span>
         </a>
 
         <ul class="hidden md:flex items-center gap-6 lg:gap-8 text-sm">
+            <li><a href="#skills" class="link-underline">{% translate 'Skills' %}</a></li>
             <li><a href="#work" class="link-underline">{% translate 'Work' %}</a></li>
-            <li><a href="#about" class="link-underline">{% translate 'About' %}</a></li>
-            <li><a href="#process" class="link-underline">{% translate 'Process' %}</a></li>
             <li><a href="#experience" class="link-underline">{% translate 'Experience' %}</a></li>
+            <li><a href="#about" class="link-underline">{% translate 'About' %}</a></li>
             <li><a href="#contact" class="link-underline">{% translate 'Contact' %}</a></li>
         </ul>
 
@@ -45,7 +108,12 @@
                 {% endfor %}
             </form>
 
-            <a href="{% static 'cv/dhana-corredor-cv.pdf' %}" download class="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-[var(--bg)] text-xs font-mono uppercase tracking-widest font-semibold hover:opacity-90 transition" data-magnetic>
+            <button id="theme-toggle" type="button" class="w-9 h-9 grid place-items-center rounded-full border border-[var(--line-strong)] hover:border-accent transition" aria-label="{% translate 'Toggle theme' %}">
+                <svg class="theme-icon-sun w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                <svg class="theme-icon-moon w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+
+            <a href="{% static 'cv/dhana-corredor-cv.pdf' %}" download class="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-[var(--bg)] text-xs font-mono uppercase tracking-widest font-semibold hover:opacity-90 transition">
                 CV ↓
             </a>
 
@@ -67,12 +135,11 @@
     </div>
 
     <nav class="flex-1 flex flex-col justify-center px-6 gap-2">
-        <a href="#work"       class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">01</span>{% translate 'Work' %}</a>
-        <a href="#about"      class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">02</span>{% translate 'About' %}</a>
-        <a href="#process"    class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">03</span>{% translate 'Process' %}</a>
-        <a href="#experience" class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">04</span>{% translate 'Experience' %}</a>
-        <a href="#skills"     class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">05</span>{% translate 'Skills' %}</a>
-        <a href="#contact"    class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">06</span>{% translate 'Contact' %}</a>
+        <a href="#skills"     class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">01</span>{% translate 'Skills' %}</a>
+        <a href="#work"       class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">02</span>{% translate 'Work' %}</a>
+        <a href="#experience" class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">03</span>{% translate 'Experience' %}</a>
+        <a href="#about"      class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">04</span>{% translate 'About' %}</a>
+        <a href="#contact"    class="mobile-link group"><span class="text-[var(--fg-subtle)] font-mono text-sm mr-3">05</span>{% translate 'Contact' %}</a>
     </nav>
 
     <div class="px-6 pb-8 space-y-3">
@@ -103,9 +170,9 @@
                 <p class="text-[var(--fg-muted)] text-sm max-w-md">{% translate 'Strategic Consulting, Web Development and Digital Marketing. Madrid, Spain.' %}</p>
             </div>
             <div class="flex flex-col gap-2 text-sm font-mono uppercase tracking-wider">
-                <a href="https://www.linkedin.com/in/dhanacorredor/" target="_blank" rel="noopener" class="link-underline" data-magnetic>LinkedIn ↗</a>
-                <a href="https://github.com/DhanaCorredor" target="_blank" rel="noopener" class="link-underline" data-magnetic>GitHub ↗</a>
-                <a href="mailto:corredorsadhana@gmail.com" class="link-underline" data-magnetic>Email ↗</a>
+                <a href="https://www.linkedin.com/in/dhanacorredor/" target="_blank" rel="noopener" class="link-underline">LinkedIn ↗</a>
+                <a href="https://github.com/DhanaCorredor" target="_blank" rel="noopener" class="link-underline">GitHub ↗</a>
+                <a href="mailto:corredorsadhana@gmail.com" class="link-underline">Email ↗</a>
             </div>
         </div>
 
@@ -116,16 +183,6 @@
         </div>
     </div>
 </footer>
-
-<div id="hud-widget" class="hidden md:flex fixed bottom-6 right-6 z-40 items-center gap-3 px-3.5 py-2 rounded-full border border-[var(--line-strong)] bg-[var(--bg-alt)]/90 backdrop-blur-md font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--fg-muted)] pointer-events-none select-none">
-    <span class="status-dot shrink-0"></span>
-    <span class="text-[var(--fg)]">Madrid</span>
-    <span class="text-[var(--fg-subtle)]">·</span>
-    <span id="hud-clock" class="text-[var(--fg)] tabular-nums">--:--:--</span>
-    <span class="text-[var(--fg-subtle)]">·</span>
-    <span class="text-accent">READING</span>
-    <span id="hud-section" class="text-[var(--fg)]">00 / HERO</span>
-</div>
 
 <script src="{% static 'js/interactions.js' %}" defer></script>
 {% block scripts %}{% endblock %}

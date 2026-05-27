@@ -5,39 +5,27 @@ from django.utils.translation import gettext_lazy as _
 def index(request):
     experience = [
         {
-            'company': 'Loopy Laces',
-            'position': _('Project Technician'),
+            'company': _('Independent — Asisty + clients'),
+            'position': _('MarTech & Frontend (Freelance)'),
             'period': _('Oct 2025 — Present'),
-            'location': _('Spain'),
-            'description': _('Supporting entrepreneurs and SMEs with their digital marketing projects since 2022.'),
-            'achievements': [
-                _('UX/UI & Web Optimization: design and improvement of user-centered interfaces, accessibility and conversion.'),
-                _('SEO & Digital Marketing: organic positioning strategies and content optimization in WordPress.'),
-                _('Web Project Management: design and development coordination for SMEs, integrating analytics and A/B testing.'),
-            ],
-            'tech': ['WordPress', 'SEO', 'GA4', 'Figma'],
+            'location': _('Remote · Spain'),
+            'description': _('Self-led MarTech platform Asisty (Next.js 15, healthcare sector) plus freelance work for SMEs: SEO, web optimization, analytics and A/B testing.'),
+            'tech': ['Next.js', 'TypeScript', 'SEO', 'GA4'],
         },
         {
             'company': 'Quirónsalud',
             'position': _('Administrative Technician'),
             'period': _('Jun 2024 — Oct 2025'),
             'location': _('Madrid, Spain'),
-            'description': '',
-            'achievements': [],
-            'tech': [],
+            'description': _('Administrative management, process control and operational support in hospital environment.'),
+            'tech': ['Process Mgmt', 'Healthcare'],
         },
         {
             'company': 'Future Retail S.L.',
             'position': _('Project Manager'),
             'period': _('Oct 2022 — May 2024'),
             'location': _('Madrid, Spain'),
-            'description': _('Strategy, analysis and optimization of social media and Web for retail clients.'),
-            'achievements': [
-                _('Digital marketing project management and customer experience improvement in retail stores.'),
-                _('Cross-departmental project follow-up and execution.'),
-                _('Content, design and signage proposals aligned with client and franchise branding to boost in-store sales.'),
-                _('Results analysis, reporting and process/cost optimization proposals.'),
-            ],
+            'description': _('Digital strategy, social media and web optimization for retail clients. Cross-departmental coordination and reporting to direction.'),
             'tech': ['HubSpot', 'Meta Ads', 'GA4', 'WordPress'],
         },
         {
@@ -45,12 +33,7 @@ def index(request):
             'position': _('Communications Manager'),
             'period': _('May 2018 — Sep 2022'),
             'location': _('Madrid, Spain'),
-            'description': _('Spreading valuable content for the leading Entrepreneurship radio show on Radio Intereconomía 95.1FM.'),
-            'achievements': [
-                _('Show content editing.'),
-                _('Web design and social media management.'),
-                _('Guest agenda management.'),
-            ],
+            'description': _('Communication management for the leading entrepreneurship show on Radio Intereconomía 95.1FM. Web design, social media and guest agenda.'),
             'tech': ['WordPress', 'Mailchimp', 'Social Media'],
         },
         {
@@ -58,15 +41,7 @@ def index(request):
             'position': _('Project Manager'),
             'period': _('Feb 2017 — Sep 2022'),
             'location': _('Madrid, Spain'),
-            'description': _('Marketing and Communication project management for clients.'),
-            'achievements': [
-                _('Social media strategy and email marketing campaigns in Mailchimp and HubSpot.'),
-                _('Advertising campaigns on Instagram and Facebook ads.'),
-                _('Content management for Cultura Emprende Radio Intereconomía.'),
-                _('Signage layout and digital content proposals for clients.'),
-                _('Project follow-up with agencies, suppliers and collaborators.'),
-                _('Analysis and reporting for management presentations.'),
-            ],
+            'description': _('B2B marketing and communication for clients: social media strategy, email marketing in Mailchimp and HubSpot, Meta Ads campaigns, reporting to direction.'),
             'tech': ['HubSpot', 'Mailchimp', 'Meta Ads', 'WordPress'],
         },
         {
@@ -74,11 +49,7 @@ def index(request):
             'position': _('Project Technician'),
             'period': _('Oct 2014 — Apr 2016'),
             'location': _('Madrid, Spain'),
-            'description': _('Analysis and optimization of digital campaigns: social media, email marketing and basic SEO.'),
-            'achievements': [
-                _('Monitoring metrics in Google Analytics, WordPress administration.'),
-                _('Configuring ads in Google Ads and Meta Ads.'),
-            ],
+            'description': _('Digital campaign analysis and optimization: paid social, email marketing and basic SEO. Google Ads and Meta Ads configuration.'),
             'tech': ['Google Ads', 'Meta Ads', 'WordPress', 'GA'],
         },
         {
@@ -86,103 +57,59 @@ def index(request):
             'position': _('Marketing Intern'),
             'period': _('Sep 2013 — May 2014'),
             'location': _('Venezuela'),
-            'description': _('Internal communications, merchandising inventory control, digital marketing campaign assistance and CRM database updates.'),
-            'achievements': [],
-            'tech': ['CRM'],
-        },
-    ]
-
-    skill_categories = [
-        {
-            'title': _('Frontend & Data'),
-            'icon': 'code',
-            'skills': [
-                {'name': 'JavaScript (ES6+)', 'level': 80},
-                {'name': 'HTML5 / CSS3', 'level': 90},
-                {'name': 'Angular', 'level': 70},
-                {'name': 'Git & GitHub', 'level': 80},
-                {'name': 'GA4 / GTM / Looker', 'level': 85},
-                {'name': 'React / Python', 'level': 50},
-            ],
-        },
-        {
-            'title': _('Marketing & Growth'),
-            'icon': 'chart',
-            'skills': [
-                {'name': 'SEO / SEMrush', 'level': 90},
-                {'name': 'Meta Ads', 'level': 85},
-                {'name': 'Klaviyo / Email', 'level': 80},
-                {'name': 'Make.com / Zapier', 'level': 80},
-                {'name': 'HubSpot / Salesforce', 'level': 85},
-                {'name': 'Copywriting', 'level': 80},
-            ],
-        },
-        {
-            'title': _('Tools & Methods'),
-            'icon': 'tools',
-            'skills': [
-                {'name': 'Figma (UX/UI)', 'level': 85},
-                {'name': 'WordPress', 'level': 90},
-                {'name': 'SCRUM', 'level': 80},
-                {'name': 'Notion', 'level': 90},
-                {'name': 'Jira', 'level': 75},
-                {'name': 'Project Management', 'level': 90},
-            ],
+            'description': _('Internal communications, merchandising inventory, digital marketing campaign assistance and CRM database updates.'),
+            'tech': ['CRM', 'Internal Comms'],
         },
     ]
 
     projects = [
         {
-            'title': 'Aurora',
-            'url': '',
-            'description': _('Mental health support platform where users can book sessions or therapies with professionals at any time of the day.'),
-            'bullets': [
-                _('Content development modules support.'),
-                _('Web layout & user panel modules.'),
-                _('Blog implementation.'),
-            ],
-            'tags': ['WordPress', 'UX/UI', 'Blog'],
+            'title': 'Lorena Velásquez Studio',
+            'description': _('Active entrepreneurship project: website for a premium manicure studio and academy in Moratalaz, Madrid. Built with Vite + React 18 + TypeScript + Tailwind. Integrated booking flow (Confirmafy), social channels and conversion-oriented landing.'),
+            'live_url': 'https://lorena-velasquez-studio.vercel.app',
+            'github_url': 'https://github.com/DhanaCorredor/LorenaVelasquezStudio',
+            'tags': ['React', 'TypeScript', 'Vite', 'Branding'],
+            'featured': True,
         },
         {
             'title': 'Viandas de Salamanca',
-            'url': 'https://viandasstores.com',
-            'description': _('E-commerce of gourmet products (jamones, embutidos, quesos). Web layout, content editing and price re-tagging for physical stores.'),
-            'bullets': [
-                _('Web layout and content editing support.'),
-                _('Brand uniform proposal design with the team.'),
-                _('Future Retail team member for sales-boosting UX proposals.'),
-            ],
-            'tags': ['E-commerce', 'UX', 'Branding'],
+            'description': _('E-commerce of gourmet products (jamones, embutidos, quesos). Web layout, content editing and brand uniform design as part of the Future Retail team. The most ambitious commercial collaboration in my path.'),
+            'live_url': 'https://viandasstores.com',
+            'github_url': '',
+            'tags': ['E-commerce', 'UX', 'Branding', 'WordPress'],
+            'featured': True,
         },
         {
-            'title': 'Cultura Emprende Radio',
-            'url': 'https://culturaemprende.com',
-            'description': _('Landing page for followers of the entrepreneurship radio show on Radio Intereconomía 95.1FM. Built end-to-end from client requirements.'),
-            'bullets': [
-                _('Full website creation per client needs.'),
-            ],
-            'tags': ['WordPress', 'Landing', 'SEO'],
+            'title': 'Asisty',
+            'description': _('Health marketing platform built with Next.js 15. Hybrid approach: clinical authority via minimalist UI, conversion-focused CTAs and SEO-ready structure for healthcare professionals and clinics.'),
+            'live_url': 'https://loopy-laces.vercel.app',
+            'github_url': 'https://github.com/DhanaCorredor/asisty',
+            'tags': ['Next.js', 'TypeScript', 'MarTech', 'Healthcare'],
+            'featured': True,
         },
         {
-            'title': 'PlayGreen',
-            'url': '',
-            'description': _('Betting platform partner portal where users can track their earnings and referred users.'),
-            'bullets': [
-                _('Layout support.'),
-                _('Click strategy and featured panel design.'),
-            ],
-            'tags': ['UI', 'Dashboard', 'Strategy'],
+            'title': 'Tiro al Blanco',
+            'description': _('Browser game inspired by carnival shooting galleries. Three difficulty levels, combo multiplier, daily leaderboard and live integrations with GNews and OpenWeatherMap APIs.'),
+            'live_url': 'https://tiro-al-blanco-ten.vercel.app',
+            'github_url': 'https://github.com/DhanaCorredor/tiro-al-blanco',
+            'tags': ['Vanilla JS', 'Game', 'APIs', 'Mobile First'],
+            'featured': False,
         },
         {
-            'title': 'Urban Lab Madrid',
-            'url': 'https://urbanlabmadrid.com',
-            'description': _('Website for the Urban Lab Madrid coworking and business center.'),
-            'bullets': [
-                _('Web layout support.'),
-                _('Initial copywriting.'),
-                _('Blog content writing.'),
-            ],
-            'tags': ['WordPress', 'Copywriting', 'Blog'],
+            'title': 'Covid Tracker',
+            'description': _('React front-end for a dashboard that consumes the Disease covimap API and displays pandemic data dynamically with charts and country breakdowns.'),
+            'live_url': '',
+            'github_url': 'https://github.com/DhanaCorredor/Covid-Tracker',
+            'tags': ['React', 'Dashboard', 'REST API'],
+            'featured': False,
+        },
+        {
+            'title': 'Google Store (Atomic)',
+            'description': _('Pixel-perfect responsive layout of the Google Store. Designed in Figma using Atomic Design methodology and built with semantic HTML5, CSS3 and vanilla JavaScript.'),
+            'live_url': '',
+            'github_url': 'https://github.com/DhanaCorredor/Google_Store_Dynamic',
+            'tags': ['HTML/CSS', 'Figma', 'Atomic Design'],
+            'featured': False,
         },
     ]
 
@@ -194,36 +121,22 @@ def index(request):
         {'school': _('International University of La Rioja'), 'degree': _('Bachelor in Business Administration'), 'year': '2013 — 2017'},
     ]
 
-    certifications = [
-        _('Digital Content Design'),
-        _('Content Marketing Strategies'),
-        _('English B1 Intermediate'),
-        _('Digital Marketing Fundamentals'),
-    ]
-
-    process = [
-        {'title': _('Goals'), 'description': _('Define what success looks like before touching the keyboard. KPIs, scope and constraints.')},
-        {'title': _('Research'), 'description': _('Audit the market, the competition and the audience. Data over opinion.')},
-        {'title': _('Strategy'), 'description': _('Translate research into a clear positioning and channel mix.')},
-        {'title': _('Ideas'), 'description': _('Generate creative concepts that fit the strategy and stretch the brand.')},
-        {'title': _('Planning'), 'description': _('Roadmap, ownership and timelines so nothing falls through the cracks.')},
-        {'title': _('Media plan'), 'description': _('Choose paid, owned and earned channels with a realistic budget.')},
-        {'title': _('Promotion'), 'description': _('Launch, iterate and optimize creatives, audiences and bidding.')},
-        {'title': _('Results analysis'), 'description': _('Read the numbers, separate signal from noise, share insights.')},
-        {'title': _('Measurement'), 'description': _('Close the loop: report against KPIs and feed learnings into the next cycle.')},
+    industries = [
+        _('Healthcare'),
+        _('Retail & E-commerce'),
+        _('Banking'),
+        _('Media & Radio'),
+        _('B2B Services'),
     ]
 
     references = [
-        # When user pastes recommendations, fill these dicts:
         # {'name': 'Jane Doe', 'role': 'CMO at Future Retail', 'quote': 'She delivered ...'},
     ]
 
     return render(request, 'index.html', {
         'experience': experience,
-        'skill_categories': skill_categories,
         'projects': projects,
         'education': education,
-        'certifications': certifications,
-        'process': process,
+        'industries': industries,
         'references': references,
     })

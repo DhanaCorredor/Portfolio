@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #0a0a0a;
+    color: #f7f7f7;
+    padding: 70px 80px;
+    position: relative;
+  }
+  .grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(195,167,232,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(195,167,232,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .accent-bar {
+    position: absolute;
+    top: 0; left: 80px;
+    width: 6px; height: 100%;
+    background: #c3a7e8;
+  }
+  .content { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c3a7e8;
+  }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: #5fbf83; box-shadow: 0 0 12px #5fbf83; }
+  h1 {
+    font-size: 124px;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+    margin-top: 60px;
+  }
+  h1 .muted { color: #c3a7e8; }
+  .role {
+    font-size: 36px;
+    color: #d0d0d0;
+    margin-top: 30px;
+    font-weight: 400;
+    max-width: 900px;
+    line-height: 1.25;
+  }
+  .role strong { color: #fff; font-weight: 600; }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+  }
+  .bottom .right { color: #c3a7e8; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="grid"></div>
+<div class="accent-bar"></div>
+<div class="content">
+  <div class="top">
+    <span class="dot"></span>
+    <span>Available · Madrid · ES</span>
+  </div>
+
+  <div>
+    <h1>Dhana<br>Corredor<span class="muted">.</span></h1>
+    <p class="role"><strong>MarTech Developer · Frontend Engineer.</strong><br>Marketing strategy meets front-end code.</p>
+  </div>
+
+  <div class="bottom">
+    <span>linkedin.com/in/dhanacorredor</span>
+    <span class="right">DC.</span>
+  </div>
+</div>
+</body>
+</html>

@@ -5,322 +5,188 @@
 
 {% block content %}
 
-{# ═════════════════ HERO — Editorial manifesto, no photo ═════════════════ #}
-<section class="hero-manifesto relative min-h-[calc(100vh-5rem)] flex flex-col px-6 md:px-10 max-w-[1500px] mx-auto overflow-hidden">
-
-    {# Decorative DC monogram + lila orb behind everything #}
-    <div class="hero-orb absolute right-[-15%] top-[10%] w-[60%] aspect-square rounded-full bg-accent opacity-[0.18] blur-[120px] pointer-events-none z-0"></div>
-    <div class="hero-monogram absolute right-[6%] top-[12%] md:right-[8%] md:top-[14%] font-display text-[18vw] leading-none text-[var(--fg)] opacity-[0.04] select-none pointer-events-none z-0">DC</div>
-    <div class="hero-cross absolute left-[2%] top-[20%] text-accent text-2xl pointer-events-none z-0 select-none animate-spin-slow">✱</div>
-    <div class="hero-cross-2 absolute right-[12%] bottom-[28%] text-[var(--fg-muted)] text-3xl pointer-events-none z-0 select-none">✱</div>
-
-    {# Top strip: index labels #}
-    <div class="relative z-20 flex items-center justify-between gap-3 pt-6 font-mono text-[10px] md:text-[11px] uppercase tracking-[0.18em] md:tracking-[0.22em] text-[var(--fg-muted)]">
-        <span class="truncate"><span class="text-accent">●</span> <span class="hidden sm:inline">INDEX </span><span class="text-[var(--fg)]">01 / 06</span> <span class="hidden sm:inline">— DHANA CORREDOR</span></span>
-        <span class="hidden md:inline shrink-0">EST. 2013 — © 2026</span>
+{# ═════════════════ HERO — minimal, recruiter-first ═════════════════ #}
+<section class="relative max-w-[1200px] mx-auto px-6 md:px-10 pt-12 md:pt-20 pb-16 md:pb-24">
+    <div class="flex items-center gap-3 mb-8 font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--fg-muted)]">
+        <span class="status-dot shrink-0"></span>
+        <span>{% translate 'Available for work' %} · Madrid · UTC+1</span>
     </div>
 
-    {# CENTERPIECE: massive manifesto #}
-    <div class="relative z-10 flex-1 flex flex-col justify-center py-8 md:py-12">
-        <p class="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-accent mb-5 md:mb-8">— A MANIFESTO</p>
+    <h1 class="font-display fluid-hero mb-6">
+        Dhana Corredor.
+    </h1>
 
-        <h1 class="font-display text-[clamp(3.5rem,15vw,18rem)] leading-[0.82] md:leading-[0.78] select-none">
-            <span class="block char-reveal" id="hero-line-1"><span data-split>I build</span></span>
-            <span class="block char-reveal -mt-1 md:-mt-3" id="hero-line-2"><span data-split>digital</span></span>
-            <span class="block -mt-1 md:-mt-3 text-accent">
-                <span id="role-shuffle"
-                      data-roles='["strategies.","products.","brands.","experiences."]'>strategies.</span>
-            </span>
-        </h1>
+    <p class="font-serif italic text-2xl md:text-3xl text-[var(--fg-muted)] leading-snug mb-10 max-w-3xl">
+        {% blocktranslate %}MarTech Developer & Frontend Engineer.{% endblocktranslate %}
+        <span class="text-[var(--fg)] not-italic font-sans"> {% blocktranslate %}I bridge marketing strategy and front-end code — building tools that move metrics, not vanity.{% endblocktranslate %}</span>
+    </p>
 
-        {# Right-aligned italic Fraunces quote, floating #}
-        <blockquote class="hidden md:block absolute right-0 top-[18%] max-w-[260px] lg:max-w-[320px] z-20">
-            <p class="font-serif italic text-lg lg:text-2xl text-[var(--fg-muted)] leading-snug">
-                "I aim for <span class="text-[var(--fg)]">clarity</span>, useful tech &amp; <span class="text-accent">long-term impact</span>."
-            </p>
-            <p class="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-[var(--fg-subtle)]">— DC, MADRID</p>
-        </blockquote>
-    </div>
-
-    {# Stats inline with marquee feel — three big counters #}
-    <div class="relative z-10 grid grid-cols-3 gap-3 md:gap-10 mb-6 md:mb-10 border-t border-[var(--line)] pt-6 md:pt-10">
-        <div>
-            <p class="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.18em] md:tracking-[0.22em] text-[var(--fg-muted)] mb-1 md:mb-2 truncate">{% translate 'Years' %}</p>
-            <p class="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-accent" data-counter data-target="10">0</p>
-        </div>
-        <div>
-            <p class="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.18em] md:tracking-[0.22em] text-[var(--fg-muted)] mb-1 md:mb-2 truncate">{% translate 'Projects' %}</p>
-            <p class="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl" data-counter data-target="25">0</p>
-        </div>
-        <div>
-            <p class="font-mono text-[9px] md:text-[10px] uppercase tracking-[0.18em] md:tracking-[0.22em] text-[var(--fg-muted)] mb-1 md:mb-2 truncate">{% translate 'Industries' %}</p>
-            <p class="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl" data-counter data-target="7">0</p>
-        </div>
-    </div>
-
-    {# CTAs strip #}
-    <div class="relative z-10 flex flex-wrap items-center justify-between gap-4 pb-8">
-        <div class="flex items-center gap-3">
-            <span class="status-dot shrink-0"></span>
-            <span class="font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--fg-muted)]">{% translate 'Available for work' %} · MADRID · UTC+1</span>
-        </div>
-
-        <div class="flex flex-wrap items-center gap-2.5">
-            <a href="{% static 'cv/dhana-corredor-cv.pdf' %}" download class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-[var(--bg)] text-xs font-semibold hover:opacity-90 transition" data-magnetic>
-                {% translate 'Download CV' %} ↓
-            </a>
-            <a href="mailto:corredorsadhana@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--line-strong)] text-xs font-semibold hover:border-accent hover:text-accent transition" data-magnetic>
-                {% translate 'Contact me' %} ↗
-            </a>
-            <a href="https://www.linkedin.com/in/dhanacorredor/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--line-strong)] text-xs font-semibold hover:border-accent hover:text-accent transition" data-magnetic>
-                LinkedIn ↗
-            </a>
-        </div>
+    <div class="flex flex-wrap items-center gap-2.5">
+        <a href="{% static 'cv/dhana-corredor-cv.pdf' %}" download class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-[var(--bg)] text-xs font-semibold hover:opacity-90 transition">
+            {% translate 'Download CV' %} ↓
+        </a>
+        <a href="mailto:corredorsadhana@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--line-strong)] text-xs font-semibold hover:border-accent hover:text-accent transition">
+            {% translate 'Contact me' %} ↗
+        </a>
+        <a href="https://www.linkedin.com/in/dhanacorredor/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--line-strong)] text-xs font-semibold hover:border-accent hover:text-accent transition">
+            LinkedIn ↗
+        </a>
+        <a href="https://github.com/DhanaCorredor" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--line-strong)] text-xs font-semibold hover:border-accent hover:text-accent transition">
+            GitHub ↗
+        </a>
     </div>
 </section>
 
-{# ═════════════════ STATS STRIP ═════════════════ #}
-<section class="border-t border-[var(--line)] bg-[var(--bg-alt)]">
-    <div class="max-w-[1500px] mx-auto px-6 md:px-10 py-12 md:py-16 grid grid-cols-2 md:grid-cols-4 gap-8 reveal-stagger">
-        <div class="border-l-2 border-accent pl-4">
-            <p class="font-display text-6xl md:text-8xl text-accent" data-counter data-target="10">0</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--fg-muted)] mt-2">{% translate 'Yrs experience' %}</p>
-        </div>
-        <div class="border-l-2 border-[var(--line-strong)] pl-4">
-            <p class="font-display text-6xl md:text-8xl text-[var(--fg)]" data-counter data-target="25">0</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--fg-muted)] mt-2">{% translate 'Projects shipped' %}</p>
-        </div>
-        <div class="border-l-2 border-[var(--line-strong)] pl-4">
-            <p class="font-display text-6xl md:text-8xl text-[var(--fg)]" data-counter data-target="7">0</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--fg-muted)] mt-2">{% translate 'Industries' %}</p>
-        </div>
-        <div class="border-l-2 border-[var(--line-strong)] pl-4">
-            <p class="font-display text-6xl md:text-8xl text-[var(--fg)]" data-counter data-target="100">0</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--fg-muted)] mt-2">{% translate 'Client satisfaction' %}%</p>
-        </div>
-    </div>
-</section>
-
-{# ═════════════════ MARQUEE 1 ═════════════════ #}
-<section class="border-y border-[var(--line)] py-8 overflow-hidden">
-    <div class="marquee font-display text-5xl md:text-7xl lg:text-9xl tracking-tight">
-        {% with words="Strategy ✱ Frontend ✱ MarTech ✱ SEO ✱ Branding ✱ Web Design ✱ Project Management ✱ Growth ✱" %}
-        <span class="px-6">{{ words }}</span>
-        <span class="px-6 text-[var(--fg-muted)]">{{ words }}</span>
-        <span class="px-6">{{ words }}</span>
-        {% endwith %}
-    </div>
-</section>
-
-{# ═════════════════ SERVICES (Jolle signature) ═════════════════ #}
-<section id="services" data-hud="01 / SERVICES" class="border-t border-[var(--line)] relative overflow-hidden">
-    <div class="max-w-[1500px] mx-auto px-6 md:px-10 py-16 md:py-24">
-        <div class="overflow-hidden mb-8">
-            <span class="section-watermark block">SERVICES</span>
+{# ═════════════════ SKILLS / STACK — visible quick ═════════════════ #}
+<section id="skills" class="border-t border-[var(--line)]">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-10 py-14 md:py-20">
+        <div class="flex items-baseline justify-between gap-4 mb-10">
+            <h2 class="font-display fluid-h1">{% translate 'Stack & tools' %}</h2>
+            <p class="font-mono text-[10px] md:text-xs uppercase tracking-[0.22em] text-[var(--fg-subtle)] shrink-0">01 / SKILLS</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 reveal-stagger">
-            <article class="service-card-dark p-6 md:p-10 rounded-2xl flex flex-col gap-4 md:gap-6 min-h-[240px] md:min-h-[320px] tilt-card">
-                <h3 class="font-mono text-xs uppercase tracking-[0.2em] opacity-60">01</h3>
-                <h2 class="font-display text-5xl md:text-7xl">{% translate 'Strategy' %}</h2>
-                <p class="text-sm opacity-70 leading-relaxed mt-auto">{% translate 'SEO audits, organic positioning, content strategy and brand positioning that move metrics — not vanity.' %}</p>
-            </article>
-
-            <article class="service-card-light p-6 md:p-10 rounded-2xl flex flex-col gap-4 md:gap-6 min-h-[240px] md:min-h-[320px] tilt-card">
-                <h3 class="font-mono text-xs uppercase tracking-[0.2em] opacity-60">02</h3>
-                <h2 class="font-display text-5xl md:text-7xl">{% translate 'Code' %}</h2>
-                <p class="text-sm opacity-80 leading-relaxed mt-auto">{% translate 'Front-end (Angular, JS, HTML/CSS), MarTech automation (Make, Zapier) and analytics (GA4, GTM, Looker).' %}</p>
-            </article>
-
-            <article class="service-card-dark p-6 md:p-10 rounded-2xl flex flex-col gap-4 md:gap-6 min-h-[240px] md:min-h-[320px] tilt-card">
-                <h3 class="font-mono text-xs uppercase tracking-[0.2em] opacity-60">03</h3>
-                <h2 class="font-display text-5xl md:text-7xl">{% translate 'Growth' %}</h2>
-                <p class="text-sm opacity-70 leading-relaxed mt-auto">{% translate 'Paid media (Meta Ads), email automation (Klaviyo, Mailchimp) and CRM ops (HubSpot, Salesforce).' %}</p>
-            </article>
-        </div>
-    </div>
-</section>
-
-{# ═════════════════ ABOUT ═════════════════ #}
-<section id="about" data-hud="02 / ABOUT" class="border-t border-[var(--line)] relative overflow-hidden">
-    <div class="max-w-[1500px] mx-auto px-6 md:px-10 py-16 md:py-24">
-        <div class="overflow-hidden mb-8">
-            <span class="section-watermark block">ABOUT ME</span>
-        </div>
-
-        <div class="grid grid-cols-12 gap-6 md:gap-10">
-            <div class="col-span-12 md:col-span-7 space-y-6 text-base md:text-lg leading-relaxed text-[var(--fg-muted)] reveal">
-                <p>{% blocktranslate %}I started in 2013 in marketing and project management, and step by step grew into the technical side — front-end, analytics, MarTech automation. That hybrid path is exactly the value I bring: I read business needs and translate them into ship-able digital products.{% endblocktranslate %}</p>
-                <p>{% blocktranslate %}Today I focus on creative projects involving disruptive change and tech with purpose. I care about clarity over noise, useful systems over hype, and shipping work that actually moves a metric.{% endblocktranslate %}</p>
-                <p class="text-[var(--fg)] italic font-display text-xl md:text-2xl pt-4 border-t border-[var(--line)]">
-                    "{% translate 'Creative projects with disruptive change and tech with purpose.' %}"
-                </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--line)] border border-[var(--line)] rounded-2xl overflow-hidden">
+            <div class="bg-[var(--bg)] p-6 md:p-8">
+                <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-4">{% translate 'Marketing & Growth' %}</p>
+                <ul class="space-y-1.5 text-sm md:text-base">
+                    <li>SEO · SEMrush · Search Console</li>
+                    <li>Meta Ads · Google Ads</li>
+                    <li>Klaviyo · Mailchimp</li>
+                    <li>HubSpot · Salesforce</li>
+                </ul>
             </div>
-
-            <div class="col-span-12 md:col-span-5 reveal">
-                <div class="relative aspect-square md:max-w-sm md:ml-auto">
-                    <div class="absolute inset-[12%] rounded-full bg-accent blur-3xl opacity-20"></div>
-                    <div class="absolute inset-0 border border-accent/30 rounded-full"></div>
-                    <img src="{% static 'images/dhana-cutout.png' %}" alt="Dhana Corredor"
-                         class="relative w-full h-full object-contain object-bottom drop-shadow-2xl">
-                </div>
-                <p class="mt-3 md:max-w-sm md:ml-auto font-mono text-[11px] uppercase tracking-widest text-[var(--fg-subtle)] flex justify-between">
-                    <span>— Madrid, ES</span>
-                    <span>2026</span>
-                </p>
+            <div class="bg-[var(--bg)] p-6 md:p-8">
+                <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-4">{% translate 'Frontend & Code' %}</p>
+                <ul class="space-y-1.5 text-sm md:text-base">
+                    <li>Angular · Next.js · JavaScript</li>
+                    <li>TypeScript · HTML5 · CSS3 · Tailwind</li>
+                    <li>Git · GitHub</li>
+                </ul>
+            </div>
+            <div class="bg-[var(--bg)] p-6 md:p-8">
+                <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-4">{% translate 'Data & Automation' %}</p>
+                <ul class="space-y-1.5 text-sm md:text-base">
+                    <li>GA4 · GTM · Looker Studio</li>
+                    <li>Make · Zapier</li>
+                    <li>Figma · WordPress</li>
+                    <li>SCRUM · Notion · Jira</li>
+                </ul>
             </div>
         </div>
+
+        <div class="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm">
+            <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--fg-subtle)]">{% translate 'Currently learning' %}:</span>
+            <span class="text-[var(--fg-muted)]">React · Python — {% translate 'AI Bootcamp at Factoría F5' %} (2026)</span>
+        </div>
+
+        <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--fg-muted)]">
+            <span><span class="text-[var(--fg)]">{% translate 'Spanish' %}</span> — {% translate 'Native' %}</span>
+            <span><span class="text-[var(--fg)]">{% translate 'English' %}</span> — {% translate 'Professional' %}</span>
+        </div>
     </div>
 </section>
 
-{# ═════════════════ WORK / PORTFOLIO ═════════════════ #}
-<section id="work" data-hud="03 / PORTFOLIO" class="border-t border-[var(--line)] relative overflow-hidden">
-    <div class="max-w-[1500px] mx-auto px-6 md:px-10 pt-16 md:pt-24">
-        <div class="overflow-hidden mb-4">
-            <span class="section-watermark block">PORTFOLIO</span>
+{# ═════════════════ SELECTED WORK ═════════════════ #}
+<section id="work" class="border-t border-[var(--line)]">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-10 pt-14 md:pt-20 pb-4">
+        <div class="flex items-baseline justify-between gap-4 mb-8">
+            <h2 class="font-display fluid-h1">{% translate 'Selected work' %}</h2>
+            <p class="font-mono text-[10px] md:text-xs uppercase tracking-[0.22em] text-[var(--fg-subtle)] shrink-0">02 / WORK</p>
         </div>
-        <p class="font-mono text-xs uppercase tracking-[0.2em] text-[var(--fg-muted)] mb-8">— {% translate 'Selected work' %}</p>
     </div>
 
     <ul class="border-t border-[var(--line)]">
         {% for p in projects %}
-        <li class="project-card group border-b border-[var(--line)]">
-            <a {% if p.url %}href="{{ p.url }}" target="_blank" rel="noopener"{% else %}href="#"{% endif %} class="block">
-                <div class="max-w-[1600px] mx-auto px-6 md:px-10 py-10 md:py-14 grid grid-cols-12 gap-6 items-center hover:bg-[var(--bg-alt)] transition">
-                    <span class="col-span-2 md:col-span-1 font-mono text-xs uppercase tracking-widest text-[var(--fg-subtle)]">{{ forloop.counter|stringformat:"02d" }}</span>
-                    <h3 class="col-span-10 md:col-span-4 font-display font-bold text-3xl md:text-5xl tracking-tight">{{ p.title }}</h3>
-                    <p class="col-span-12 md:col-span-4 text-[var(--fg-muted)] text-sm md:text-base leading-snug">{{ p.description }}</p>
-                    <div class="col-span-8 md:col-span-2 flex flex-wrap gap-2">
-                        {% for tag in p.tags %}<span class="font-mono text-[10px] uppercase tracking-widest px-2 py-1 border border-[var(--line)] rounded-full">{{ tag }}</span>{% endfor %}
+        <li class="project-card border-b border-[var(--line)] {% if p.featured %}bg-[var(--bg-alt)]{% endif %}">
+            <div class="max-w-[1200px] mx-auto px-6 md:px-10 py-6 md:py-8 grid grid-cols-12 gap-4 md:gap-6 items-start">
+                <span class="col-span-2 md:col-span-1 font-mono text-xs uppercase tracking-widest text-[var(--fg-subtle)] pt-1">{{ forloop.counter|stringformat:"02d" }}</span>
+                <div class="col-span-10 md:col-span-4">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <h3 class="font-display font-bold fluid-h2 tracking-tight">{{ p.title }}</h3>
+                        {% if p.featured %}<span class="font-mono text-[9px] uppercase tracking-widest px-2 py-0.5 rounded-full bg-accent text-[var(--bg)]">{% translate 'Featured' %}</span>{% endif %}
                     </div>
-                    <div class="col-span-4 md:col-span-1 flex justify-end">
-                        <span class="project-arrow w-12 h-12 rounded-full border border-[var(--fg)] grid place-items-center group-hover:bg-[var(--fg)] group-hover:text-[var(--bg)] transition">
-                            {% if p.url %}↗{% else %}—{% endif %}
-                        </span>
+                    <div class="mt-3 flex flex-wrap gap-1.5">
+                        {% for tag in p.tags %}<span class="font-mono text-[10px] uppercase tracking-widest px-2 py-0.5 border border-[var(--line)] rounded-full">{{ tag }}</span>{% endfor %}
                     </div>
                 </div>
-            </a>
+                <p class="col-span-12 md:col-span-5 text-[var(--fg-muted)] text-sm md:text-base leading-snug">{{ p.description }}</p>
+                <div class="col-span-12 md:col-span-2 flex flex-wrap gap-2 md:justify-end content-start">
+                    {% if p.live_url %}
+                    <a href="{{ p.live_url }}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full bg-[var(--fg)] text-[var(--bg)] hover:opacity-80 transition">{% translate 'Live' %} ↗</a>
+                    {% endif %}
+                    {% if p.github_url %}
+                    <a href="{{ p.github_url }}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full border border-[var(--line-strong)] hover:border-accent hover:text-accent transition">{% translate 'Code' %} ↗</a>
+                    {% endif %}
+                </div>
+            </div>
         </li>
         {% endfor %}
     </ul>
 </section>
 
-{# ═════════════════ PROCESS ═════════════════ #}
-<section id="process" data-hud="04 / PROCESS" class="border-t border-[var(--line)] relative overflow-hidden">
-    <div class="max-w-[1500px] mx-auto px-6 md:px-10 py-16 md:py-24">
-        <div class="overflow-hidden mb-4">
-            <span class="section-watermark block">PROCESS</span>
+{# ═════════════════ EXPERIENCE ═════════════════ #}
+<section id="experience" class="border-t border-[var(--line)]">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-10 py-14 md:py-20">
+        <div class="flex items-baseline justify-between gap-4 mb-8">
+            <h2 class="font-display fluid-h1">{% translate 'Experience' %}</h2>
+            <p class="font-mono text-[10px] md:text-xs uppercase tracking-[0.22em] text-[var(--fg-subtle)] shrink-0">03 / EXPERIENCE</p>
         </div>
-        <p class="font-mono text-xs uppercase tracking-[0.2em] text-[var(--fg-muted)] mb-8">— {% translate 'How I work' %}</p>
 
-    <div class="overflow-x-auto no-scrollbar -mx-6 md:-mx-10 px-6 md:px-10 pb-4">
-        <ol class="flex gap-4 min-w-max">
-            {% for step in process %}
-            <li class="flex-shrink-0 w-[280px] md:w-[320px] p-6 md:p-8 border border-[var(--line)] rounded-2xl bg-[var(--bg-alt)] reveal" style="transition-delay: {{ forloop.counter0|add:1 }}00ms">
-                <p class="font-mono text-[10px] uppercase tracking-widest text-[var(--fg-muted)] mb-4">{{ forloop.counter|stringformat:"02d" }}</p>
-                <h3 class="font-display text-3xl md:text-4xl mb-3">{{ step.title }}</h3>
-                <p class="text-sm text-[var(--fg-muted)] leading-relaxed">{{ step.description }}</p>
+        <ol class="border-t border-[var(--line)]">
+            {% for j in experience %}
+            <li class="border-b border-[var(--line)] py-3 md:py-4 grid grid-cols-12 gap-3 md:gap-6 items-baseline">
+                <span class="col-span-12 md:col-span-3 font-mono text-[11px] uppercase tracking-widest text-[var(--fg-muted)]">{{ j.period }}</span>
+                <h3 class="col-span-12 md:col-span-4 font-semibold text-base md:text-lg">{{ j.position }}</h3>
+                <p class="col-span-8 md:col-span-3 text-sm text-[var(--fg-muted)]">{{ j.company }} · {{ j.location }}</p>
+                <div class="col-span-4 md:col-span-2 flex flex-wrap gap-1 md:justify-end">
+                    {% for t in j.tech|slice:":3" %}<span class="font-mono text-[10px] uppercase px-1.5 py-0.5 border border-[var(--line)] rounded-full text-[var(--fg-muted)]">{{ t }}</span>{% endfor %}
+                </div>
             </li>
             {% endfor %}
         </ol>
-    </div>
-    </div>
-</section>
 
-{# ═════════════════ MARQUEE 2 (TECH) ═════════════════ #}
-<section class="border-y border-[var(--line)] py-5 overflow-hidden">
-    <div class="marquee marquee-slow font-mono uppercase text-sm tracking-widest text-[var(--fg-muted)]">
-        {% with techs="HTML5 · CSS3 · JavaScript · Angular · React · Python · GA4 · GTM · SEMrush · Meta Ads · Klaviyo · Make.com · Zapier · HubSpot · Salesforce · Figma · WordPress · Notion · Jira · SCRUM · " %}
-        <span class="px-4">{{ techs }}</span>
-        <span class="px-4">{{ techs }}</span>
-        <span class="px-4">{{ techs }}</span>
-        {% endwith %}
-    </div>
-</section>
-
-{# ═════════════════ EXPERIENCE ═════════════════ #}
-<section id="experience" data-hud="05 / EXPERIENCE" class="border-t border-[var(--line)] relative overflow-hidden">
-    <div class="max-w-[1500px] mx-auto px-6 md:px-10 py-16 md:py-24">
-        <div class="overflow-hidden mb-4">
-            <span class="section-watermark block">EXPERIENCE</span>
+        {% if education %}
+        <div class="mt-12 pt-8 border-t border-[var(--line)]">
+            <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--fg-subtle)] mb-4">{% translate 'Education' %}</p>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {% for edu in education %}
+                <li class="text-sm">
+                    <p class="font-semibold text-[var(--fg)]">{{ edu.school }}</p>
+                    <p class="text-[var(--fg-muted)] text-xs mt-0.5">{{ edu.year }} · {{ edu.degree }}</p>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
-        <p class="font-mono text-xs uppercase tracking-[0.2em] text-[var(--fg-muted)] mb-8">— {% translate 'Career log' %}</p>
-
-    <ol class="reveal-stagger">
-        {% for j in experience %}
-        <li class="border-t border-[var(--line)] py-6 md:py-8 grid grid-cols-12 gap-6 group hover:bg-[var(--bg-alt)] transition px-2 -mx-2 rounded-xl">
-            <span class="col-span-12 md:col-span-2 font-mono text-xs uppercase tracking-widest text-[var(--fg-muted)]">{{ j.period }}</span>
-            <div class="col-span-12 md:col-span-4">
-                <h3 class="font-display text-2xl md:text-3xl">{{ j.position }}</h3>
-                <p class="text-sm text-[var(--fg-muted)] mt-1">{{ j.company }} — {{ j.location }}</p>
-            </div>
-            <p class="col-span-12 md:col-span-4 text-sm text-[var(--fg-muted)] leading-relaxed">{{ j.description }}</p>
-            <div class="col-span-12 md:col-span-2 flex flex-wrap gap-1.5 md:justify-end content-start">
-                {% for t in j.tech %}<span class="font-mono text-[10px] uppercase px-2 py-0.5 border border-[var(--line)] rounded-full">{{ t }}</span>{% endfor %}
-            </div>
-        </li>
-        {% endfor %}
-    </ol>
+        {% endif %}
     </div>
 </section>
 
-{# ═════════════════ SKILLS BENTO ═════════════════ #}
-<section id="skills" data-hud="06 / SKILLS" class="border-t border-[var(--line)] relative overflow-hidden">
-    <div class="max-w-[1500px] mx-auto px-6 md:px-10 py-16 md:py-24">
-        <div class="overflow-hidden mb-4">
-            <span class="section-watermark block">SKILLS</span>
+{# ═════════════════ ABOUT — short, 2 paragraphs ═════════════════ #}
+<section id="about" class="border-t border-[var(--line)]">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-10 py-14 md:py-20">
+        <div class="flex items-baseline justify-between gap-4 mb-8">
+            <h2 class="font-display fluid-h1">{% translate 'About' %}</h2>
+            <p class="font-mono text-[10px] md:text-xs uppercase tracking-[0.22em] text-[var(--fg-subtle)] shrink-0">04 / ABOUT</p>
         </div>
-        <p class="font-mono text-xs uppercase tracking-[0.2em] text-[var(--fg-muted)] mb-8">— {% translate 'Stack & tools' %}</p>
 
-        <div class="grid grid-cols-12 gap-4 md:gap-6 reveal-stagger">
-            <div class="col-span-12 md:col-span-7 p-6 md:p-10 border border-[var(--line)] rounded-2xl bg-[var(--bg-alt)] flex flex-col justify-between min-h-[280px]">
-                <p class="font-mono text-xs uppercase tracking-widest text-[var(--fg-subtle)]">{% translate 'Frontend & Data' %}</p>
-                <p class="font-display font-bold text-2xl md:text-4xl tracking-tight leading-tight mt-6">
-                    Angular. JavaScript. HTML5. CSS3. Git. <span class="text-[var(--fg-subtle)]">GA4. GTM. Looker Studio. Search Console.</span> <span class="italic">React + Python (in progress).</span>
-                </p>
+        <div class="grid grid-cols-12 gap-6 md:gap-10">
+            <div class="col-span-12 md:col-span-8 space-y-5 text-base md:text-lg leading-relaxed text-[var(--fg-muted)]">
+                <p>{% blocktranslate %}I started in 2013 in marketing and project management, and step by step grew into the technical side — front-end, analytics, MarTech automation. That hybrid path is exactly the value I bring: I read business needs and translate them into ship-able digital products.{% endblocktranslate %}</p>
+                <p>{% blocktranslate %}I focus on creative projects involving disruptive change and tech with purpose. I care about clarity over noise, useful systems over hype, and shipping work that actually moves a metric.{% endblocktranslate %}</p>
             </div>
 
-            <div class="col-span-12 md:col-span-5 p-6 md:p-10 border border-[var(--line)] rounded-2xl bg-[var(--invert-bg)] text-[var(--invert-fg)] min-h-[280px] flex flex-col justify-between">
-                <p class="font-mono text-xs uppercase tracking-widest opacity-60">{% translate 'My core' %}</p>
-                <p class="font-display font-bold text-2xl md:text-4xl tracking-tight leading-tight mt-6">
-                    {% translate 'Marketing & Growth.' %} <span class="opacity-60">SEO · SEMrush · Meta Ads · Klaviyo · Make · Zapier · HubSpot · Salesforce.</span>
-                </p>
-            </div>
-
-            <div class="col-span-12 md:col-span-4 p-6 md:p-8 border border-[var(--line)] rounded-2xl">
-                <p class="font-mono text-xs uppercase tracking-widest text-[var(--fg-subtle)] mb-4">{% translate 'Tools & Methods' %}</p>
-                <ul class="space-y-1 font-display font-semibold text-lg md:text-xl">
-                    <li>SCRUM</li>
-                    <li>Notion</li>
-                    <li>Jira</li>
-                    <li>Figma</li>
-                    <li>WordPress</li>
+            <div class="col-span-12 md:col-span-4 md:pl-8 md:border-l border-[var(--line)]">
+                <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--fg-subtle)] mb-3">{% translate 'Quick facts' %}</p>
+                <ul class="space-y-2.5 text-sm">
+                    <li class="flex justify-between gap-3"><span class="text-[var(--fg-muted)]">{% translate 'Based in' %}</span><span>Madrid, {% translate 'Spain' %}</span></li>
+                    <li class="flex justify-between gap-3"><span class="text-[var(--fg-muted)]">{% translate 'Experience' %}</span><span>10+ {% translate 'years' %}</span></li>
+                    <li class="flex justify-between gap-3"><span class="text-[var(--fg-muted)]">{% translate 'Languages' %}</span><span>ES · EN</span></li>
+                    <li class="flex justify-between gap-3"><span class="text-[var(--fg-muted)]">{% translate 'Status' %}</span><span class="text-accent">{% translate 'Open to work' %}</span></li>
                 </ul>
-            </div>
 
-            <div class="col-span-12 md:col-span-4 p-6 md:p-8 border border-[var(--line)] rounded-2xl bg-[var(--bg-alt)]">
-                <p class="font-mono text-xs uppercase tracking-widest text-[var(--fg-subtle)] mb-4">{% translate 'Languages' %}</p>
-                <div class="space-y-3">
-                    <div>
-                        <p class="font-display font-bold text-2xl">{% translate 'Spanish' %}</p>
-                        <p class="font-mono text-[10px] uppercase tracking-widest text-[var(--fg-muted)]">{% translate 'Native' %}</p>
-                    </div>
-                    <div>
-                        <p class="font-display font-bold text-2xl">{% translate 'English' %}</p>
-                        <p class="font-mono text-[10px] uppercase tracking-widest text-[var(--fg-muted)]">{% translate 'Professional' %}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-span-12 md:col-span-4 p-6 md:p-8 border border-[var(--line)] rounded-2xl flex flex-col justify-between">
-                <p class="font-mono text-xs uppercase tracking-widest text-[var(--fg-subtle)] mb-4">{% translate 'Education' %}</p>
-                <ul class="space-y-2 text-sm">
-                    {% for edu in education %}
-                    <li>
-                        <p class="font-semibold">{{ edu.school }}</p>
-                        <p class="text-[var(--fg-muted)] text-xs">{{ edu.year }} · {{ edu.degree }}</p>
-                    </li>
-                    {% endfor %}
+                <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--fg-subtle)] mt-6 mb-3">{% translate 'Industries' %}</p>
+                <ul class="flex flex-wrap gap-1.5">
+                    {% for ind in industries %}<li class="font-mono text-[10px] uppercase tracking-widest px-2 py-0.5 border border-[var(--line)] rounded-full">{{ ind }}</li>{% endfor %}
                 </ul>
             </div>
         </div>
@@ -329,21 +195,20 @@
 
 {# ═════════════════ REFERENCES ═════════════════ #}
 {% if references %}
-<section id="references" class="border-t border-[var(--line)] relative overflow-hidden">
-    <div class="max-w-[1500px] mx-auto px-6 md:px-10 py-16 md:py-24">
-        <div class="overflow-hidden mb-4">
-            <span class="section-watermark block">REFERENCES</span>
+<section id="references" class="border-t border-[var(--line)]">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-10 py-14 md:py-20">
+        <div class="flex items-baseline justify-between gap-4 mb-8">
+            <h2 class="font-display fluid-h1">{% translate 'References' %}</h2>
+            <p class="font-mono text-[10px] md:text-xs uppercase tracking-[0.22em] text-[var(--fg-subtle)] shrink-0">05 / REFERENCES</p>
         </div>
-        <p class="font-mono text-xs uppercase tracking-[0.2em] text-[var(--fg-muted)] mb-8">— {% translate 'What people say' %}</p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {% for ref in references %}
-            <figure class="p-8 border border-[var(--line)] rounded-2xl bg-[var(--bg-alt)] flex flex-col">
-                <svg class="w-8 h-8 text-[var(--fg-subtle)] mb-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M9.13 7.07A8 8 0 002 15h4a4 4 0 014-4V7a.93.93 0 00-.87-.07zm10 0A8 8 0 0012 15h4a4 4 0 014-4V7a.93.93 0 00-.87-.07z"/></svg>
-                <blockquote class="text-base md:text-lg leading-relaxed text-[var(--fg-muted)] mb-6 flex-1">"{{ ref.quote }}"</blockquote>
+            <figure class="p-6 md:p-8 border border-[var(--line)] rounded-2xl bg-[var(--bg-alt)] flex flex-col">
+                <blockquote class="text-sm md:text-base leading-relaxed text-[var(--fg-muted)] mb-5 flex-1">"{{ ref.quote }}"</blockquote>
                 <figcaption class="border-t border-[var(--line)] pt-4">
-                    <p class="font-display font-bold tracking-tight">{{ ref.name }}</p>
-                    <p class="font-mono text-xs text-[var(--fg-muted)] mt-1">{{ ref.role }}</p>
+                    <p class="font-semibold text-[var(--fg)]">{{ ref.name }}</p>
+                    <p class="font-mono text-[10px] uppercase tracking-widest text-[var(--fg-muted)] mt-1">{{ ref.role }}</p>
                 </figcaption>
             </figure>
             {% endfor %}
@@ -353,24 +218,36 @@
 {% endif %}
 
 {# ═════════════════ CONTACT ═════════════════ #}
-<section id="contact" data-hud="07 / CONTACT" class="border-t border-[var(--line)] bg-accent text-[var(--invert-fg)] relative overflow-hidden">
-    <div class="max-w-[1500px] mx-auto px-6 md:px-10 py-24 md:py-32 text-center">
-        <p class="font-mono text-xs uppercase tracking-[0.2em] opacity-60 mb-6">— {% translate 'Contact' %}</p>
-        <h2 class="font-display text-6xl md:text-8xl lg:text-[10rem] leading-[0.9] mb-8">
-            {% translate 'Have an idea?' %}<br>{% translate "Let's work together." %}
+<section id="contact" class="border-t border-[var(--line)]" style="background:var(--contact-bg);color:var(--contact-fg)">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-28">
+        <p class="font-mono text-[10px] uppercase tracking-[0.22em] opacity-60 mb-6">— {% translate 'Contact' %}</p>
+        <h2 class="font-display fluid-hero mb-6">
+            {% translate "Let's work together." %}
         </h2>
-        <p class="max-w-xl mx-auto opacity-70 text-base md:text-lg leading-relaxed mb-10">
+        <p class="max-w-xl opacity-80 text-base md:text-lg leading-relaxed mb-10">
             {% blocktranslate %}Open to new opportunities and interesting projects. Drop me a line — I read everything.{% endblocktranslate %}
         </p>
-        <a href="mailto:corredorsadhana@gmail.com" class="big-cta inline-flex items-center gap-3 font-display font-bold text-3xl md:text-5xl tracking-tight border-b border-current pb-2" data-magnetic>
-            corredorsadhana@gmail.com
-            <span class="text-2xl">↗</span>
-        </a>
-        <div class="mt-12 flex justify-center gap-6 font-mono text-xs uppercase tracking-widest opacity-70">
-            <a href="https://www.linkedin.com/in/dhanacorredor/" target="_blank" rel="noopener" class="link-underline">LinkedIn</a>
-            <span>·</span>
-            <a href="https://github.com/DhanaCorredor" target="_blank" rel="noopener" class="link-underline">GitHub</a>
-            <span>·</span>
+
+        <div class="flex flex-col gap-4 md:gap-6">
+            <a href="mailto:corredorsadhana@gmail.com" class="big-cta inline-flex items-center gap-3 font-display font-bold fluid-h2 tracking-tight border-b border-current pb-2 self-start">
+                corredorsadhana@gmail.com
+                <span class="text-2xl">↗</span>
+            </a>
+
+            <div class="flex flex-wrap items-center gap-3">
+                <button type="button" id="copy-email" data-email="corredorsadhana@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-current text-xs font-semibold uppercase tracking-widest hover:opacity-80 transition">
+                    <span class="copy-label">{% translate 'Copy email' %}</span>
+                    <span class="copy-icon" aria-hidden="true">⧉</span>
+                </button>
+                <a href="https://cal.eu/dhanacorredor" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--contact-fg)] text-[var(--contact-bg)] text-xs font-semibold uppercase tracking-widest hover:opacity-90 transition">
+                    {% translate 'Book a 15-min intro call' %} ↗
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-current/20 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-widest opacity-80">
+            <a href="https://www.linkedin.com/in/dhanacorredor/" target="_blank" rel="noopener" class="link-underline">LinkedIn ↗</a>
+            <a href="https://github.com/DhanaCorredor" target="_blank" rel="noopener" class="link-underline">GitHub ↗</a>
             <a href="tel:+34722381698" class="link-underline">+34 722 381 698</a>
         </div>
     </div>

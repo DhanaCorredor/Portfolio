@@ -57,7 +57,5 @@ build/
 dist/
 *.egg-info/
 
-# Archivos personales (temporal — quitar cuando se publique)
-CV-LinkedIn.pdf
-Portfolio Marketing Digital*.pdf
-*.pdf
+# Personal PDFs at repo root (CVs/portfolios drafts). Final CV lives in static/cv/.
+/*.pdf
