@@ -18,7 +18,7 @@ db.sqlite3
 db.sqlite3-journal
 media/
 staticfiles/
-/static_collected/
+staticfiles_collected/
 
 # Migrations (descomenta si NO quieres versionarlas — normalmente SÍ se versionan)
 # */migrations/*.py
@@ -27,7 +27,7 @@ staticfiles/
 # Tailwind / Node
 node_modules/
 theme/static_src/node_modules/
-theme/static/css/dist/
+# theme/static/css/dist/ — committed for Vercel (no Node in Python runtime)
 
 # Environment variables
 .env
@@ -52,9 +52,9 @@ htmlcov/
 .pytest_cache/
 .tox/
 
-# Distribution
-build/
-dist/
+# Python distribution
+/build/
+/dist/
 *.egg-info/
 
 # Personal PDFs at repo root (CVs/portfolios drafts). Final CV lives in static/cv/.
