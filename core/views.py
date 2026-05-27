@@ -6,6 +6,10 @@ def cv(request):
     return render(request, 'cv.html')
 
 
+def cv_marketing(request):
+    return render(request, 'cv-marketing.html')
+
+
 def index(request):
     experience = [
         {

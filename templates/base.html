@@ -113,7 +113,7 @@
                 <svg class="theme-icon-moon w-4 h-4 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
             </button>
 
-            <a href="{% url 'core:cv' %}" target="_blank" rel="noopener" class="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-[var(--bg)] text-xs font-mono uppercase tracking-widest font-semibold hover:opacity-90 transition">
+            <a href="{% url 'core:cv_marketing' %}" target="_blank" rel="noopener" class="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-[var(--bg)] text-xs font-mono uppercase tracking-widest font-semibold hover:opacity-90 transition">
                 CV ↗
             </a>
 
@@ -143,13 +143,13 @@
     </nav>
 
     <div class="px-6 pb-8 space-y-3">
-        <a href="{% url 'core:cv' %}" target="_blank" rel="noopener" class="flex items-center justify-between gap-2 w-full px-5 py-4 rounded-full bg-accent text-[var(--bg)] text-sm font-semibold">
-            <span>{% translate 'View CV' %}</span>
+        <a href="{% url 'core:cv_marketing' %}" target="_blank" rel="noopener" class="flex items-center justify-between gap-2 w-full px-5 py-4 rounded-full bg-accent text-[var(--bg)] text-sm font-semibold">
+            <span>{% translate 'View CV — Marketing' %}</span>
             <span>↗</span>
         </a>
-        <a href="{% static 'cv/dhana-corredor-cv.pdf' %}" download class="flex items-center justify-between gap-2 w-full px-5 py-4 rounded-full border border-[var(--line-strong)] text-sm font-semibold">
-            <span>{% translate 'Download PDF' %}</span>
-            <span>↓</span>
+        <a href="{% url 'core:cv' %}" target="_blank" rel="noopener" class="flex items-center justify-between gap-2 w-full px-5 py-4 rounded-full border border-[var(--line-strong)] text-sm font-semibold">
+            <span>{% translate 'CV general' %}</span>
+            <span>↗</span>
         </a>
         <a href="mailto:corredorsadhana@gmail.com" class="flex items-center justify-between gap-2 w-full px-5 py-4 rounded-full border border-[var(--line-strong)] text-sm font-semibold">
             <span>{% translate 'Contact me' %}</span>

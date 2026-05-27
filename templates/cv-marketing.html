@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dhana Corredor — CV Marketing</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: #444;
+    --ink-mute: #666;
+    --accent: #6e4fb0;
+    --line: #d6d6d6;
+    --bg: #fff;
+    --todo-bg: #fff3c4;
+    --todo-fg: #6b4e00;
+  }
+  @page { size: A4; margin: 13mm 15mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #f4f4f4; }
+  body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .sheet {
+    background: var(--bg);
+    max-width: 210mm;
+    margin: 24px auto;
+    padding: 18mm 20mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    font-size: 10pt;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { box-shadow: none; margin: 0; padding: 0; max-width: none; font-size: 9pt; }
+    .no-print { display: none !important; }
+  }
+  @media (max-width: 700px) {
+    .sheet { padding: 24px; margin: 0; box-shadow: none; font-size: 14px; }
+  }
+  a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--ink-mute); }
+  a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* Header */
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 14px; }
+  h1 {
+    font-size: 26pt;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0;
+    line-height: 1;
+  }
+  .role {
+    font-size: 11pt;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 4px 0 8px 0;
+    letter-spacing: 0.02em;
+  }
+  .meta {
+    font-size: 9pt;
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+  }
+  .meta span::after { content: " ·"; color: var(--line); margin-left: 6px; }
+  .meta span:last-child::after { content: ""; }
+
+  /* Section headings */
+  h2 {
+    font-size: 9pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin: 16px 0 8px 0;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* Profile bullets */
+  .profile-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .profile-bullets li {
+    position: relative;
+    padding-left: 18px;
+    margin: 4px 0;
+    font-size: 10pt;
+    color: var(--ink);
+  }
+  .profile-bullets li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Experience */
+  .exp {
+    display: grid;
+    grid-template-columns: 36mm 1fr;
+    gap: 12px;
+    padding: 6px 0;
+    border-top: 1px solid var(--line);
+  }
+  .exp:first-of-type { border-top: 0; padding-top: 2px; }
+  .exp-period {
+    font-size: 8.5pt;
+    color: var(--ink-mute);
+    font-weight: 600;
+  }
+  .exp-location {
+    font-size: 8pt;
+    color: var(--ink-mute);
+    margin-top: 1px;
+  }
+  .exp-role { font-weight: 700; font-size: 10.5pt; color: var(--ink); }
+  .exp-company { color: var(--ink-soft); font-weight: 500; font-size: 9.5pt; }
+  .exp-summary { font-size: 9pt; color: var(--ink-soft); margin: 3px 0 4px 0; }
+  .exp-wins {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0 0;
+  }
+  .exp-wins li {
+    position: relative;
+    padding-left: 12px;
+    margin: 2px 0;
+    font-size: 9pt;
+    color: var(--ink);
+  }
+  .exp-wins li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-size: 8pt;
+  }
+
+  /* TODO placeholders for metrics — visible on screen, subtle in print */
+  .todo {
+    background: var(--todo-bg);
+    color: var(--todo-fg);
+    padding: 0 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.9em;
+  }
+  @media print {
+    .todo { background: transparent; color: var(--ink); padding: 0; }
+  }
+
+  /* Brand portfolio */
+  .brands {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .brands span {
+    display: inline-block;
+    padding: 3px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: 8.5pt;
+    color: var(--ink-soft);
+    background: #fafafa;
+  }
+
+  /* Stack grid */
+  .stack {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 700px) {
+    .stack { grid-template-columns: 1fr; }
+  }
+  .stack-col h3 {
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin: 0 0 4px 0;
+  }
+  .stack-col p {
+    margin: 0;
+    font-size: 9pt;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  /* Education compact */
+  .edu {
+    display: grid;
+    grid-template-columns: 28mm 1fr;
+    gap: 10px;
+    padding: 2px 0;
+    font-size: 9pt;
+  }
+  .edu-period { color: var(--ink-mute); font-weight: 500; }
+  .edu-title strong { font-weight: 700; }
+
+  /* Languages / certs footer */
+  .footer-line {
+    font-size: 8.5pt;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+  .footer-line strong {
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 8pt;
+    letter-spacing: 0.1em;
+    margin-right: 4px;
+  }
+
+  /* On-screen print button */
+  .print-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .print-btn:hover { opacity: 0.9; }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+<header>
+  <h1>Dhana Corredor Muñoz</h1>
+  <p class="role">Marketing Digital · Performance & Brand · MarTech</p>
+  <div class="meta">
+    <span>Madrid, España</span>
+    <span>+34 722 381 698</span>
+    <span><a href="mailto:corredorsadhana@gmail.com">corredorsadhana@gmail.com</a></span>
+    <span><a href="https://www.linkedin.com/in/dhanacorredor/">linkedin.com/in/dhanacorredor</a></span>
+    <span><a href="https://github.com/DhanaCorredor">github.com/DhanaCorredor</a></span>
+  </div>
+</header>
+
+<h2>Perfil</h2>
+<ul class="profile-bullets">
+  <li><strong>10+ años</strong> diseñando y ejecutando estrategias de marketing digital end-to-end para retail, sanidad, banca y B2B — desde paid media y email automation hasta SEO técnico y CRO.</li>
+  <li>Perfil <strong>híbrido marketing + código</strong>: gestiono campañas en HubSpot, Klaviyo, Meta Ads y Google Ads, y además construyo las landing pages, dashboards de GA4 y A/B tests que las hacen rentables.</li>
+  <li>Foco en proyectos creativos con cambio disruptivo. <strong>Resultados medibles</strong>: <span class="todo">[ej. +X% leads en 6 meses para retail client]</span>, <span class="todo">[ej. -Y% CPL en Meta Ads]</span>, <span class="todo">[ej. +Z% open rate en flujos Klaviyo]</span>.</li>
+</ul>
+
+<h2>Experiencia</h2>
+
+<div class="exp">
+  <div>
+    <div class="exp-period">Oct 2025 — Presente</div>
+    <div class="exp-location">Remoto · Madrid</div>
+  </div>
+  <div>
+    <div class="exp-role">MarTech & Growth Lead <span class="exp-company">— Asisty (proyecto propio) + freelance PYMEs</span></div>
+    <div class="exp-summary">Plataforma MarTech para clínicas y profesionales sanitarios + consultoría de growth para clientes independientes.</div>
+    <ul class="exp-wins">
+      <li>Estrategia SEO y arquitectura de contenidos de Asisty (sector sanitario): <span class="todo">[+X visitas orgánicas / mes]</span>.</li>
+      <li>Implementación de GA4, GTM y dashboards en Looker Studio para clientes PYMEs.</li>
+      <li>Optimización de conversión vía A/B testing y CRO en landing pages y e-commerce.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exp">
+  <div>
+    <div class="exp-period">Jun 2024 — Oct 2025</div>
+    <div class="exp-location">Madrid · Presencial</div>
+  </div>
+  <div>
+    <div class="exp-role">Técnico Administrativo <span class="exp-company">— Quirónsalud</span></div>
+    <div class="exp-summary">Gestión administrativa y coordinación operativa en entorno hospitalario privado.</div>
+    <ul class="exp-wins">
+      <li>Mantenimiento de marketing freelance en paralelo para clientes externos.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exp">
+  <div>
+    <div class="exp-period">Oct 2022 — May 2024</div>
+    <div class="exp-location">Madrid · Híbrido</div>
+  </div>
+  <div>
+    <div class="exp-role">Project Manager — Marketing & Digital <span class="exp-company">— Future Retail S.L.</span></div>
+    <div class="exp-summary">Dirección de proyectos digitales para cartera de clientes retail. Cliente estrella: <strong>Viandas de Salamanca</strong> (e-commerce gourmet).</div>
+    <ul class="exp-wins">
+      <li>Lanzamiento y optimización de e-commerce Viandas de Salamanca: <span class="todo">[+X% conversión / Y ventas mensuales]</span>.</li>
+      <li>Gestión de campañas paid media (Meta Ads + Google Ads) con presupuestos de <span class="todo">[€X/mes]</span>.</li>
+      <li>Implementación de flujos automation en HubSpot y reporting ejecutivo a dirección.</li>
+      <li>Propuestas de branding y uniformidad visual cross-marca.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exp">
+  <div>
+    <div class="exp-period">May 2018 — Sep 2022</div>
+    <div class="exp-location">Madrid · Presencial</div>
+  </div>
+  <div>
+    <div class="exp-role">Responsable de Comunicación <span class="exp-company">— Cultura Emprende Radio (Radio Intereconomía 95.1FM)</span></div>
+    <div class="exp-summary">Comunicación 360º del programa líder en emprendimiento de la cadena Intereconomía.</div>
+    <ul class="exp-wins">
+      <li>Crecimiento de la comunidad en RRSS: <span class="todo">[+X% seguidores en 4 años]</span>.</li>
+      <li>Gestión de agenda con invitados de alto perfil (CEOs, fundadores) y producción editorial.</li>
+      <li>Diseño y mantenimiento web en WordPress + email marketing en Mailchimp.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exp">
+  <div>
+    <div class="exp-period">Feb 2017 — Sep 2022</div>
+    <div class="exp-location">Madrid · Híbrido</div>
+  </div>
+  <div>
+    <div class="exp-role">Project Manager — Marketing B2B <span class="exp-company">— Urban Lab Madrid</span></div>
+    <div class="exp-summary">Marketing y comunicación para cartera de clientes B2B en sectores diversos.</div>
+    <ul class="exp-wins">
+      <li>Email marketing en Mailchimp y HubSpot: <span class="todo">[+X% open rate / Y% click rate]</span>.</li>
+      <li>Campañas Meta Ads con foco en lead generation: <span class="todo">[-X% CPL]</span>.</li>
+      <li>Reporting de KPIs y propuestas de optimización mensual a clientes.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exp">
+  <div>
+    <div class="exp-period">Oct 2014 — Abr 2016</div>
+    <div class="exp-location">Madrid</div>
+  </div>
+  <div>
+    <div class="exp-role">Técnico de Proyectos Digitales <span class="exp-company">— Apolo Agencia Digital</span></div>
+    <div class="exp-summary">Ejecución y optimización de campañas digitales para cartera de clientes.</div>
+    <ul class="exp-wins">
+      <li>Setup y optimización en Google Ads y Meta Ads para <span class="todo">[X clientes]</span>.</li>
+      <li>SEO on-page y administración WordPress.</li>
+      <li>Email marketing y reporting de resultados.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="exp">
+  <div>
+    <div class="exp-period">Sep 2013 — May 2014</div>
+    <div class="exp-location">Venezuela</div>
+  </div>
+  <div>
+    <div class="exp-role">Becaria de Marketing <span class="exp-company">— Bancaribe International Bank</span></div>
+    <div class="exp-summary">Apoyo en comunicación interna y campañas de marketing digital corporativo.</div>
+  </div>
+</div>
+
+<h2>Marcas y clientes gestionados</h2>
+<div class="brands">
+  <span>Asisty (Healthcare)</span>
+  <span>Viandas de Salamanca</span>
+  <span>Lorena Velásquez Studio</span>
+  <span>Quirónsalud</span>
+  <span>Radio Intereconomía</span>
+  <span>Urban Lab Madrid</span>
+  <span>Apolo Agencia Digital</span>
+  <span>Bancaribe</span>
+  <span class="todo">[añadir clientes destacados de Future Retail / Urban Lab]</span>
+</div>
+
+<h2>Stack profesional</h2>
+<div class="stack">
+  <div class="stack-col">
+    <h3>Marketing</h3>
+    <p>HubSpot · Salesforce · Klaviyo · Mailchimp · Meta Ads · Google Ads · SEMrush · Search Console · SEO técnico · CRO · A/B Testing · Email Automation · Content Marketing · Copywriting · Branding</p>
+  </div>
+  <div class="stack-col">
+    <h3>Analítica & Data</h3>
+    <p>Google Analytics 4 · Google Tag Manager · Looker Studio · Make · Zapier · Marketing Automation · Reporting ejecutivo · KPI Dashboarding</p>
+  </div>
+  <div class="stack-col">
+    <h3>Plus técnico</h3>
+    <p>HTML5 · CSS3 · Tailwind · JavaScript · TypeScript · Next.js · React · WordPress · Figma · Git · UX/UI · Project Management (SCRUM, Jira, Notion)</p>
+  </div>
+</div>
+
+<h2>Formación</h2>
+<div class="edu"><div class="edu-period">2026</div><div class="edu-title"><strong>Factoría F5</strong> — Bootcamp IA: Python, Videojuegos y Programación</div></div>
+<div class="edu"><div class="edu-period">2023</div><div class="edu-title"><strong>freeCodeCamp</strong> — Certificado Profesional en Gestión de Proyectos</div></div>
+<div class="edu"><div class="edu-period">2023</div><div class="edu-title"><strong>ThePower Business School</strong> — Rock{TheCode}, Desarrollo Full Stack</div></div>
+<div class="edu"><div class="edu-period">2017 — 2019</div><div class="edu-title"><strong>ENEB Barcelona</strong> — Máster en Dirección Comercial y Publicidad</div></div>
+<div class="edu"><div class="edu-period">2013 — 2017</div><div class="edu-title"><strong>UNIR</strong> — Grado en Administración y Dirección de Empresas (ADE)</div></div>
+
+<p class="footer-line"><strong>Idiomas</strong> Español (nativo) · Inglés (B1 profesional)</p>
+<p class="footer-line"><strong>Certificaciones</strong> Diseño de Contenidos Digitales · Estrategias de Marketing de Contenidos · Fundamentos de Marketing Digital</p>
+
+</div>
+
+<button class="print-btn no-print" onclick="window.print()">Imprimir / Guardar PDF</button>
+
+</body>
+</html>
