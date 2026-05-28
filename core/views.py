@@ -2,10 +2,6 @@ from django.shortcuts import render
 from django.utils.translation import gettext_lazy as _
 
 
-def cv(request):
-    return render(request, 'cv.html')
-
-
 def cv_marketing(request):
     return render(request, 'cv-marketing.html')
 

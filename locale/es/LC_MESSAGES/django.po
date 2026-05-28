@@ -525,12 +525,18 @@ msgstr "Contáctame"
 msgid "Yrs experience"
 msgstr "Años de experiencia"
 
-# ── About v2
-msgid "I started in 2013 in marketing and project management, and step by step grew into the technical side — front-end, analytics, MarTech automation. That hybrid path is exactly the value I bring: I read business needs and translate them into ship-able digital products."
-msgstr "Empecé en 2013 en marketing y gestión de proyectos, y poco a poco crecí hacia el lado técnico — front-end, analítica, automatización MarTech. Ese camino híbrido es exactamente el valor que aporto: leo las necesidades del negocio y las traduzco en productos digitales que se pueden enviar."
+# ── About v3 (LinkedIn-aligned, marketing-CV facts)
+msgid "My path is uncommon: I started in strategic marketing in 2013, then trained as a Full Stack Developer to grow on the technical side. That double track lets me act as the bridge between clients, creatives and developers — the same person who defines the funnel ships the landing, configures GA4/GTM and runs the A/B tests."
+msgstr "Mi perfil tiene un componente poco común: empecé en marketing estratégico en 2013 y luego me formé como Desarrolladora Full Stack para crecer por el lado técnico. Esa doble vía me convierte en el puente entre cliente, creativos y desarrolladores — la misma persona que define el funnel monta la landing, configura GA4/GTM y lanza los A/B tests."
 
-msgid "Today I focus on creative projects involving disruptive change and tech with purpose. I care about clarity over noise, useful systems over hype, and shipping work that actually moves a metric."
-msgstr "Hoy me enfoco en proyectos creativos que impliquen cambios disruptivos y tecnología con propósito. Me importa la claridad antes que el ruido, los sistemas útiles antes que el hype, y enviar trabajo que mueva una métrica."
+msgid "13 years across banking, retail, healthcare, media and B2B — Bancaribe, Viandas de Salamanca, Radio Intereconomía, Quirónsalud and self-led MarTech at Asisty. My method combines the agility of SCRUM, the discipline of Jira, and rigorous analysis with GA4 and Looker Studio."
+msgstr "13 años en banca, retail, sanidad, media y B2B — Bancaribe, Viandas de Salamanca, Radio Intereconomía, Quirónsalud y proyecto propio MarTech en Asisty. Mi metodología combina la agilidad de SCRUM, el orden de Jira y el análisis riguroso de datos con GA4 y Looker Studio."
+
+msgid "Lifelong learner: in 2026 I'm integrating Python and AI into my stack at Factoría F5. The future of project management runs through intelligent automation — and I'm already applying it."
+msgstr "Eterna aprendiz: este 2026 estoy integrando Python e Inteligencia Artificial en mi stack en Factoría F5. El futuro de la gestión de proyectos pasa por la automatización inteligente — y yo ya la estoy aplicando."
+
+msgid "View CV"
+msgstr "Ver CV"
 
 msgid "Creative projects with disruptive change and tech with purpose."
 msgstr "Proyectos creativos con cambios disruptivos y tecnología con propósito."

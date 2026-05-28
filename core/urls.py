@@ -6,6 +6,5 @@ app_name = 'core'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('cv/', views.cv, name='cv'),
     path('cv/marketing/', views.cv_marketing, name='cv_marketing'),
 ]

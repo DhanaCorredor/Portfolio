@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dhana Corredor — Marketing Manager · CV</title>
+<title>Dhana Corredor — MarTech Developer + Marketing Project Manager · CV</title>
 <style>
   :root {
     --ink: #1a1a1a;
@@ -11,11 +11,13 @@
     --ink-mute: #666;
     --accent: #6e4fb0;
     --accent-soft: #f4f0fb;
+    --accent-line: #e1d6f1;
     --line: #d6d6d6;
+    --line-soft: #ebebeb;
     --bg: #fff;
-    --hi: #fff3c4;
+    --bg-tint: #fafafa;
   }
-  @page { size: A4; margin: 12mm 14mm; }
+  @page { size: A4; margin: 5mm 8mm; }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: #f4f4f4; }
   body {
@@ -27,105 +29,100 @@
     background: var(--bg);
     max-width: 210mm;
     margin: 24px auto;
-    padding: 16mm 18mm;
+    padding: 12mm 14mm;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    font-size: 10pt;
+    font-size: 9pt;
+    line-height: 1.35;
   }
   @media print {
     html, body { background: #fff; }
-    .sheet { box-shadow: none; margin: 0; padding: 0; max-width: none; font-size: 9pt; }
+    .sheet { box-shadow: none; margin: 0; padding: 0; max-width: none; font-size: 8pt; line-height: 1.25; }
     .no-print { display: none !important; }
   }
   @media (max-width: 700px) {
-    .sheet { padding: 24px; margin: 0; box-shadow: none; font-size: 14px; }
+    .sheet { padding: 22px; margin: 0; box-shadow: none; font-size: 14px; }
   }
   a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--ink-mute); }
   a:hover { color: var(--accent); border-color: var(--accent); }
 
-  /* Header */
-  header { border-bottom: 2px solid var(--ink); padding-bottom: 10px; margin-bottom: 12px; }
-  h1 {
-    font-size: 26pt;
+  /* ─── Header — single column ─── */
+  header {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+  header h1 {
+    font-size: 30pt;
     font-weight: 800;
     letter-spacing: -0.02em;
     margin: 0;
-    line-height: 1;
+    line-height: 1.05;
+    color: var(--ink);
   }
-  .role {
+  header .role {
     font-size: 11pt;
     color: var(--accent);
     font-weight: 700;
-    margin: 4px 0 2px 0;
+    margin: 5px 0 8px 0;
     letter-spacing: 0.01em;
   }
-  .tagline {
-    font-size: 10pt;
+  header .meta-line {
+    font-size: 8.5pt;
     color: var(--ink-soft);
-    font-style: italic;
-    margin: 0 0 8px 0;
+    line-height: 1.55;
+    margin: 0;
   }
-  .meta {
-    font-size: 9pt;
-    color: var(--ink-soft);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 10px;
-  }
-  .meta span::after { content: " ·"; color: var(--line); margin-left: 6px; }
-  .meta span:last-child::after { content: ""; }
-  .availability {
-    margin-top: 6px;
-    font-size: 9pt;
-    font-weight: 600;
+  .meta-icon {
+    display: inline-block;
     color: var(--accent);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 3px 10px;
-    background: var(--accent-soft);
-    border-radius: 999px;
-  }
-  .availability::before {
-    content: "";
-    width: 7px;
-    height: 7px;
-    background: #22c55e;
-    border-radius: 50%;
-    box-shadow: 0 0 0 3px rgba(34,197,94,0.18);
+    font-weight: 700;
+    margin-right: 3px;
+    font-size: 9pt;
+    font-variant-emoji: text;
   }
 
-  /* Section */
+  /* ─── Section H2 with accent bar ─── */
   h2 {
     font-size: 9pt;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.04em;
     color: var(--accent);
-    margin: 14px 0 6px 0;
-    padding-bottom: 3px;
+    margin: 9px 0 5px 0;
+    padding: 0 0 3px 9px;
     border-bottom: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+  }
+  h2 .sect-num {
+    color: var(--ink-mute);
+    font-weight: 700;
+    margin-right: 8px;
   }
 
-  /* Profile + Specialties */
+  /* ─── Perfil ─── */
   .profile {
-    font-size: 10pt;
+    font-size: 9.5pt;
     color: var(--ink);
-    margin: 0 0 8px 0;
+    margin: 0 0 4px 0;
+    line-height: 1.45;
+    text-align: justify;
   }
+  .profile + .profile { margin-top: 3px; color: var(--ink-soft); }
   .profile strong { color: var(--ink); font-weight: 700; }
 
+  /* ─── Specs grid (Lo que cubro en agencia) ─── */
   .specs {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2px 16px;
+    gap: 3px 18px;
     margin: 4px 0 4px 0;
+    padding: 0;
   }
   @media (max-width: 700px) {
     .specs { grid-template-columns: 1fr; }
   }
   .specs li {
     position: relative;
-    padding-left: 16px;
+    padding-left: 17px;
     margin: 2px 0;
     font-size: 9.5pt;
     list-style: none;
@@ -140,39 +137,64 @@
   }
   .specs li strong { color: var(--ink); font-weight: 700; }
 
-  /* Experience */
+  /* ─── Experience ─── */
   .exp {
-    display: grid;
-    grid-template-columns: 34mm 1fr;
-    gap: 12px;
-    padding: 6px 0;
-    border-top: 1px solid var(--line);
+    padding: 3px 0;
+    border-top: 1px solid var(--line-soft);
   }
-  .exp:first-of-type { border-top: 0; padding-top: 2px; }
-  .exp-period {
+  .exp:first-of-type { border-top: 0; padding-top: 1px; }
+  .exp.featured {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-top: 0;
+    padding: 5px 9px 5px 11px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 2px;
+  }
+  .exp.featured + .exp { border-top: 1px solid var(--line-soft); padding-top: 3px; }
+  .exp-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
     font-size: 8.5pt;
     color: var(--ink-mute);
-    font-weight: 700;
+    margin-bottom: 3px;
   }
-  .exp-location {
-    font-size: 8pt;
+  .exp-role .exp-period,
+  .exp-role .exp-location {
+    font-size: 8.5pt;
+    font-weight: 600;
     color: var(--ink-mute);
-    margin-top: 1px;
   }
+  .exp-status {
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--bg);
+    border: 1px solid var(--accent-line);
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+  .exp.featured .exp-status { background: var(--bg); }
   .exp-role { font-weight: 700; font-size: 10.5pt; color: var(--ink); }
   .exp-company { color: var(--ink-soft); font-weight: 500; font-size: 9.5pt; }
-  .exp-summary { font-size: 9pt; color: var(--ink-soft); margin: 3px 0 4px 0; }
+  .exp-summary { font-size: 9pt; color: var(--ink-soft); margin: 3px 0 4px 0; text-align: justify; }
   .exp-wins {
     list-style: none;
     padding: 0;
-    margin: 4px 0 0 0;
+    margin: 3px 0 0 0;
   }
   .exp-wins li {
     position: relative;
     padding-left: 12px;
-    margin: 2px 0;
+    margin: 1px 0;
     font-size: 9pt;
     color: var(--ink);
+    line-height: 1.35;
+    text-align: justify;
   }
   .exp-wins li::before {
     content: "▸";
@@ -183,61 +205,55 @@
     font-size: 8pt;
   }
   .exp-wins li strong { color: var(--ink); font-weight: 700; }
-
-  .side-note {
-    font-size: 8.5pt;
-    color: var(--ink-mute);
-    font-style: italic;
-    margin-top: 2px;
-  }
-
-  /* Brand portfolio */
-  .brands {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  .brands span {
+  .bullet-icon {
     display: inline-block;
-    padding: 3px 10px;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    font-size: 8.5pt;
-    color: var(--ink-soft);
-    background: #fafafa;
-  }
-  .brands span.own {
-    background: var(--accent-soft);
     color: var(--accent);
-    border-color: var(--accent);
-    font-weight: 600;
+    font-size: 10pt;
+    margin-right: 2px;
+    font-variant-emoji: text;
   }
 
-  /* Stack grid */
-  .stack {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+  .sub-project {
+    margin-top: 7px;
+    padding-top: 6px;
+    border-top: 1px dashed var(--accent-line);
+    font-size: 9pt;
+    line-height: 1.45;
   }
-  @media (max-width: 700px) {
-    .stack { grid-template-columns: 1fr; }
-  }
-  .stack-col h3 {
-    font-size: 8pt;
-    font-weight: 800;
+  .sub-project .label {
+    display: inline-block;
+    font-size: 7.5pt;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.14em;
+    font-weight: 700;
     color: var(--accent);
-    margin: 0 0 4px 0;
+    margin-right: 6px;
   }
-  .stack-col p {
-    margin: 0;
+
+  /* ─── Skills & herramientas — grouped ─── */
+  .stack-line {
     font-size: 9pt;
     color: var(--ink-soft);
-    line-height: 1.5;
+    margin: 1px 0 0 0;
+    line-height: 1.4;
+  }
+  .stack-line strong { color: var(--accent); font-weight: 700; }
+  .skill-group {
+    margin-top: 5px;
+  }
+  .skill-group:first-of-type {
+    margin-top: 2px;
+  }
+  .skill-group-title {
+    font-size: 8.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    margin: 0 0 2px 0;
   }
 
-  /* Education + footer compact */
+  /* ─── Education ─── */
   .edu-line {
     font-size: 9pt;
     color: var(--ink-soft);
@@ -260,7 +276,50 @@
     margin-right: 4px;
   }
 
-  /* On-screen print button */
+  /* ─── Closing CTA ─── */
+  .cta {
+    margin-top: 6px;
+    padding: 7px 10px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: center;
+  }
+  @media (max-width: 700px) {
+    .cta { grid-template-columns: 1fr; }
+  }
+  .cta .cta-text {
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+  .cta .cta-text strong {
+    font-weight: 800;
+    margin-right: 4px;
+  }
+  .cta .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 8.5pt;
+    font-weight: 600;
+  }
+  .cta .cta-links a {
+    display: inline-block;
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 3px;
+    color: #fff;
+  }
+  .cta .cta-links a:hover {
+    background: #fff;
+    color: var(--accent);
+  }
+
+  /* ─── Print button ─── */
   .print-btn {
     position: fixed;
     bottom: 20px;
@@ -285,170 +344,65 @@
 
 <header>
   <h1>Dhana Corredor Muñoz</h1>
-  <p class="role">Marketing Manager · Performance · MarTech · Growth</p>
-  <p class="tagline">Estrategia y ejecución bajo el mismo techo: diseño la campaña, monto la landing, mido el resultado y optimizo. Tres roles en una sola contratación.</p>
-  <div class="meta">
-    <span>Madrid, España</span>
-    <span>+34 722 381 698</span>
-    <span><a href="mailto:corredorsadhana@gmail.com">corredorsadhana@gmail.com</a></span>
-    <span><a href="https://www.linkedin.com/in/dhanacorredor/">linkedin.com/in/dhanacorredor</a></span>
-    <span><a href="https://github.com/DhanaCorredor">github.com/DhanaCorredor</a></span>
-  </div>
-  <div class="availability">Disponible para incorporación inmediata · Madrid / Híbrido / Remoto</div>
+  <p class="role">MarTech Developer + Marketing Project Manager</p>
+  <div class="meta-line"><span class="meta-icon">☎&#xFE0E;</span>+34 722 381 698 · <span class="meta-icon">✉&#xFE0E;</span><a href="mailto:dhanacorredor@gmail.com">dhanacorredor@gmail.com</a> · <span class="meta-icon">◉</span>Madrid, España · <span class="meta-icon">in/</span><a href="https://www.linkedin.com/in/dhanacorredor/">linkedin.com/in/dhanacorredor</a></div>
 </header>
 
-<h2>Perfil</h2>
-<p class="profile"><strong>13 años en marketing digital</strong> diseñando y ejecutando estrategias <strong>end-to-end</strong> para 5 sectores (retail, sanidad, banca, media, B2B). Perfil <strong>híbrido marketing + código</strong> que reduce drásticamente el time-to-launch: la misma persona que define el funnel monta la landing, configura el tracking GA4/GTM y lanza los A/B tests. <strong>Especialidad: multi-cliente, multi-canal, multi-sector</strong> — perfil natural para entorno agencia.</p>
+<p class="profile">Perfil híbrido en <strong>Marketing Digital y Desarrollo Frontend</strong> + <strong>13 años de experiencia</strong> en proyectos en sectores retail, sanidad, banca, media y B2B.</p>
 
-<h2>Lo que entrego</h2>
-<ul class="specs">
-  <li><strong>Campañas pagadas con foco en ROAS</strong> — Meta, Google, LinkedIn Ads</li>
-  <li><strong>Embudos lead-to-customer</strong> — HubSpot, Klaviyo, Mailchimp, lead scoring</li>
-  <li><strong>Tracking & reporting accionable</strong> — GA4, GTM, Looker Studio</li>
-  <li><strong>SEO técnico para tráfico orgánico</strong> — keyword research, schema, arquitectura</li>
-  <li><strong>Landings de conversión en días, no sprints</strong> — Next.js, React, WordPress</li>
-  <li><strong>CRO basado en datos</strong> — hipótesis con GA4 + heatmaps, no intuición</li>
-</ul>
+<h2><span class="sect-num">01 ·</span> Experiencia</h2>
 
-<h2>Experiencia</h2>
-
-<div class="exp">
-  <div>
-    <div class="exp-period">Oct 2025 — Presente</div>
-    <div class="exp-location">Remoto · Madrid</div>
-  </div>
-  <div>
-    <div class="exp-role">MarTech & Growth Lead <span class="exp-company">— Asisty (fundadora) + cartera freelance</span></div>
-    <div class="exp-summary">Lanzamiento de plataforma MarTech sanitaria propia + consultoría de growth para PYMEs y emprendimientos.</div>
+<div class="exp featured">
+  <div class="exp-role"><span class="exp-period">Desde 2022</span> · MarTech Developer <span class="exp-company">— Proyectos Freelance</span> · <span class="exp-location">Madrid</span></div>
     <ul class="exp-wins">
-      <li>Fundadora y lead de <strong>Asisty</strong>: definí posicionamiento, arquitectura de contenidos (Next.js 15), estrategia SEO healthcare-specific (schema médico, long-tail orientado a clínicas) y stack analítico end-to-end.</li>
-      <li>Construí desde cero el stack analítico (GA4 + GTM + Looker Studio) para clientes PYMEs: eventos custom, embudos por canal y dashboards ejecutivos auto-actualizados.</li>
-      <li>Lancé programa de CRO sistematizado en landings y e-commerce: hipótesis con datos GA4 + heatmaps → tests A/B → decisiones, no opiniones.</li>
-      <li>Cliente activo: <strong>Lorena Velásquez Studio</strong> (estudio premium de manicura + academia en Moratalaz) — diseño web Vite + React, integración booking Confirmafy y estrategia de captación local.</li>
+      <li><strong>Diagnostico Centro de Salud</strong> (sanidad · 4+ años desde apertura en 2022) — Instagram + Facebook Ads, branding e identidad visual, gestión integral de marketing y RRSS desde el día uno.</li>
+      <li><strong>Asisty.app</strong> (sanidad · proyecto propio, desde Oct 2025) — Plataforma de gestión de proyectos para clínicas: Next.js 15, SEO healthcare-specific, stack GA4 + GTM + Looker Studio y CRO con tests A/B basados en datos.</li>
+      <li><strong>Lorena Velásquez Studio</strong> (beauty · desde Oct 2025) — Manicura premium en Moratalaz: web Vite + React + booking Confirmafy + estrategia de captación local.</li>
+      <li><strong>Asahi Sushi Bar</strong> (restauración · desde 2026) — Sushi en Leganés, Madrid: web + RRSS + menú digital; en desarrollo: web v2 más sólida y sistema propio de comandas mesa→cocina.</li>
     </ul>
-  </div>
 </div>
 
 <div class="exp">
-  <div>
-    <div class="exp-period">Jun 2024 — Oct 2025</div>
-    <div class="exp-location">Madrid · Híbrido</div>
-  </div>
-  <div>
-    <div class="exp-role">Marketing Freelance Multi-Cliente <span class="exp-company">— Sector sanitario y PYMEs + apoyo operativo en Quirónsalud</span></div>
-    <div class="exp-summary">Consultoría de marketing como actividad principal con inmersión paralela en el sector sanitario (insight del cliente final que nutrió la fundación posterior de Asisty).</div>
-    <ul class="exp-wins">
-      <li>Cartera freelance: SEO técnico, GA4/GTM setup, campañas paid media y email marketing para clientes PYMEs en diversos sectores.</li>
-      <li>Inmersión en entorno hospitalario privado (Quirónsalud) — adquirí conocimiento operativo del sector sanitario que diferencia mi propuesta MarTech en healthcare.</li>
-      <li>Decisión estratégica: el aprendizaje sectorial me permitió lanzar Asisty con knowledge real del cliente, no especulación de mercado.</li>
-    </ul>
-  </div>
+  <div class="exp-role"><span class="exp-period">Jun 2024 — Oct 2025</span> · Técnico Administrativo · Gestión de Proyectos <span class="exp-company">— Quirónsalud (Sede Central)</span> · <span class="exp-location">Madrid</span></div>
+    <div class="exp-summary">Equipo de gestión de proyectos y mejora de procesos en la sede central corporativa (+80 hospitales). Foco en la transformación digital y operativa de Contabilidad y Tesorería: análisis de flujos de trabajo, detección de ineficiencias y colaboración directa con IT y Sistemas en propuestas de automatización, digitalización e integración de IA. Experiencia práctica que después informó el diseño conceptual de Asisty.</div>
 </div>
 
 <div class="exp">
-  <div>
-    <div class="exp-period">Oct 2022 — May 2024</div>
-    <div class="exp-location">Madrid · Híbrido</div>
-  </div>
-  <div>
-    <div class="exp-role">Project Manager — Marketing & Digital <span class="exp-company">— Future Retail S.L.</span></div>
-    <div class="exp-summary">Dirección end-to-end de proyectos digitales para cartera retail. Cliente estrella: <strong>Viandas de Salamanca</strong> (e-commerce gourmet líder en jamones, embutidos y quesos).</div>
+  <div class="exp-role"><span class="exp-period">Oct 2022 — May 2024</span> · Project Manager · Marketing & Digital <span class="exp-company">— Future Retail S.L. (Consultoría de Retail)</span> · <span class="exp-location">Madrid</span></div>
+    <div class="exp-summary">Seguimiento y gestión de proyectos de marketing end-to-end para la cartera multimarca de retail (<strong>Viandas</strong>, <strong>Panaria</strong>, entre otras). Dirección de campañas de Paid Media (Meta + Google Ads) y diseño de flujos de automatización en HubSpot (nurturing, lead scoring, handoff comercial), con reporting semanal de ROAS e ingresos a dirección.</div>
     <ul class="exp-wins">
-      <li>Lideré el lanzamiento y optimización del e-commerce <strong>Viandas de Salamanca</strong>: maquetación web, edición de contenidos, uniformidad de marca — conversion rate y AOV en línea con benchmarks de gourmet food (1,5-2,5% conversión, AOV €40-70).</li>
-      <li>Lancé campañas paid media multi-canal (Meta Ads + Google Ads) con presupuestos mensuales de 4 cifras y reporting de ROAS semanal a dirección.</li>
-      <li>Construí flujos de marketing automation en HubSpot: nurturing por industria, lead scoring y handoff automatizado a comercial.</li>
-      <li>Coordiné equipos cross-funcionales (creatividad, desarrollo, comercial) en proyectos simultáneos para múltiples clientes retail.</li>
+      <li><strong><span class="bullet-icon">★</span> Destacado:</strong> Coordinación cross-functional (entre los equipos de creatividad, desarrollo y comercial) para el <strong>relanzamiento de marca y el nuevo e-commerce gourmet de Viandas</strong>. Supervisión de la estrategia de contenidos y de la consistencia visual durante todo el proceso de rebranding.</li>
     </ul>
-  </div>
 </div>
 
 <div class="exp">
-  <div>
-    <div class="exp-period">May 2018 — Sep 2022</div>
-    <div class="exp-location">Madrid · Presencial</div>
-  </div>
-  <div>
-    <div class="exp-role">Responsable de Comunicación <span class="exp-company">— Cultura Emprende Radio (Radio Intereconomía 95.1FM)</span></div>
-    <div class="exp-summary">Comunicación 360º del programa de referencia de la cadena en emprendimiento.</div>
+  <div class="exp-role"><span class="exp-period">Feb 2017 — Sep 2022</span> · Project Manager · Marketing in-house <span class="exp-company">— Urban Lab Madrid</span> · <span class="exp-location">Madrid</span> <span class="exp-status">5+ años</span></div>
+    <div class="exp-summary">Responsable del marketing in-house de la empresa, coordinando sus marcas y líneas de negocio. Ejecución de email marketing (open rates 22-28%, superando el benchmark del sector), campañas Meta Ads de lead generation para captación B2B (emprendedores, freelance y pymes) y optimización de CPL. Diseño de materiales corporativos (portfolios de servicios, catálogos, flyers) y reporting mensual a dirección.</div>
     <ul class="exp-wins">
-      <li>Construí y consolidé el posicionamiento del programa como referente del nicho emprendimiento durante 4+ años continuos en la cadena.</li>
-      <li>Agendé y produje invitados de alto perfil (CEOs, fundadores) — producción editorial semanal con guion, briefing y promoción digital.</li>
-      <li>Diseñé y mantuve la presencia digital completa: web WordPress, RRSS y email marketing en Mailchimp (newsletter editorial).</li>
+      <li><strong><span class="bullet-icon">★</span> Hito:</strong> Lanzamiento y gestión operativa de <strong>Cultura Emprende Radio</strong>, programa propio de la empresa emitido en <strong>Radio Intereconomía 95.1FM</strong> (+4 años en parrilla como referente nacional de emprendimiento). Project management integral: agenda de invitados (CEOs, fundadores), producción editorial y presencia digital (web WordPress, RRSS, newsletter).</li>
+      <li><strong><span class="bullet-icon">⚡&#xFE0E;</span> Reto Profesional:</strong> La gestión de crisis durante la pandemia del COVID-19, liderando la adaptación digital de los servicios y la continuidad operativa para mantener el centro a flote frente a los retos del mercado.</li>
     </ul>
-    <div class="side-note">En paralelo (Feb 2017 — Sep 2022): Project Manager Marketing B2B en <strong>Urban Lab Madrid</strong> — gestión simultánea de cartera de clientes B2B con email marketing (open rates 22-28%, benchmark sector), campañas Meta Ads para lead generation, optimización iterativa de CPL y reporting mensual.</div>
-  </div>
 </div>
 
 <div class="exp">
-  <div>
-    <div class="exp-period">Oct 2014 — Abr 2016</div>
-    <div class="exp-location">Madrid</div>
-  </div>
-  <div>
-    <div class="exp-role">Técnico de Proyectos Digitales <span class="exp-company">— Apolo Agencia Digital</span></div>
-    <div class="exp-summary">Agencia digital multi-cuenta. Ejecución end-to-end de campañas para cartera diversa de clientes.</div>
-    <ul class="exp-wins">
-      <li>Setup y optimización paralela en Google Ads y Meta Ads para cartera multi-cliente — rotación rápida entre cuentas con KPIs diferenciados.</li>
-      <li>SEO on-page y administración WordPress para sitios cliente activos.</li>
-      <li>Email marketing y reporting mensual de resultados con dashboards consolidados.</li>
-    </ul>
-  </div>
+  <div class="exp-role"><span class="exp-period">Oct 2014 — Abr 2016</span> · Project Manager Junior <span class="exp-company">— Apolo Agencia Digital</span> · <span class="exp-location">Madrid</span></div>
+  <div class="exp-summary">Gestión end-to-end de proyectos de marketing digital para una cartera multicliente. Ejecución y optimización de campañas de Paid Media (Google/Facebook Ads), SEO on-page, administración de WordPress, email marketing y reporting mensual de KPIs.</div>
 </div>
 
 <div class="exp">
-  <div>
-    <div class="exp-period">Sep 2013 — May 2014</div>
-    <div class="exp-location">Venezuela</div>
-  </div>
-  <div>
-    <div class="exp-role">Becaria — Departamento de Marketing <span class="exp-company">— Bancaribe International Bank</span></div>
-    <div class="exp-summary">Primer rol en marketing. Apoyo directo al equipo de Marketing corporativo del banco en campañas digitales, comunicación interna y CRM.</div>
-    <ul class="exp-wins">
-      <li>Apoyo en campañas de marketing digital del departamento — primer contacto con paid media corporativo y email marketing.</li>
-      <li>Gestión y actualización de bases de datos CRM del banco.</li>
-      <li>Comunicación interna y control de inventarios de merchandising para acciones de marca.</li>
-    </ul>
-  </div>
+  <div class="exp-role"><span class="exp-period">Sep 2013 — May 2014</span> · Becaria · Dpto. de Marketing <span class="exp-company">— Bancaribe International Bank</span> · <span class="exp-location">Venezuela</span></div>
+  <div class="exp-summary">Apoyo al equipo de Marketing corporativo en branding, merchandising, materiales de marca, inventarios y comunicación interna.</div>
 </div>
 
-<h2>Marcas y clientes gestionados</h2>
-<div class="brands">
-  <span class="own">Asisty <em style="opacity:0.75">— Healthcare MarTech</em></span>
-  <span class="own">Lorena Velásquez Studio <em style="opacity:0.75">— Beauty</em></span>
-  <span>Viandas de Salamanca <em style="opacity:0.6">— Gourmet e-commerce</em></span>
-  <span>Quirónsalud <em style="opacity:0.6">— Healthcare</em></span>
-  <span>Radio Intereconomía <em style="opacity:0.6">— Media</em></span>
-  <span>Urban Lab Madrid <em style="opacity:0.6">— B2B</em></span>
-  <span>Apolo Agencia Digital <em style="opacity:0.6">— Multi-sector</em></span>
-  <span>Bancaribe <em style="opacity:0.6">— Banking</em></span>
-  <span>+ cartera retail (Future Retail)</span>
-  <span>+ cartera B2B (Urban Lab)</span>
-</div>
+<h2><span class="sect-num">02 ·</span> Skills & herramientas</h2>
+<p class="stack-line"><strong>Project Management:</strong> Agile (SCRUM, Kanban) · Jira · Notion · Roadmapping · Coordinación Cross-functional.</p>
+<p class="stack-line"><strong>Desarrollo Frontend:</strong> HTML5 · CSS3 · Tailwind · JavaScript · TypeScript · React · Next.js · Git · Python.</p>
+<p class="stack-line"><strong>Analítica & CRO:</strong> GA4 · Google Tag Manager · Looker Studio · SEMrush · A/B testing · CRO.</p>
+<p class="stack-line"><strong>Marketing, Automation & Diseño:</strong> Performance (Meta, Google, LinkedIn Ads) · CRM (HubSpot, Salesforce) · Automations (Make, Zapier) · Email Marketing · Figma · WordPress · Headless CMS · Vercel / Netlify.</p>
 
-<h2>Stack profesional</h2>
-<div class="stack">
-  <div class="stack-col">
-    <h3>Performance & Automation</h3>
-    <p>Meta Ads · Google Ads · LinkedIn Ads · HubSpot · Salesforce · Klaviyo · Mailchimp · Make · Zapier · Marketing Automation · Email flows · Lead scoring</p>
-  </div>
-  <div class="stack-col">
-    <h3>Analítica & Reporting</h3>
-    <p>Google Analytics 4 · Google Tag Manager · Looker Studio · SEMrush · Search Console · KPI Dashboarding · Reporting ejecutivo · A/B Testing · CRO</p>
-  </div>
-  <div class="stack-col">
-    <h3>Plus técnico (sin pedir a dev)</h3>
-    <p>HTML5 · CSS3 · Tailwind · JavaScript · TypeScript · Next.js · React · WordPress · Figma · Git · SCRUM · Jira · Notion</p>
-  </div>
-</div>
-
-<h2>Formación & Certificaciones</h2>
-<p class="edu-line"><span class="year">2017–2019</span> <strong>ENEB Barcelona</strong> — Máster en Dirección Comercial y Publicidad</p>
-<p class="edu-line"><span class="year">2013–2017</span> <strong>UNIR</strong> — Grado en Administración y Dirección de Empresas (ADE)</p>
-<p class="edu-line"><span class="year">2026</span> <strong>Factoría F5</strong> — Bootcamp IA aplicada (Python, AI-driven development)</p>
-<p class="edu-line"><span class="year">2023</span> <strong>freeCodeCamp</strong> — Project Management Professional · <strong>ThePower Business School</strong> — Rock{TheCode} Full Stack</p>
-<p class="footer-line"><strong>Cursos</strong> Diseño de Contenidos Digitales · Estrategias de Marketing de Contenidos · Fundamentos de Marketing Digital</p>
-
-<p class="footer-line"><strong>Idiomas</strong> Español (nativo) · Inglés (working proficiency — lectura técnica, reuniones operativas)</p>
+<h2><span class="sect-num">03 ·</span> Formación destacada</h2>
+<p class="edu-line"><span class="year">2026</span> <strong>Factoría F5</strong> — Bootcamp Full Stack enfocado a Python (en curso) · <span class="year">Abr 2020</span> <strong>N+E Business School</strong> — Especialista en Big Data & Business Analytics</p>
+<p class="edu-line"><span class="year">2017–2019</span> <strong>ENEB Barcelona</strong> — Máster en Dirección Comercial y Publicidad · <span class="year">2013–2017</span> <strong>UNIR</strong> — Grado en ADE · <strong>Idiomas:</strong> Español (nativo) · Inglés (working proficiency)</p>
 
 </div>
 
