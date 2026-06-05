@@ -3,6 +3,10 @@ from django.utils.translation import gettext_lazy as _
 
 
 def cv_marketing(request):
+    return render(request, 'cv-marketing-web.html')
+
+
+def cv_marketing_print(request):
     return render(request, 'cv-marketing.html')
 
 

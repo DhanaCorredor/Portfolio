@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dhana Corredor — MarTech Developer + Marketing Project Manager · CV (web)</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: #444;
+    --ink-mute: #666;
+    --accent: #6e4fb0;
+    --accent-soft: #f4f0fb;
+    --accent-line: #e1d6f1;
+    --line: #d6d6d6;
+    --line-soft: #ebebeb;
+    --bg: #fff;
+    --bg-tint: #fafafa;
+  }
+  @page { size: A4; margin: 5mm 8mm; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #f4f4f4; }
+  body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .sheet {
+    background: var(--bg);
+    max-width: 210mm;
+    margin: 36px auto;
+    padding: 20mm 20mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    font-size: 10.5pt;
+    line-height: 1.55;
+  }
+  @media print {
+    html, body { background: #fff; }
+    .sheet { box-shadow: none; margin: 0; padding: 0; max-width: none; font-size: 9.5pt; line-height: 1.45; }
+    .no-print { display: none !important; }
+  }
+  @media (max-width: 700px) {
+    .sheet { padding: 24px; margin: 0; box-shadow: none; font-size: 15px; }
+  }
+  a { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--ink-mute); }
+  a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ─── Header — single column ─── */
+  header {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  header h1 {
+    font-size: 32pt;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0;
+    line-height: 1.08;
+    color: var(--ink);
+  }
+  header .role {
+    font-size: 12.5pt;
+    color: var(--accent);
+    font-weight: 700;
+    margin: 9px 0 14px 0;
+    letter-spacing: 0.01em;
+  }
+  header .meta-line {
+    font-size: 9.5pt;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .meta-icon {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 3px;
+    font-size: 9pt;
+    font-variant-emoji: text;
+  }
+
+  /* ─── Section H2 with accent bar ─── */
+  h2 {
+    font-size: 10.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    margin: 26px 0 12px 0;
+    padding: 0 0 6px 11px;
+    border-bottom: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+  }
+  h2 .sect-num {
+    color: var(--ink-mute);
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  /* ─── Perfil ─── */
+  .profile {
+    font-size: 11pt;
+    color: var(--ink);
+    margin: 4px 0 8px 0;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  .profile + .profile { margin-top: 6px; color: var(--ink-soft); }
+  .profile strong { color: var(--ink); font-weight: 700; }
+
+  /* ─── Specs grid (Lo que cubro en agencia) ─── */
+  .specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 24px;
+    margin: 8px 0;
+    padding: 0;
+  }
+  @media (max-width: 700px) {
+    .specs { grid-template-columns: 1fr; }
+  }
+  .specs li {
+    position: relative;
+    padding-left: 18px;
+    margin: 4px 0;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    list-style: none;
+  }
+  .specs li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-size: 9pt;
+  }
+  .specs li strong { color: var(--ink); font-weight: 700; }
+
+  /* ─── Experience ─── */
+  .exp {
+    padding: 14px 0;
+    border-top: 1px solid var(--line-soft);
+  }
+  .exp:first-of-type { border-top: 0; padding-top: 4px; }
+  .exp.featured {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-top: 0;
+    padding: 14px 16px 14px 18px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 6px;
+  }
+  .exp.featured + .exp { border-top: 1px solid var(--line-soft); padding-top: 14px; }
+  .exp-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+    font-size: 9.5pt;
+    color: var(--ink-mute);
+    margin-bottom: 4px;
+  }
+  .exp-role .exp-period,
+  .exp-role .exp-location {
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: var(--ink-mute);
+  }
+  .exp-status {
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--bg);
+    border: 1px solid var(--accent-line);
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+  .exp.featured .exp-status { background: var(--bg); }
+  .exp-role { font-weight: 700; font-size: 12pt; color: var(--ink); line-height: 1.45; }
+  .exp-company { color: var(--ink-soft); font-weight: 500; font-size: 10.5pt; }
+  .exp-summary { font-size: 10.5pt; color: var(--ink-soft); margin: 6px 0 8px 0; text-align: justify; line-height: 1.55; }
+  .exp-wins {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 0;
+  }
+  .exp-wins li {
+    position: relative;
+    padding-left: 16px;
+    margin: 6px 0;
+    font-size: 10.5pt;
+    color: var(--ink);
+    line-height: 1.55;
+    text-align: justify;
+  }
+  .exp-wins li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-size: 8pt;
+  }
+  .exp-wins li strong { color: var(--ink); font-weight: 700; }
+  .bullet-icon {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 10pt;
+    margin-right: 2px;
+    font-variant-emoji: text;
+  }
+
+  .sub-project {
+    margin-top: 7px;
+    padding-top: 6px;
+    border-top: 1px dashed var(--accent-line);
+    font-size: 9pt;
+    line-height: 1.45;
+  }
+  .sub-project .label {
+    display: inline-block;
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    color: var(--accent);
+    margin-right: 6px;
+  }
+
+  /* ─── Skills & herramientas — grouped ─── */
+  .stack-line {
+    font-size: 10.5pt;
+    color: var(--ink-soft);
+    margin: 7px 0 0 0;
+    line-height: 1.6;
+  }
+  .stack-line strong { color: var(--accent); font-weight: 700; }
+  .skill-group {
+    margin-top: 5px;
+  }
+  .skill-group:first-of-type {
+    margin-top: 2px;
+  }
+  .skill-group-title {
+    font-size: 8.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    margin: 0 0 2px 0;
+  }
+
+  /* ─── Education ─── */
+  .edu-line {
+    font-size: 10.5pt;
+    color: var(--ink-soft);
+    margin: 7px 0;
+    line-height: 1.6;
+  }
+  .edu-line .year { color: var(--ink-mute); font-weight: 600; margin-right: 6px; }
+  .edu-line strong { color: var(--ink); font-weight: 700; }
+
+  .footer-line {
+    font-size: 8.5pt;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+  .footer-line strong {
+    color: var(--accent);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 8pt;
+    letter-spacing: 0.12em;
+    margin-right: 4px;
+  }
+
+  /* ─── Closing CTA ─── */
+  .cta {
+    margin-top: 6px;
+    padding: 7px 10px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: center;
+  }
+  @media (max-width: 700px) {
+    .cta { grid-template-columns: 1fr; }
+  }
+  .cta .cta-text {
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+  .cta .cta-text strong {
+    font-weight: 800;
+    margin-right: 4px;
+  }
+  .cta .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 8.5pt;
+    font-weight: 600;
+  }
+  .cta .cta-links a {
+    display: inline-block;
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 3px;
+    color: #fff;
+  }
+  .cta .cta-links a:hover {
+    background: #fff;
+    color: var(--accent);
+  }
+
+  /* ─── Print button ─── */
+  .print-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: #fff;
+    border: none !important;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .print-btn:hover { opacity: 0.9; color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+<header>
+  <h1>Dhana Corredor Muñoz</h1>
+  <p class="role">MarTech Developer + Marketing Project Manager</p>
+  <div class="meta-line"><span class="meta-icon">☎&#xFE0E;</span>+34 722 381 698 · <span class="meta-icon">✉&#xFE0E;</span><a href="mailto:dhanacorredor@gmail.com">dhanacorredor@gmail.com</a> · <span class="meta-icon">◉</span>Madrid, España · <span class="meta-icon">in/</span><a href="https://www.linkedin.com/in/dhanacorredor/">linkedin.com/in/dhanacorredor</a></div>
+</header>
+
+<p class="profile">Perfil híbrido en <strong>Marketing Digital y Desarrollo Frontend</strong> + <strong>13 años de experiencia</strong> en proyectos en sectores retail, sanidad, banca, media y B2B.</p>
+
+<h2><span class="sect-num">01 ·</span> Experiencia</h2>
+
+<div class="exp featured">
+  <div class="exp-role"><span class="exp-period">Desde 2022</span> · MarTech Developer <span class="exp-company">— Proyectos Freelance</span> · <span class="exp-location">Madrid</span></div>
+    <ul class="exp-wins">
+      <li><strong>Diagnostico Centro de Salud</strong> (sanidad · 4+ años desde apertura en 2022) — Instagram + Facebook Ads, branding e identidad visual, gestión integral de marketing y RRSS desde el día uno.</li>
+      <li><strong>Asisty.app</strong> (sanidad · proyecto propio, desde Oct 2025) — Plataforma de gestión de proyectos para clínicas: Next.js 15, SEO healthcare-specific, stack GA4 + GTM + Looker Studio y CRO con tests A/B basados en datos.</li>
+      <li><strong>Lorena Velásquez Studio</strong> (beauty · desde Oct 2025) — Manicura premium en Moratalaz: web Vite + React + booking Confirmafy + estrategia de captación local.</li>
+      <li><strong>Asahi Sushi Bar</strong> (restauración · desde 2026) — Sushi en Leganés, Madrid: web + RRSS + menú digital; en desarrollo: web v2 más sólida y sistema propio de comandas mesa→cocina.</li>
+    </ul>
+</div>
+
+<div class="exp">
+  <div class="exp-role"><span class="exp-period">Jun 2024 — Oct 2025</span> · Técnico Administrativo · Gestión de Proyectos <span class="exp-company">— Quirónsalud (Sede Central)</span> · <span class="exp-location">Madrid</span></div>
+    <div class="exp-summary">Equipo de gestión de proyectos y mejora de procesos en la sede central corporativa (+80 hospitales). Foco en la transformación digital y operativa de Contabilidad y Tesorería: análisis de flujos de trabajo, detección de ineficiencias y colaboración directa con IT y Sistemas en propuestas de automatización, digitalización e integración de IA. Experiencia práctica que después informó el diseño conceptual de Asisty.</div>
+</div>
+
+<div class="exp">
+  <div class="exp-role"><span class="exp-period">Oct 2022 — May 2024</span> · Project Manager · Marketing & Digital <span class="exp-company">— Future Retail S.L. (Consultoría de Retail)</span> · <span class="exp-location">Madrid</span></div>
+    <div class="exp-summary">Seguimiento y gestión de proyectos de marketing end-to-end para la cartera multimarca de retail (<strong>Viandas</strong>, <strong>Panaria</strong>, entre otras). Dirección de campañas de Paid Media (Meta + Google Ads) y diseño de flujos de automatización en HubSpot (nurturing, lead scoring, handoff comercial), con reporting semanal de ROAS e ingresos a dirección.</div>
+    <ul class="exp-wins">
+      <li><strong><span class="bullet-icon">★</span> Destacado:</strong> Coordinación cross-functional (entre los equipos de creatividad, desarrollo y comercial) para el <strong>relanzamiento de marca y el nuevo e-commerce gourmet de Viandas</strong>. Supervisión de la estrategia de contenidos y de la consistencia visual durante todo el proceso de rebranding.</li>
+    </ul>
+</div>
+
+<div class="exp">
+  <div class="exp-role"><span class="exp-period">Feb 2017 — Sep 2022</span> · Project Manager · Marketing in-house <span class="exp-company">— Urban Lab Madrid</span> · <span class="exp-location">Madrid</span> <span class="exp-status">5+ años</span></div>
+    <div class="exp-summary">Responsable del marketing in-house de la empresa, coordinando sus marcas y líneas de negocio. Ejecución de email marketing (open rates 22-28%, superando el benchmark del sector), campañas Meta Ads de lead generation para captación B2B (emprendedores, freelance y pymes) y optimización de CPL. Diseño de materiales corporativos (portfolios de servicios, catálogos, flyers) y reporting mensual a dirección.</div>
+    <ul class="exp-wins">
+      <li><strong><span class="bullet-icon">★</span> Hito:</strong> Lanzamiento y gestión operativa de <strong>Cultura Emprende Radio</strong>, programa propio de la empresa emitido en <strong>Radio Intereconomía 95.1FM</strong> (+4 años en parrilla como referente nacional de emprendimiento). Project management integral: agenda de invitados (CEOs, fundadores), producción editorial y presencia digital (web WordPress, RRSS, newsletter).</li>
+      <li><strong><span class="bullet-icon">⚡&#xFE0E;</span> Reto Profesional:</strong> La gestión de crisis durante la pandemia del COVID-19, liderando la adaptación digital de los servicios y la continuidad operativa para mantener el centro a flote frente a los retos del mercado.</li>
+    </ul>
+</div>
+
+<div class="exp">
+  <div class="exp-role"><span class="exp-period">Oct 2014 — Abr 2016</span> · Project Manager Junior <span class="exp-company">— Apolo Agencia Digital</span> · <span class="exp-location">Madrid</span></div>
+  <div class="exp-summary">Gestión end-to-end de proyectos de marketing digital para una cartera multicliente. Ejecución y optimización de campañas de Paid Media (Google/Facebook Ads), SEO on-page, administración de WordPress, email marketing y reporting mensual de KPIs.</div>
+</div>
+
+<div class="exp">
+  <div class="exp-role"><span class="exp-period">Sep 2013 — May 2014</span> · Becaria · Dpto. de Marketing <span class="exp-company">— Bancaribe International Bank</span> · <span class="exp-location">Venezuela</span></div>
+  <div class="exp-summary">Apoyo al equipo de Marketing corporativo en branding, merchandising, materiales de marca, inventarios y comunicación interna.</div>
+</div>
+
+<h2><span class="sect-num">02 ·</span> Skills & herramientas</h2>
+<p class="stack-line"><strong>Project Management:</strong> Agile (SCRUM, Kanban) · Jira · Notion · Roadmapping · Coordinación Cross-functional.</p>
+<p class="stack-line"><strong>Desarrollo Frontend:</strong> HTML5 · CSS3 · Tailwind · JavaScript · TypeScript · React · Next.js · Git · Python.</p>
+<p class="stack-line"><strong>Analítica & CRO:</strong> GA4 · Google Tag Manager · Looker Studio · SEMrush · A/B testing · CRO.</p>
+<p class="stack-line"><strong>Marketing, Automation & Diseño:</strong> Performance (Meta, Google, LinkedIn Ads) · CRM (HubSpot, Salesforce) · Automations (Make, Zapier) · Email Marketing · Figma · WordPress · Headless CMS · Vercel / Netlify.</p>
+
+<h2><span class="sect-num">03 ·</span> Formación destacada</h2>
+<p class="edu-line"><span class="year">2026</span> <strong>Factoría F5</strong> — Bootcamp Full Stack enfocado a Python (en curso) · <span class="year">Abr 2020</span> <strong>N+E Business School</strong> — Especialista en Big Data & Business Analytics</p>
+<p class="edu-line"><span class="year">2017–2019</span> <strong>ENEB Barcelona</strong> — Máster en Dirección Comercial y Publicidad · <span class="year">2013–2017</span> <strong>UNIR</strong> — Grado en ADE · <strong>Idiomas:</strong> Español (nativo) · Inglés (working proficiency)</p>
+
+</div>
+
+</body>
+</html>
