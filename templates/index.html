@@ -225,37 +225,42 @@
 <section id="contact" class="border-t border-[var(--line)]" style="background:var(--contact-bg);color:var(--contact-fg)">
     <div class="max-w-[1200px] mx-auto px-6 md:px-10 py-20 md:py-28">
         <p class="font-mono text-[10px] uppercase tracking-[0.22em] opacity-60 mb-6">— {% translate 'Contact' %}</p>
-        <h2 class="font-display fluid-hero mb-6">
+        <h2 class="font-display fluid-hero mb-12 md:mb-16">
             {% translate "Let's work together." %}
         </h2>
-        <p class="max-w-xl opacity-80 text-base md:text-lg leading-relaxed mb-10">
-            {% blocktranslate %}Open to new opportunities and interesting projects. Drop me a line — I read everything.{% endblocktranslate %}
-        </p>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-            {# Left: direct email + copy #}
-            <div class="flex flex-col gap-4 md:gap-6">
-                <a href="mailto:dhanacorredor@gmail.com" class="big-cta inline-flex items-center gap-3 font-display font-bold fluid-h2 tracking-tight border-b border-current pb-2 self-start">
-                    dhanacorredor@gmail.com
-                    <span class="text-2xl">↗</span>
-                </a>
-
-                <div class="flex flex-wrap items-center gap-3">
-                    <button type="button" id="copy-email" data-email="dhanacorredor@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-current text-xs font-semibold uppercase tracking-widest hover:opacity-80 transition">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {# Left: direct email + copy + socials #}
+            <div class="lg:col-span-5 flex flex-col gap-8">
+                <div class="flex flex-col gap-3 items-start">
+                    <span class="font-mono text-[10px] uppercase tracking-[0.22em] opacity-60">{% translate 'Email' %}</span>
+                    <a href="mailto:dhanacorredor@gmail.com" class="big-cta font-sans font-semibold text-2xl md:text-3xl tracking-tight break-words self-start">
+                        dhanacorredor@gmail.com
+                    </a>
+                    <button type="button" id="copy-email" data-email="dhanacorredor@gmail.com" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest opacity-70 hover:opacity-100 transition">
                         <span class="copy-label">{% translate 'Copy email' %}</span>
                         <span class="copy-icon" aria-hidden="true">⧉</span>
                     </button>
                 </div>
+
+                <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-widest opacity-70 pt-2 border-t border-current/15">
+                    <a href="https://www.linkedin.com/in/dhanacorredor/" target="_blank" rel="noopener" class="link-underline pt-4">LinkedIn ↗</a>
+                    <a href="https://github.com/DhanaCorredor" target="_blank" rel="noopener" class="link-underline pt-4">GitHub ↗</a>
+                    <a href="tel:+34722381698" class="link-underline pt-4">+34 722 381 698</a>
+                </div>
             </div>
 
             {# Right: contact form → Resend → inbox #}
-            <form action="{% url 'core:contact' %}" method="post" class="flex flex-col gap-4" novalidate>
+            <form action="{% url 'core:contact' %}" method="post" class="lg:col-span-7 flex flex-col gap-7" novalidate>
                 {% csrf_token %}
 
                 {% if messages %}
                 <div class="flex flex-col gap-2" role="status" aria-live="polite">
                     {% for message in messages %}
-                    <p class="text-sm rounded-xl px-4 py-3 {% if message.tags == 'error' %}bg-red-500/15 text-red-200 border border-red-400/30{% else %}bg-emerald-500/15 text-emerald-100 border border-emerald-400/30{% endif %}">{{ message }}</p>
+                    <p class="flex items-start gap-2 text-sm rounded-lg px-4 py-3 bg-[var(--contact-fg)] text-[var(--contact-bg)] {% if message.tags == 'error' %}border-l-4 border-red-500{% endif %}">
+                        <span aria-hidden="true">{% if message.tags == 'error' %}⚠{% else %}✓{% endif %}</span>
+                        <span>{{ message }}</span>
+                    </p>
                     {% endfor %}
                 </div>
                 {% endif %}
@@ -265,36 +270,31 @@
                     <label>{% translate 'Company' %}<input type="text" name="company" tabindex="-1" autocomplete="off"></label>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <label class="flex flex-col gap-1.5 text-xs font-semibold uppercase tracking-widest opacity-80">
-                        {% translate 'Name' %}
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-7">
+                    <label class="flex flex-col gap-2">
+                        <span class="font-mono text-[10px] uppercase tracking-[0.22em] opacity-60">{% translate 'Name' %}</span>
                         <input type="text" name="name" required autocomplete="name"
-                               class="rounded-xl bg-transparent border border-current/30 px-4 py-3 text-base font-normal normal-case tracking-normal placeholder:opacity-50 focus:outline-none focus:border-current transition">
+                               class="w-full bg-transparent border-0 border-b border-current/30 pb-2 text-base focus:outline-none focus:border-current transition">
                     </label>
-                    <label class="flex flex-col gap-1.5 text-xs font-semibold uppercase tracking-widest opacity-80">
-                        {% translate 'Email' %}
+                    <label class="flex flex-col gap-2">
+                        <span class="font-mono text-[10px] uppercase tracking-[0.22em] opacity-60">{% translate 'Email' %}</span>
                         <input type="email" name="email" required autocomplete="email"
-                               class="rounded-xl bg-transparent border border-current/30 px-4 py-3 text-base font-normal normal-case tracking-normal placeholder:opacity-50 focus:outline-none focus:border-current transition">
+                               class="w-full bg-transparent border-0 border-b border-current/30 pb-2 text-base focus:outline-none focus:border-current transition">
                     </label>
                 </div>
 
-                <label class="flex flex-col gap-1.5 text-xs font-semibold uppercase tracking-widest opacity-80">
-                    {% translate 'Message' %}
+                <label class="flex flex-col gap-2">
+                    <span class="font-mono text-[10px] uppercase tracking-[0.22em] opacity-60">{% translate 'Message' %}</span>
                     <textarea name="message" rows="4" required
-                              class="rounded-xl bg-transparent border border-current/30 px-4 py-3 text-base font-normal normal-case tracking-normal placeholder:opacity-50 focus:outline-none focus:border-current transition resize-y"></textarea>
+                              class="w-full bg-transparent border-0 border-b border-current/30 pb-2 text-base focus:outline-none focus:border-current transition resize-y"></textarea>
                 </label>
 
                 <button type="submit"
-                        class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[var(--contact-fg)] text-[var(--contact-bg)] text-xs font-semibold uppercase tracking-widest hover:opacity-90 transition self-start">
-                    {% translate 'Send message' %} ↗
+                        class="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[var(--contact-fg)] text-[var(--contact-bg)] text-xs font-semibold uppercase tracking-widest hover:opacity-90 transition self-start mt-1">
+                    {% translate 'Send message' %}
+                    <span class="transition-transform group-hover:translate-x-0.5">↗</span>
                 </button>
             </form>
-        </div>
-
-        <div class="mt-12 pt-8 border-t border-current/20 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-widest opacity-80">
-            <a href="https://www.linkedin.com/in/dhanacorredor/" target="_blank" rel="noopener" class="link-underline">LinkedIn ↗</a>
-            <a href="https://github.com/DhanaCorredor" target="_blank" rel="noopener" class="link-underline">GitHub ↗</a>
-            <a href="tel:+34722381698" class="link-underline">+34 722 381 698</a>
         </div>
     </div>
 </section>

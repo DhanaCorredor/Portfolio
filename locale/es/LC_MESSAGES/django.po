@@ -647,3 +647,39 @@ msgstr "Marketing B2B in-house: campañas de lead-gen con Meta Ads, email market
 
 msgid "Dhana Corredor — MarTech Developer and Marketing Project Manager in Madrid. 13+ years bridging marketing strategy and front-end code. Specializing in healthcare, retail and B2B projects."
 msgstr "Dhana Corredor — MarTech Developer y Marketing Project Manager en Madrid. 13+ años uniendo estrategia de marketing y código front-end. Especializada en proyectos de sanidad, retail y B2B."
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Message"
+msgstr "Mensaje"
+
+msgid "Company"
+msgstr "Empresa"
+
+msgid "Send message"
+msgstr "Enviar mensaje"
+
+msgid "Copy email"
+msgstr "Copiar email"
+
+msgid "Thanks! Your message has been sent."
+msgstr "¡Gracias! Tu mensaje se ha enviado."
+
+msgid "Please fill in your name, email and message."
+msgstr "Por favor, completa tu nombre, email y mensaje."
+
+msgid "That email address does not look valid."
+msgstr "Esa dirección de email no parece válida."
+
+msgid "Sorry, the form is unavailable right now. Please email me directly."
+msgstr "Lo siento, el formulario no está disponible ahora mismo. Escríbeme directamente por email."
+
+msgid "New message from your portfolio — %(name)s"
+msgstr "Nuevo mensaje desde tu portfolio — %(name)s"
+
+msgid "Something went wrong sending your message. Please email me directly."
+msgstr "Algo falló al enviar tu mensaje. Escríbeme directamente por email."

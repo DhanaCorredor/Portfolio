@@ -177,7 +177,7 @@ def contact(request):
     # Honeypot: real users leave this hidden field empty; bots fill it.
     if request.POST.get('company', '').strip():
         messages.success(request, _g('Thanks! Your message has been sent.'))
-        return redirect(redirect_url)
+        return redirect(redirect_url)  # silently accept bots
 
     name = request.POST.get('name', '').strip()
     email = request.POST.get('email', '').strip()
@@ -212,7 +212,7 @@ def contact(request):
             'subject': _g('New message from your portfolio — %(name)s') % {'name': name},
             'html': html,
         })
-        messages.success(request, _g('Thanks! Your message has been sent. I read everything.'))
+        messages.success(request, _g('Thanks! Your message has been sent.'))
     except Exception:
         logger.exception('Contact form: Resend send failed.')
         messages.error(request, _g('Something went wrong sending your message. Please email me directly.'))
