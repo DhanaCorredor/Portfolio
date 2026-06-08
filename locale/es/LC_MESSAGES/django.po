@@ -317,12 +317,6 @@ msgstr "Idiomas"
 msgid "Native or Bilingual"
 msgstr "Nativo o Bilingüe"
 
-msgid "Professional Working"
-msgstr "Profesional"
-
-msgid "AI Bootcamp — Python, Game Dev & Programming"
-msgstr "Bootcamp IA — Python, Videojuegos y Programación"
-
 msgid "Professional Certificate in Project Management"
 msgstr "Certificado Profesional en Gestión de Proyectos"
 
@@ -622,3 +616,25 @@ msgstr "Estrategia"
 
 msgid "Creative strategy that drives results."
 msgstr "Estrategia creativa que da resultados."
+
+# ── Fixes: language level, bootcamp naming, periods, Urban Lab
+msgid "Intermediate (B1)"
+msgstr "Intermedio (B1)"
+
+msgid "Full Stack Bootcamp at Factoría F5"
+msgstr "Bootcamp Full Stack en Factoría F5"
+
+msgid "Full Stack Bootcamp — Python"
+msgstr "Bootcamp Full Stack — Python"
+
+msgid "Project Manager Junior"
+msgstr "Project Manager Junior"
+
+msgid "2022 — Present"
+msgstr "2022 — Actualidad"
+
+msgid "In-house B2B marketing: lead-gen Meta Ads, email marketing in Mailchimp and HubSpot, corporate materials and reporting to direction. Launched and ran Cultura Emprende Radio — the company's own show on Radio Intereconomía 95.1FM — managing guest agenda, editorial production and digital presence."
+msgstr "Marketing B2B in-house: campañas de lead-gen con Meta Ads, email marketing en Mailchimp y HubSpot, materiales corporativos y reporting a dirección. Lancé y gestioné Cultura Emprende Radio — programa propio de la empresa en Radio Intereconomía 95.1FM — coordinando agenda de invitados, producción editorial y presencia digital."
+
+msgid "Dhana Corredor — MarTech Developer and Frontend Engineer in Madrid. 13+ years bridging marketing strategy and front-end code. Specializing in healthcare, retail and B2B projects."
+msgstr "Dhana Corredor — MarTech Developer y Frontend Engineer en Madrid. 13+ años uniendo estrategia de marketing y código front-end. Especializada en proyectos de sanidad, retail y B2B."

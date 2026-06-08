@@ -15,7 +15,7 @@ def index(request):
         {
             'company': _('Independent — Asisty + clients'),
             'position': _('MarTech & Frontend (Freelance)'),
-            'period': _('Oct 2025 — Present'),
+            'period': _('2022 — Present'),
             'location': _('Remote · Spain'),
             'description': _('Self-led MarTech platform Asisty (Next.js 15, healthcare sector) plus freelance work for SMEs: SEO, web optimization, analytics and A/B testing.'),
             'tech': ['Next.js', 'TypeScript', 'SEO', 'GA4'],
@@ -37,24 +37,16 @@ def index(request):
             'tech': ['HubSpot', 'Meta Ads', 'GA4', 'WordPress'],
         },
         {
-            'company': 'Cultura Emprende Radio',
-            'position': _('Communications Manager'),
-            'period': _('May 2018 — Sep 2022'),
-            'location': _('Madrid, Spain'),
-            'description': _('Communication management for the leading entrepreneurship show on Radio Intereconomía 95.1FM. Web design, social media and guest agenda.'),
-            'tech': ['WordPress', 'Mailchimp', 'Social Media'],
-        },
-        {
             'company': 'Urban Lab Madrid',
             'position': _('Project Manager'),
             'period': _('Feb 2017 — Sep 2022'),
             'location': _('Madrid, Spain'),
-            'description': _('B2B marketing and communication for clients: social media strategy, email marketing in Mailchimp and HubSpot, Meta Ads campaigns, reporting to direction.'),
+            'description': _('In-house B2B marketing: lead-gen Meta Ads, email marketing in Mailchimp and HubSpot, corporate materials and reporting to direction. Launched and ran Cultura Emprende Radio — the company\'s own show on Radio Intereconomía 95.1FM — managing guest agenda, editorial production and digital presence.'),
             'tech': ['HubSpot', 'Mailchimp', 'Meta Ads', 'WordPress'],
         },
         {
             'company': 'Apolo Agencia Digital',
-            'position': _('Project Technician'),
+            'position': _('Project Manager Junior'),
             'period': _('Oct 2014 — Apr 2016'),
             'location': _('Madrid, Spain'),
             'description': _('Digital campaign analysis and optimization: paid social, email marketing and basic SEO. Google Ads and Meta Ads configuration.'),
@@ -122,7 +114,7 @@ def index(request):
     ]
 
     education = [
-        {'school': 'Factoría F5', 'degree': _('AI Bootcamp — Python, Game Dev & Programming'), 'year': '2026'},
+        {'school': 'Factoría F5', 'degree': _('Full Stack Bootcamp — Python'), 'year': '2026'},
         {'school': 'freeCodeCamp', 'degree': _('Professional Certificate in Project Management'), 'year': '2023'},
         {'school': 'ThePower Business School', 'degree': _('Rock{TheCode} — Full Stack Development'), 'year': '2023'},
         {'school': 'ENEB Barcelona', 'degree': _('Master in Commercial Direction & Advertising'), 'year': '2017 — 2019'},
