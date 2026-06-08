@@ -21,22 +21,20 @@
         <span class="text-[var(--fg)] not-italic font-sans"> {% blocktranslate %}I bridge marketing strategy and front-end code — building tools that move metrics, not vanity.{% endblocktranslate %}</span>
     </p>
 
-    <div class="flex flex-wrap items-center gap-2.5">
-        <a href="{% url 'core:cv_marketing' %}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-[var(--bg)] text-xs font-semibold hover:opacity-90 transition">
-            {% translate 'View CV' %} ↗
-        </a>
-        <a href="{% static 'cv/dhana-corredor-cv-marketing.pdf' %}" download class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--line-strong)] text-xs font-semibold hover:border-accent hover:text-accent transition">
-            {% translate 'Download PDF' %} ↓
-        </a>
-        <a href="mailto:dhanacorredor@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--line-strong)] text-xs font-semibold hover:border-accent hover:text-accent transition">
-            {% translate 'Contact me' %} ↗
-        </a>
-        <a href="https://www.linkedin.com/in/dhanacorredor/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--line-strong)] text-xs font-semibold hover:border-accent hover:text-accent transition">
-            LinkedIn ↗
-        </a>
-        <a href="https://github.com/DhanaCorredor" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--line-strong)] text-xs font-semibold hover:border-accent hover:text-accent transition">
-            GitHub ↗
-        </a>
+    <div class="flex flex-wrap items-center gap-x-7 gap-y-4">
+        <div class="flex flex-wrap items-center gap-2.5">
+            <a href="{% url 'core:cv_marketing' %}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-[var(--bg)] text-xs font-semibold hover:opacity-90 transition">
+                {% translate 'View CV' %} ↗
+            </a>
+            <a href="{% static 'cv/dhana-corredor-cv-marketing.pdf' %}" download class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--line-strong)] text-xs font-semibold hover:border-accent hover:text-accent transition">
+                {% translate 'Download PDF' %} ↓
+            </a>
+        </div>
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--fg-muted)]">
+            <a href="#contact" class="link-underline hover:text-[var(--fg)] transition">{% translate 'Contact me' %} ↗</a>
+            <a href="https://www.linkedin.com/in/dhanacorredor/" target="_blank" rel="noopener" class="link-underline hover:text-[var(--fg)] transition">LinkedIn ↗</a>
+            <a href="https://github.com/DhanaCorredor" target="_blank" rel="noopener" class="link-underline hover:text-[var(--fg)] transition">GitHub ↗</a>
+        </div>
     </div>
 </section>
 
@@ -104,21 +102,21 @@
             <div class="max-w-[1200px] mx-auto px-6 md:px-10 py-6 md:py-8 grid grid-cols-12 gap-4 md:gap-6 items-start">
                 <span class="col-span-2 md:col-span-1 font-mono text-xs uppercase tracking-widest text-[var(--fg-subtle)] pt-1">{{ forloop.counter|stringformat:"02d" }}</span>
                 <div class="col-span-10 md:col-span-4">
-                    <div class="flex items-center gap-2 flex-wrap">
+                    <div class="flex items-baseline gap-3 flex-wrap">
                         <h3 class="font-display font-bold fluid-h2 tracking-tight">{{ p.title }}</h3>
-                        {% if p.featured %}<span class="font-mono text-[9px] uppercase tracking-widest px-2 py-0.5 rounded-full bg-accent text-[var(--bg)]">{% translate 'Featured' %}</span>{% endif %}
+                        {% if p.featured %}<span class="font-mono text-[9px] uppercase tracking-[0.18em] text-accent">★ {% translate 'Featured' %}</span>{% endif %}
                     </div>
-                    <div class="mt-3 flex flex-wrap gap-1.5">
-                        {% for tag in p.tags %}<span class="font-mono text-[10px] uppercase tracking-widest px-2 py-0.5 border border-[var(--line)] rounded-full">{{ tag }}</span>{% endfor %}
+                    <div class="mt-3 font-mono text-[10px] uppercase tracking-widest text-[var(--fg-subtle)] leading-relaxed">
+                        {% for tag in p.tags %}{{ tag }}{% if not forloop.last %} · {% endif %}{% endfor %}
                     </div>
                 </div>
                 <p class="col-span-12 md:col-span-5 text-[var(--fg-muted)] text-sm md:text-base leading-snug">{{ p.description }}</p>
-                <div class="col-span-12 md:col-span-2 flex flex-wrap gap-2 md:justify-end content-start">
+                <div class="col-span-12 md:col-span-2 flex flex-wrap gap-x-4 gap-y-1 md:justify-end content-start font-mono text-[10px] uppercase tracking-widest">
                     {% if p.live_url %}
-                    <a href="{{ p.live_url }}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full bg-[var(--fg)] text-[var(--bg)] hover:opacity-80 transition">{% translate 'Live' %} ↗</a>
+                    <a href="{{ p.live_url }}" target="_blank" rel="noopener" class="link-underline hover:text-accent transition">{% translate 'Live' %} ↗</a>
                     {% endif %}
                     {% if p.github_url %}
-                    <a href="{{ p.github_url }}" target="_blank" rel="noopener" class="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full border border-[var(--line-strong)] hover:border-accent hover:text-accent transition">{% translate 'Code' %} ↗</a>
+                    <a href="{{ p.github_url }}" target="_blank" rel="noopener" class="link-underline hover:text-accent transition">{% translate 'Code' %} ↗</a>
                     {% endif %}
                 </div>
             </div>
@@ -141,8 +139,8 @@
                 <span class="col-span-12 md:col-span-3 font-mono text-[11px] uppercase tracking-widest text-[var(--fg-muted)]">{{ j.period }}</span>
                 <h3 class="col-span-12 md:col-span-4 font-semibold text-base md:text-lg">{{ j.position }}</h3>
                 <p class="col-span-8 md:col-span-3 text-sm text-[var(--fg-muted)]">{{ j.company }} · {{ j.location }}</p>
-                <div class="col-span-4 md:col-span-2 flex flex-wrap gap-1 md:justify-end">
-                    {% for t in j.tech|slice:":3" %}<span class="font-mono text-[10px] uppercase px-1.5 py-0.5 border border-[var(--line)] rounded-full text-[var(--fg-muted)]">{{ t }}</span>{% endfor %}
+                <div class="col-span-4 md:col-span-2 font-mono text-[10px] uppercase tracking-widest text-[var(--fg-subtle)] md:text-right">
+                    {% for t in j.tech|slice:":3" %}{{ t }}{% if not forloop.last %} · {% endif %}{% endfor %}
                 </div>
             </li>
             {% endfor %}
@@ -189,8 +187,8 @@
                 </ul>
 
                 <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--fg-subtle)] mt-6 mb-3">{% translate 'Industries' %}</p>
-                <ul class="flex flex-wrap gap-1.5">
-                    {% for ind in industries %}<li class="font-mono text-[10px] uppercase tracking-widest px-2 py-0.5 border border-[var(--line)] rounded-full">{{ ind }}</li>{% endfor %}
+                <ul class="font-mono text-[10px] uppercase tracking-widest text-[var(--fg-muted)] leading-relaxed">
+                    {% for ind in industries %}<li class="inline">{{ ind }}{% if not forloop.last %} · {% endif %}</li>{% endfor %}
                 </ul>
             </div>
         </div>
