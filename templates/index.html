@@ -17,7 +17,7 @@
     </h1>
 
     <p class="font-serif italic text-2xl md:text-3xl text-[var(--fg-muted)] leading-snug mb-10 max-w-3xl">
-        {% blocktranslate %}MarTech Developer & Frontend Engineer.{% endblocktranslate %}
+        {% blocktranslate %}MarTech Developer & Marketing Project Manager.{% endblocktranslate %}
         <span class="text-[var(--fg)] not-italic font-sans"> {% blocktranslate %}I bridge marketing strategy and front-end code — building tools that move metrics, not vanity.{% endblocktranslate %}</span>
     </p>
 
@@ -61,7 +61,7 @@
             <div class="bg-[var(--bg)] p-6 md:p-8">
                 <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-4">{% translate 'Frontend & Code' %}</p>
                 <ul class="space-y-1.5 text-sm md:text-base">
-                    <li>Angular · Next.js · JavaScript</li>
+                    <li>React · Next.js · JavaScript</li>
                     <li>TypeScript · HTML5 · CSS3 · Tailwind</li>
                     <li>Git · GitHub</li>
                 </ul>
@@ -79,7 +79,7 @@
 
         <div class="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm">
             <span class="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--fg-subtle)]">{% translate 'Currently learning' %}:</span>
-            <span class="text-[var(--fg-muted)]">React · Python — {% translate 'Full Stack Bootcamp at Factoría F5' %} (2026)</span>
+            <span class="text-[var(--fg-muted)]">Python — {% translate 'Full Stack Bootcamp at Factoría F5' %} (2026)</span>
         </div>
 
         <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--fg-muted)]">
@@ -176,7 +176,7 @@
             <div class="col-span-12 md:col-span-8 space-y-5 text-base md:text-lg leading-relaxed text-[var(--fg-muted)]">
                 <p>{% blocktranslate %}My path is uncommon: I started in strategic marketing in 2013, then trained as a Full Stack Developer to grow on the technical side. That double track lets me act as the bridge between clients, creatives and developers — the same person who defines the funnel ships the landing, configures GA4/GTM and runs the A/B tests.{% endblocktranslate %}</p>
                 <p>{% blocktranslate %}13 years across banking, retail, healthcare, media and B2B — Bancaribe, Viandas de Salamanca, Radio Intereconomía, Quirónsalud and self-led MarTech at Asisty. My method combines the agility of SCRUM, the discipline of Jira, and rigorous analysis with GA4 and Looker Studio.{% endblocktranslate %}</p>
-                <p>{% blocktranslate %}Lifelong learner: in 2026 I'm integrating Python and AI into my stack at Factoría F5. The future of project management runs through intelligent automation — and I'm already applying it.{% endblocktranslate %}</p>
+                <p>{% blocktranslate %}Lifelong learner: in 2026 I'm rounding out my technical side with a Full Stack Bootcamp focused on Python at Factoría F5 — closing the gap between marketing strategy and the code that delivers it.{% endblocktranslate %}</p>
             </div>
 
             <div class="col-span-12 md:col-span-4 md:pl-8 md:border-l border-[var(--line)]">
@@ -232,21 +232,63 @@
             {% blocktranslate %}Open to new opportunities and interesting projects. Drop me a line — I read everything.{% endblocktranslate %}
         </p>
 
-        <div class="flex flex-col gap-4 md:gap-6">
-            <a href="mailto:dhanacorredor@gmail.com" class="big-cta inline-flex items-center gap-3 font-display font-bold fluid-h2 tracking-tight border-b border-current pb-2 self-start">
-                dhanacorredor@gmail.com
-                <span class="text-2xl">↗</span>
-            </a>
-
-            <div class="flex flex-wrap items-center gap-3">
-                <button type="button" id="copy-email" data-email="dhanacorredor@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-current text-xs font-semibold uppercase tracking-widest hover:opacity-80 transition">
-                    <span class="copy-label">{% translate 'Copy email' %}</span>
-                    <span class="copy-icon" aria-hidden="true">⧉</span>
-                </button>
-                <a href="https://cal.com/dhanacorredor" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--contact-fg)] text-[var(--contact-bg)] text-xs font-semibold uppercase tracking-widest hover:opacity-90 transition">
-                    {% translate 'Book a 15-min intro call' %} ↗
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+            {# Left: direct email + copy #}
+            <div class="flex flex-col gap-4 md:gap-6">
+                <a href="mailto:dhanacorredor@gmail.com" class="big-cta inline-flex items-center gap-3 font-display font-bold fluid-h2 tracking-tight border-b border-current pb-2 self-start">
+                    dhanacorredor@gmail.com
+                    <span class="text-2xl">↗</span>
                 </a>
+
+                <div class="flex flex-wrap items-center gap-3">
+                    <button type="button" id="copy-email" data-email="dhanacorredor@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-current text-xs font-semibold uppercase tracking-widest hover:opacity-80 transition">
+                        <span class="copy-label">{% translate 'Copy email' %}</span>
+                        <span class="copy-icon" aria-hidden="true">⧉</span>
+                    </button>
+                </div>
             </div>
+
+            {# Right: contact form → Resend → inbox #}
+            <form action="{% url 'core:contact' %}" method="post" class="flex flex-col gap-4" novalidate>
+                {% csrf_token %}
+
+                {% if messages %}
+                <div class="flex flex-col gap-2" role="status" aria-live="polite">
+                    {% for message in messages %}
+                    <p class="text-sm rounded-xl px-4 py-3 {% if message.tags == 'error' %}bg-red-500/15 text-red-200 border border-red-400/30{% else %}bg-emerald-500/15 text-emerald-100 border border-emerald-400/30{% endif %}">{{ message }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {# Honeypot — hidden from humans, catches bots #}
+                <div class="hidden" aria-hidden="true">
+                    <label>{% translate 'Company' %}<input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <label class="flex flex-col gap-1.5 text-xs font-semibold uppercase tracking-widest opacity-80">
+                        {% translate 'Name' %}
+                        <input type="text" name="name" required autocomplete="name"
+                               class="rounded-xl bg-transparent border border-current/30 px-4 py-3 text-base font-normal normal-case tracking-normal placeholder:opacity-50 focus:outline-none focus:border-current transition">
+                    </label>
+                    <label class="flex flex-col gap-1.5 text-xs font-semibold uppercase tracking-widest opacity-80">
+                        {% translate 'Email' %}
+                        <input type="email" name="email" required autocomplete="email"
+                               class="rounded-xl bg-transparent border border-current/30 px-4 py-3 text-base font-normal normal-case tracking-normal placeholder:opacity-50 focus:outline-none focus:border-current transition">
+                    </label>
+                </div>
+
+                <label class="flex flex-col gap-1.5 text-xs font-semibold uppercase tracking-widest opacity-80">
+                    {% translate 'Message' %}
+                    <textarea name="message" rows="4" required
+                              class="rounded-xl bg-transparent border border-current/30 px-4 py-3 text-base font-normal normal-case tracking-normal placeholder:opacity-50 focus:outline-none focus:border-current transition resize-y"></textarea>
+                </label>
+
+                <button type="submit"
+                        class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[var(--contact-fg)] text-[var(--contact-bg)] text-xs font-semibold uppercase tracking-widest hover:opacity-90 transition self-start">
+                    {% translate 'Send message' %} ↗
+                </button>
+            </form>
         </div>
 
         <div class="mt-12 pt-8 border-t border-current/20 flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-widest opacity-80">

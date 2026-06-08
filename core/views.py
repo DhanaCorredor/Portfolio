@@ -1,5 +1,15 @@
-from django.shortcuts import render
+import logging
+
+import resend
+from django.conf import settings
+from django.contrib import messages
+from django.shortcuts import redirect, render
+from django.urls import reverse
+from django.utils.translation import gettext as _g
 from django.utils.translation import gettext_lazy as _
+from django.views.decorators.http import require_POST
+
+logger = logging.getLogger(__name__)
 
 
 def cv_marketing(request):
@@ -82,10 +92,26 @@ def index(request):
         {
             'title': 'Asisty',
             'description': _('Health marketing platform built with Next.js 15. Hybrid approach: clinical authority via minimalist UI, conversion-focused CTAs and SEO-ready structure for healthcare professionals and clinics.'),
-            'live_url': 'https://loopy-laces.vercel.app',
+            'live_url': 'https://asisty.vercel.app',
             'github_url': 'https://github.com/DhanaCorredor/asisty',
             'tags': ['Next.js', 'TypeScript', 'MarTech', 'Healthcare'],
             'featured': True,
+        },
+        {
+            'title': 'Diagnóstico Centro de Salud',
+            'description': _('Integral marketing for a Madrid health center since it opened in 2022: Meta Ads (Instagram + Facebook) lead-gen, brand and visual identity, and full social-media management from day one.'),
+            'live_url': '',
+            'github_url': '',
+            'tags': ['Meta Ads', 'Branding', 'Healthcare', 'Social Media'],
+            'featured': True,
+        },
+        {
+            'title': 'Asahi Sushi Bar',
+            'description': _('Sushi bar in Leganés, Madrid: website, social media and digital menu. In progress: a more robust v2 site and a custom table-to-kitchen order system.'),
+            'live_url': '',
+            'github_url': '',
+            'tags': ['Web', 'Social Media', 'Hospitality'],
+            'featured': False,
         },
         {
             'title': 'Tiro al Blanco',
@@ -117,6 +143,7 @@ def index(request):
         {'school': 'Factoría F5', 'degree': _('Full Stack Bootcamp — Python'), 'year': '2026'},
         {'school': 'freeCodeCamp', 'degree': _('Professional Certificate in Project Management'), 'year': '2023'},
         {'school': 'ThePower Business School', 'degree': _('Rock{TheCode} — Full Stack Development'), 'year': '2023'},
+        {'school': 'N+E Business School', 'degree': _('Specialist in Big Data & Business Analytics'), 'year': '2020'},
         {'school': 'ENEB Barcelona', 'degree': _('Master in Commercial Direction & Advertising'), 'year': '2017 — 2019'},
         {'school': _('International University of La Rioja'), 'degree': _('Bachelor in Business Administration'), 'year': '2013 — 2017'},
     ]
@@ -140,3 +167,54 @@ def index(request):
         'industries': industries,
         'references': references,
     })
+
+
+@require_POST
+def contact(request):
+    """Relay the contact form to the inbox via Resend, then redirect to #contact."""
+    redirect_url = reverse('core:index') + '#contact'
+
+    # Honeypot: real users leave this hidden field empty; bots fill it.
+    if request.POST.get('company', '').strip():
+        messages.success(request, _g('Thanks! Your message has been sent.'))
+        return redirect(redirect_url)
+
+    name = request.POST.get('name', '').strip()
+    email = request.POST.get('email', '').strip()
+    message = request.POST.get('message', '').strip()
+
+    if not name or not email or not message:
+        messages.error(request, _g('Please fill in your name, email and message.'))
+        return redirect(redirect_url)
+
+    if '@' not in email or '.' not in email.split('@')[-1]:
+        messages.error(request, _g('That email address does not look valid.'))
+        return redirect(redirect_url)
+
+    if not settings.RESEND_API_KEY:
+        logger.error('Contact form: RESEND_API_KEY is not configured.')
+        messages.error(request, _g('Sorry, the form is unavailable right now. Please email me directly.'))
+        return redirect(redirect_url)
+
+    safe_name = name.replace('<', '').replace('>', '')
+    body = message.replace('\n', '<br>')
+    html = (
+        f'<p><strong>From:</strong> {safe_name} &lt;{email}&gt;</p>'
+        f'<hr><p>{body}</p>'
+    )
+
+    try:
+        resend.api_key = settings.RESEND_API_KEY
+        resend.Emails.send({
+            'from': f'Portfolio <{settings.CONTACT_FROM_EMAIL}>',
+            'to': [settings.CONTACT_TO_EMAIL],
+            'reply_to': email,
+            'subject': _g('New message from your portfolio — %(name)s') % {'name': name},
+            'html': html,
+        })
+        messages.success(request, _g('Thanks! Your message has been sent. I read everything.'))
+    except Exception:
+        logger.exception('Contact form: Resend send failed.')
+        messages.error(request, _g('Something went wrong sending your message. Please email me directly.'))
+
+    return redirect(redirect_url)

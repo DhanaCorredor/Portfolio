@@ -4,6 +4,7 @@ Django==5.2.13
 django-browser-reload==1.21.0
 django-tailwind==4.4.2
 pytailwindcss==0.3.0
+resend==2.16.0
 sqlparse==0.5.5
 tzdata==2026.2
 whitenoise==6.8.2

@@ -526,8 +526,8 @@ msgstr "Mi perfil tiene un componente poco común: empecé en marketing estraté
 msgid "13 years across banking, retail, healthcare, media and B2B — Bancaribe, Viandas de Salamanca, Radio Intereconomía, Quirónsalud and self-led MarTech at Asisty. My method combines the agility of SCRUM, the discipline of Jira, and rigorous analysis with GA4 and Looker Studio."
 msgstr "13 años en banca, retail, sanidad, media y B2B — Bancaribe, Viandas de Salamanca, Radio Intereconomía, Quirónsalud y proyecto propio MarTech en Asisty. Mi metodología combina la agilidad de SCRUM, el orden de Jira y el análisis riguroso de datos con GA4 y Looker Studio."
 
-msgid "Lifelong learner: in 2026 I'm integrating Python and AI into my stack at Factoría F5. The future of project management runs through intelligent automation — and I'm already applying it."
-msgstr "Eterna aprendiz: este 2026 estoy integrando Python e Inteligencia Artificial en mi stack en Factoría F5. El futuro de la gestión de proyectos pasa por la automatización inteligente — y yo ya la estoy aplicando."
+msgid "Lifelong learner: in 2026 I'm rounding out my technical side with a Full Stack Bootcamp focused on Python at Factoría F5 — closing the gap between marketing strategy and the code that delivers it."
+msgstr "Eterna aprendiz: en 2026 estoy reforzando mi parte técnica con un Bootcamp Full Stack enfocado a Python en Factoría F5 — cerrando la distancia entre la estrategia de marketing y el código que la hace realidad."
 
 msgid "View CV"
 msgstr "Ver CV"
@@ -627,6 +627,15 @@ msgstr "Bootcamp Full Stack en Factoría F5"
 msgid "Full Stack Bootcamp — Python"
 msgstr "Bootcamp Full Stack — Python"
 
+msgid "Specialist in Big Data & Business Analytics"
+msgstr "Especialista en Big Data & Business Analytics"
+
+msgid "Integral marketing for a Madrid health center since it opened in 2022: Meta Ads (Instagram + Facebook) lead-gen, brand and visual identity, and full social-media management from day one."
+msgstr "Marketing integral para un centro de salud de Madrid desde su apertura en 2022: lead-gen con Meta Ads (Instagram + Facebook), branding e identidad visual y gestión integral de RRSS desde el día uno."
+
+msgid "Sushi bar in Leganés, Madrid: website, social media and digital menu. In progress: a more robust v2 site and a custom table-to-kitchen order system."
+msgstr "Sushi bar en Leganés, Madrid: web, redes sociales y menú digital. En desarrollo: una web v2 más sólida y un sistema propio de comandas mesa→cocina."
+
 msgid "Project Manager Junior"
 msgstr "Project Manager Junior"
 
@@ -636,5 +645,5 @@ msgstr "2022 — Actualidad"
 msgid "In-house B2B marketing: lead-gen Meta Ads, email marketing in Mailchimp and HubSpot, corporate materials and reporting to direction. Launched and ran Cultura Emprende Radio — the company's own show on Radio Intereconomía 95.1FM — managing guest agenda, editorial production and digital presence."
 msgstr "Marketing B2B in-house: campañas de lead-gen con Meta Ads, email marketing en Mailchimp y HubSpot, materiales corporativos y reporting a dirección. Lancé y gestioné Cultura Emprende Radio — programa propio de la empresa en Radio Intereconomía 95.1FM — coordinando agenda de invitados, producción editorial y presencia digital."
 
-msgid "Dhana Corredor — MarTech Developer and Frontend Engineer in Madrid. 13+ years bridging marketing strategy and front-end code. Specializing in healthcare, retail and B2B projects."
-msgstr "Dhana Corredor — MarTech Developer y Frontend Engineer en Madrid. 13+ años uniendo estrategia de marketing y código front-end. Especializada en proyectos de sanidad, retail y B2B."
+msgid "Dhana Corredor — MarTech Developer and Marketing Project Manager in Madrid. 13+ years bridging marketing strategy and front-end code. Specializing in healthcare, retail and B2B projects."
+msgstr "Dhana Corredor — MarTech Developer y Marketing Project Manager en Madrid. 13+ años uniendo estrategia de marketing y código front-end. Especializada en proyectos de sanidad, retail y B2B."

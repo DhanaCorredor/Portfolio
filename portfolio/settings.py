@@ -164,3 +164,16 @@ STORAGES = {
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# --- Contact form (Resend) --------------------------------------------------
+# The contact form posts to a Django view that relays the message via Resend's
+# HTTP API (works on Vercel serverless, no SMTP). Set RESEND_API_KEY in the
+# Vercel project env vars. Without a verified domain, Resend only delivers from
+# 'onboarding@resend.dev' to the account-owner email (CONTACT_TO_EMAIL).
+
+RESEND_API_KEY = os.environ.get('RESEND_API_KEY', '')
+# Free Resend (no verified domain) only delivers to the account-owner address.
+# That is the Gmail the Resend account was created with: corredorsadhana@gmail.com.
+CONTACT_TO_EMAIL = os.environ.get('CONTACT_TO_EMAIL', 'corredorsadhana@gmail.com')
+CONTACT_FROM_EMAIL = os.environ.get('CONTACT_FROM_EMAIL', 'onboarding@resend.dev')
