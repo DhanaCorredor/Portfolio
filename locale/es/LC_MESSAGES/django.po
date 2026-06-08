@@ -689,3 +689,9 @@ msgstr "La verificación anti-spam falló. Inténtalo de nuevo."
 
 msgid "Protected by reCAPTCHA — the Google <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\" class=\"link-underline\">Privacy Policy</a> and <a href=\"https://policies.google.com/terms\" target=\"_blank\" rel=\"noopener\" class=\"link-underline\">Terms</a> apply."
 msgstr "Protegido por reCAPTCHA — se aplican la <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\" class=\"link-underline\">Política de Privacidad</a> y los <a href=\"https://policies.google.com/terms\" target=\"_blank\" rel=\"noopener\" class=\"link-underline\">Términos</a> de Google."
+
+msgid "I bridge marketing strategy and front-end code — building tools that move metrics, not vanity."
+msgstr "Conecto la estrategia de marketing con el código front-end: construyo herramientas que mueven métricas, no vanidad."
+
+msgid "MarTech Developer & Marketing Project Manager."
+msgstr "MarTech Developer y Marketing Project Manager."
