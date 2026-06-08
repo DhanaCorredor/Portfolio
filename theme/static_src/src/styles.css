@@ -210,3 +210,6 @@ a:focus-visible {
 }
 
 body.menu-open { overflow: hidden; }
+
+/* ==== Hide reCAPTCHA v3 badge (legal notice shown by the form instead) ==== */
+.grecaptcha-badge { visibility: hidden; }

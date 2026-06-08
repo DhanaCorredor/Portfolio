@@ -1,5 +1,6 @@
 import logging
 
+import requests
 import resend
 from django.conf import settings
 from django.contrib import messages
@@ -10,6 +11,35 @@ from django.utils.translation import gettext_lazy as _
 from django.views.decorators.http import require_POST
 
 logger = logging.getLogger(__name__)
+
+
+def _verify_recaptcha(token, request):
+    """Validate a reCAPTCHA v3 token. Fail-closed on bad/low-score results,
+    fail-open on network errors so a Google outage can't block real visitors."""
+    if not token:
+        return False
+    try:
+        resp = requests.post(
+            'https://www.google.com/recaptcha/api/siteverify',
+            data={
+                'secret': settings.RECAPTCHA_SECRET_KEY,
+                'response': token,
+                'remoteip': request.META.get('REMOTE_ADDR', ''),
+            },
+            timeout=10,
+        )
+        data = resp.json()
+    except Exception:
+        logger.exception('reCAPTCHA: verification request failed; allowing through.')
+        return True  # fail open on network error
+    if not data.get('success'):
+        logger.warning('reCAPTCHA: not successful: %s', data.get('error-codes'))
+        return False
+    score = data.get('score')
+    if score is not None and score < settings.RECAPTCHA_MIN_SCORE:
+        logger.warning('reCAPTCHA: score %s below threshold.', score)
+        return False
+    return True
 
 
 def cv_marketing(request):
@@ -166,6 +196,7 @@ def index(request):
         'education': education,
         'industries': industries,
         'references': references,
+        'recaptcha_site_key': settings.RECAPTCHA_SITE_KEY,
     })
 
 
@@ -190,6 +221,12 @@ def contact(request):
     if '@' not in email or '.' not in email.split('@')[-1]:
         messages.error(request, _g('That email address does not look valid.'))
         return redirect(redirect_url)
+
+    if settings.RECAPTCHA_SECRET_KEY:
+        token = request.POST.get('g-recaptcha-response', '')
+        if not _verify_recaptcha(token, request):
+            messages.error(request, _g('Anti-spam check failed. Please try again.'))
+            return redirect(redirect_url)
 
     if not settings.RESEND_API_KEY:
         logger.error('Contact form: RESEND_API_KEY is not configured.')

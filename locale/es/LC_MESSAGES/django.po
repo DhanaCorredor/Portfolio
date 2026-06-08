@@ -683,3 +683,9 @@ msgstr "Nuevo mensaje desde tu portfolio — %(name)s"
 
 msgid "Something went wrong sending your message. Please email me directly."
 msgstr "Algo falló al enviar tu mensaje. Escríbeme directamente por email."
+
+msgid "Anti-spam check failed. Please try again."
+msgstr "La verificación anti-spam falló. Inténtalo de nuevo."
+
+msgid "Protected by reCAPTCHA — the Google <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\" class=\"link-underline\">Privacy Policy</a> and <a href=\"https://policies.google.com/terms\" target=\"_blank\" rel=\"noopener\" class=\"link-underline\">Terms</a> apply."
+msgstr "Protegido por reCAPTCHA — se aplican la <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\" class=\"link-underline\">Política de Privacidad</a> y los <a href=\"https://policies.google.com/terms\" target=\"_blank\" rel=\"noopener\" class=\"link-underline\">Términos</a> de Google."

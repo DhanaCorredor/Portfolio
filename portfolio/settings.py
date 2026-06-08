@@ -177,3 +177,13 @@ RESEND_API_KEY = os.environ.get('RESEND_API_KEY', '')
 # That is the Gmail the Resend account was created with: corredorsadhana@gmail.com.
 CONTACT_TO_EMAIL = os.environ.get('CONTACT_TO_EMAIL', 'corredorsadhana@gmail.com')
 CONTACT_FROM_EMAIL = os.environ.get('CONTACT_FROM_EMAIL', 'onboarding@resend.dev')
+
+
+# --- reCAPTCHA v3 (invisible, contact form) ---------------------------------
+# Set both keys in Vercel env vars. While SECRET is empty the contact view skips
+# verification (form keeps working on just the honeypot); protection activates
+# once the secret is present. Register the site at google.com/recaptcha/admin.
+
+RECAPTCHA_SITE_KEY = os.environ.get('RECAPTCHA_SITE_KEY', '')
+RECAPTCHA_SECRET_KEY = os.environ.get('RECAPTCHA_SECRET_KEY', '')
+RECAPTCHA_MIN_SCORE = float(os.environ.get('RECAPTCHA_MIN_SCORE', '0.5'))
