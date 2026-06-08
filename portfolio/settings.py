@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
 
     'tailwind',
     'theme',
@@ -102,6 +103,7 @@ TEMPLATES = [
                 'django.template.context_processors.i18n',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'core.context_processors.site_globals',
             ],
         },
     },
@@ -187,3 +189,11 @@ CONTACT_FROM_EMAIL = os.environ.get('CONTACT_FROM_EMAIL', 'onboarding@resend.dev
 RECAPTCHA_SITE_KEY = os.environ.get('RECAPTCHA_SITE_KEY', '')
 RECAPTCHA_SECRET_KEY = os.environ.get('RECAPTCHA_SECRET_KEY', '')
 RECAPTCHA_MIN_SCORE = float(os.environ.get('RECAPTCHA_MIN_SCORE', '0.5'))
+
+
+# --- Analytics (GA4) --------------------------------------------------------
+# Public Measurement ID (G-XXXXXXXXXX). Set GA4_MEASUREMENT_ID in Vercel env
+# vars; the gtag snippet only renders when it is present (so local/dev traffic
+# is not tracked while the var is unset).
+
+GA4_MEASUREMENT_ID = os.environ.get('GA4_MEASUREMENT_ID', '')

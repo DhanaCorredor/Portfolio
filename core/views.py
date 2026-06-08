@@ -4,6 +4,7 @@ import requests
 import resend
 from django.conf import settings
 from django.contrib import messages
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils.translation import gettext as _g
@@ -40,6 +41,18 @@ def _verify_recaptcha(token, request):
         logger.warning('reCAPTCHA: score %s below threshold.', score)
         return False
     return True
+
+
+def robots_txt(request):
+    """Serve /robots.txt with an absolute link to the sitemap."""
+    sitemap_url = request.build_absolute_uri('/sitemap.xml')
+    lines = [
+        'User-agent: *',
+        'Allow: /',
+        'Disallow: /admin/',
+        f'Sitemap: {sitemap_url}',
+    ]
+    return HttpResponse('\n'.join(lines) + '\n', content_type='text/plain')
 
 
 def cv_marketing(request):
